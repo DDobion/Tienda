@@ -1,0 +1,396 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Block & Blade | Tienda de Aventureros</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">◆</span>
+            BLOCK<span>&</span>BLADE
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Sobre nosotros</a>
+            <a href="#categorias">Categorías</a>
+            <a href="#aventura">Tu aventura</a>
+        </nav>
+
+        <button class="btn-carrito" onclick="abrirCarrito()">
+            🛒 Carrito
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="hero-subtitle">
+                    FORJA TU PROPIA AVENTURA
+                </p>
+
+                <h1>
+                    EQUÍPATE PARA<br>
+                    EL MUNDO
+                </h1>
+
+                <p class="hero-description">
+                    Bienvenido a Block & Blade, la tienda donde los
+                    aventureros encuentran todo lo necesario para
+                    sobrevivir, explorar y conquistar nuevos territorios.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#categorias" class="btn-primary">
+                        EXPLORAR TIENDA
+                    </a>
+
+                    <a href="#nosotros" class="btn-secondary">
+                        CONÓCENOS
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="scroll-indicator">
+                ↓ Explora nuestro mundo ↓
+            </div>
+
+        </section>
+
+
+        <!-- ================= SOBRE NOSOTROS ================= -->
+
+        <section id="nosotros" class="about">
+
+            <div class="about-image">
+
+                <div class="pixel-frame">
+                    <div class="fake-world">
+                        <span>⚔️</span>
+                        <span>🧪</span>
+                        <span>🛡️</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="about-content">
+
+                <span class="section-label">
+                    SOBRE NOSOTROS
+                </span>
+
+                <h2>
+                    UN MERCADO NACIDO
+                    <span>PARA AVENTUREROS</span>
+                </h2>
+
+                <p>
+                    En Block & Blade creemos que cada aventurero
+                    necesita el equipo adecuado antes de comenzar
+                    una nueva misión.
+                </p>
+
+                <p>
+                    Nuestra tienda reúne armas, armaduras, pociones,
+                    herramientas y objetos especiales inspirados en
+                    los mundos de bloques que todos conocemos y
+                    disfrutamos.
+                </p>
+
+                <p>
+                    Ya seas un constructor, explorador, guerrero o
+                    simplemente alguien que busca sobrevivir una
+                    noche más, aquí encontrarás algo para ti.
+                </p>
+
+                <a href="#categorias" class="text-button">
+                    CONOCE NUESTROS PRODUCTOS →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CATEGORIAS ================= -->
+
+        <section id="categorias" class="categories">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    NUESTRO INVENTARIO
+                </span>
+
+                <h2>
+                    ELIGE TU EQUIPO
+                </h2>
+
+                <p>
+                    Todo lo que necesitas para comenzar tu próxima aventura.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <!-- ARMAS -->
+
+                <article class="category-card">
+
+                    <div class="category-image weapon">
+                        ⚔️
+                    </div>
+
+                    <div class="category-info">
+
+                        <span>01</span>
+
+                        <h3>ARMAS</h3>
+
+                        <p>
+                            Espadas, arcos y herramientas
+                            para enfrentarte a cualquier enemigo.
+                        </p>
+
+                        <button onclick="verCategoria('armas')">
+                            VER ARMAS →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ARMADURAS -->
+
+                <article class="category-card">
+
+                    <div class="category-image armor">
+                        🛡️
+                    </div>
+
+                    <div class="category-info">
+
+                        <span>02</span>
+
+                        <h3>ARMADURAS</h3>
+
+                        <p>
+                            Protege tu cuerpo con equipamiento
+                            preparado para las batallas más difíciles.
+                        </p>
+
+                        <button onclick="verCategoria('armaduras')">
+                            VER ARMADURAS →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- POCIONES -->
+
+                <article class="category-card">
+
+                    <div class="category-image potion">
+                        🧪
+                    </div>
+
+                    <div class="category-info">
+
+                        <span>03</span>
+
+                        <h3>POCIONES</h3>
+
+                        <p>
+                            Elixires mágicos para recuperar energía,
+                            fuerza y resistencia.
+                        </p>
+
+                        <button onclick="verCategoria('pociones')">
+                            VER POCIONES →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- OBJETOS -->
+
+                <article class="category-card">
+
+                    <div class="category-image items">
+                        💎
+                    </div>
+
+                    <div class="category-info">
+
+                        <span>04</span>
+
+                        <h3>OBJETOS</h3>
+
+                        <p>
+                            Objetos especiales, materiales raros
+                            y artículos para los coleccionistas.
+                        </p>
+
+                        <button onclick="verCategoria('objetos')">
+                            VER OBJETOS →
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BANNER ================= -->
+
+        <section class="adventure">
+
+            <div class="adventure-content">
+
+                <span class="section-label">
+                    TU AVENTURA COMIENZA AQUÍ
+                </span>
+
+                <h2>
+                    ¿ESTÁS LISTO PARA
+                    ENTRAR AL MUNDO?
+                </h2>
+
+                <p>
+                    Prepara tu inventario, equipa tus mejores objetos
+                    y descubre todo lo que tenemos preparado para ti.
+                </p>
+
+                <a href="#categorias" class="btn-primary">
+                    COMENZAR A EXPLORAR
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MISION ================= -->
+
+        <section id="aventura" class="mission">
+
+            <div class="mission-content">
+
+                <span class="section-label">
+                    NUESTRA MISIÓN
+                </span>
+
+                <h2>
+                    MÁS QUE UNA TIENDA.
+                    <span>UNA AVENTURA.</span>
+                </h2>
+
+                <p>
+                    Queremos crear un espacio donde cada producto
+                    se sienta como parte de una aventura.
+                </p>
+
+                <p>
+                    Desde la primera espada de un aventurero novato
+                    hasta el equipamiento de un guerrero experimentado,
+                    cada objeto tiene una historia que contar.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            BLOCK<span>&</span>BLADE
+        </div>
+
+        <p>
+            © 2026 Block & Blade — Todos los derechos reservados.
+        </p>
+
+        <div class="footer-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Sobre nosotros</a>
+            <a href="#categorias">Tienda</a>
+            <a href="#">Contacto</a>
+        </div>
+
+    </footer>
+
+
+
+    <div id="carrito" class="cart-modal">
+
+        <div class="cart-box">
+
+            <button class="close-cart" onclick="cerrarCarrito()">
+                ×
+            </button>
+
+            <h2>
+                TU INVENTARIO
+            </h2>
+
+            <p>
+                Tu carrito está vacío.
+            </p>
+
+            <button class="btn-primary" onclick="cerrarCarrito()">
+                CONTINUAR EXPLORANDO
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
