@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -11,9 +10,9 @@ html {
 
 body {
     background: #04010f;
-    color: #d9d6c9;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    color: #d9d6c9; /* color de titulos */
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
 section {
@@ -50,14 +49,14 @@ button {
 }
 
 .logo {
-    font-family: Georgia, serif;
-    font-size: 13px;
+    font-family:  Georgia, serif;
+    font-size: 22px;
     font-weight: bold;
 }
 
 .logo span {
     color: #b88a32;
-    font-size: 8px;
+    font-size: 13px;
 }
 
 .navbar nav {
@@ -68,7 +67,7 @@ button {
 .navbar a {
     color: #7e8990;
     text-decoration: none;
-    font-size: 9px;
+    font-size: 15px;
 }
 
 .navbar a:hover {
@@ -86,7 +85,7 @@ button {
     border: 1px solid #26343d;
     color: #b6b8b2;
     padding: 10px 18px;
-    font-size: 9px;
+    font-size: 14px;
 }
 
 .carrito {
@@ -98,28 +97,90 @@ button {
     justify-content: center;
     align-items: center;
 
-    font-size: 10px;
+    font-size: 16px;
 }
 
 
-/* -------------------------
+/* -----------------------------------------------------------
    HERO
-------------------------- */
+-------------------------------------------------------------------- */
 
 .hero {
+    position: relative;
     min-height: 490px;
-
+    padding: 0 9%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    padding-left: 11%;
-    padding-right: 11%;
+    overflow: hidden;
 }
+
+.hero > img { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero .imagen img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        rgba(4,1,15,0.97) 0%,
+        rgba(4,1,15,0.85) 35%,
+        rgba(4,1,15,0.45) 70%,
+        rgba(4,1,15,0.15) 100%
+    );
+
+    z-index: 1;
+}
+
 
 .hero .texto {
+    position: relative;
     width: 42%;
+    z-index: 2;
+    padding: 40px 0 40px 7%;
 }
+
+.hero h1 {
+    font-size: 54px;
+    line-height: 1.12;
+    margin-bottom: 20px;
+
+    color: #e0ddd3;
+}
+
+.hero p {
+    color: #7d8b92;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 350px;
+}
+
+
 
 .etiqueta {
     display: inline-block;
@@ -130,27 +191,10 @@ button {
     padding: 5px 8px;
     margin-bottom: 18px;
 
-    font-family: monospace;
-    font-size: 7px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
 }
 
-.hero h1 {
-    font-size: 40px;
-    line-height: 1.12;
-
-    margin-bottom: 20px;
-
-    color: #e0ddd3;
-}
-
-.hero p {
-    color: #7d8b92;
-    font-size: 25px;
-    line-height: 1.7;
-
-    max-width: 350px;
-    
-}
 
 .botones {
     margin-top: 22px;
@@ -163,66 +207,26 @@ button {
 .principal {
     background: #c9942d;
     border: none;
-
     padding: 12px 18px;
-
-    font-size: 9px;
+    font-size: 15px;
     font-weight: bold;
-
     color: #101a20;
 }
 
 .botones span {
     color: #56646b;
-    font-size: 8px;
+    font-size: 13px;
 }
 
 
-/* img 
-
-.hero .imagen {
-    width: 340px;
-    height: 340px;
-
-    border: 1px solid #33424b;
-    background: #122736;
-
-    position: relative;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero .imagen small {
-    position: absolute;
-    bottom: 12px;
-
-    color: #53616a;
-    font-family: monospace;
-    font-size: 6px;
-}
-
-.hero .imagen small:first-of-type {
-    left: 12px;
-}
-
-.hero .imagen small:last-of-type {
-    right: 12px;
-} */
-
-
-
-
-/* -------------------------
+/* -------------------------------------------------------
    clasificacion de items 
-------------------------- */
+------------------------------------------------------------------------- */
 
-.clasificaciones {
-    background: #122738;
-    border-top: 1px solid #253741;
-    border-bottom: 1px solid #253741;
-}
+/* .clasificaciones {
+    background: #383412;
+    border: 1px solid #33444e;
+} */
 
 .titulo {
     display: flex;
@@ -233,7 +237,7 @@ button {
 }
 
 .titulo h2 {
-    font-size: 22px;
+    font-size: 34px;
     line-height: 1.15;
 }
 
@@ -241,7 +245,7 @@ button {
     width: 245px;
 
     color: #718089;
-    font-size: 9px;
+    font-size: 14px;
     line-height: 1.6;
 }
 
@@ -254,9 +258,7 @@ button {
 
 .productos article {
     min-height: 155px;
-
     padding: 18px 13px;
-
     border-right: 1px solid #33444e;
 }
 
@@ -266,21 +268,21 @@ button {
 
 .productos small {
     color: #b88a32;
-    font-family: monospace;
-    font-size: 7px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
 }
 
 .productos h3 {
     margin: 12px 0;
 
-    font-size: 11px;
+    font-size: 19px;
     color: #d4d3cd;
 }
 
 .productos p {
     color: #72808a;
 
-    font-size: 8px;
+    font-size: 14px;
     line-height: 1.6;
 
     margin-bottom: 17px;
@@ -289,13 +291,13 @@ button {
 .productos a {
     color: #9e9c91;
     text-decoration: none;
-    font-size: 7px;
+    font-size: 13px;
 }
 
 
-/* -------------------------
+/* -----------------------------------------------------------------------------------------------
    licencia 
-------------------------- */
+--------------------------------------------------------------------------------------- */
 
 .licencia {
     display: flex;
@@ -310,14 +312,14 @@ button {
 }
 
 .licencia h2 {
-    font-size: 24px;
+    font-size: 34px;
     line-height: 1.15;
     margin-bottom: 20px;
 }
 
 .licencia p {
     color: #718089;
-    font-size: 9px;
+    font-size: 15px;
     line-height: 1.7;
 
     margin-bottom: 12px;
@@ -325,17 +327,15 @@ button {
 
 .registro {
     width: 40%;
-
     background: #122738;
     border: 1px solid #33444e;
-
     padding: 18px;
 }
 
 .registro > small {
     color: #b88a32;
-    font-family: monospace;
-    font-size: 7px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
 }
 
 .registro hr {
@@ -359,19 +359,19 @@ button {
 
 .registro span {
     color: #53636c;
-    font-size: 8px;
+    font-size: 13px;
 }
 
 .registro b {
     color: #b8b8b1;
-    font-size: 8px;
+    font-size: 13px;
     font-weight: normal;
 }
 
 
-/* -------------------------
+/* ------------------------------------------------------------------------------------
    encargos
-------------------------- */
+------------------------- ------------------------------------------------------------------*/
 
 .encargos {
     background: #122738;
@@ -394,18 +394,18 @@ button {
 
 .icono {
     color: #c9942d;
-    font-size: 16px;
+    font-size: 22px;
     margin-bottom: 12px;
 }
 
 .servicios h3 {
-    font-size: 11px;
+    font-size: 19px;
     margin-bottom: 10px;
 }
 
 .servicios p {
     color: #718089;
-    font-size: 8px;
+    font-size: 14px;
     line-height: 1.6;
 }
 
@@ -422,25 +422,24 @@ button {
 
 .solicitud p {
     color: #66757d;
-    font-size: 8px;
+    font-size: 14px;
 }
 
-.solicitud button,
-.contacto button {
+.solicitud button {
     background: #c9942d;
     border: none;
 
     padding: 12px 20px;
 
     color: #111a20;
-    font-size: 8px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 
-/* -------------------------
+/* ------------------------------------------------------------------------------
    reviews
-------------------------- */
+------------------------------------------------------------------- */
 
 .reviews {
     min-height: 300px;
@@ -467,7 +466,7 @@ button {
     font-family: Georgia, serif;
     font-style: italic;
 
-    font-size: 9px;
+    font-size: 16px;
     line-height: 1.6;
 
     margin-bottom: 15px;
@@ -475,13 +474,13 @@ button {
 
 .comentarios small {
     color: #69777f;
-    font-size: 7px;
+    font-size: 12px;
 }
 
 
-/* -------------------------
+/* -----------------------------------------------------------------------------------
    dudosas 
-------------------------- */
+----------------------------------------------------------------------------- */
 
 .dudas {
     border-top: 1px solid #253741;
@@ -491,57 +490,140 @@ button {
     border-top: 1px solid #33444e;
 }
 
-.preguntas div {
+.preguntas details {
+    border-bottom: 1px solid #263943;
+    padding: 14px 0;
+    
+}
+
+.preguntas summary {
     min-height: 43px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 
-    border-bottom: 1px solid #263943;
-}
-
-.preguntas span {
     color: #b5b7b0;
-    font-size: 9px;
+    font-size: 16px;
+
+    cursor: pointer;
+    list-style: none;
 }
 
-.preguntas b {
+.preguntas summary::-webkit-details-marker {
+    display: none;
+}
+
+.preguntas summary::after {
+    content: "+";
     color: #c9942d;
-    font-size: 12px;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.preguntas details[open] summary::after {
+    content: "–";
+
+}
+
+.preguntas details p {
+    color: #718089;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+    max-width: 600px;
 }
 
 .contacto {
     margin-top: 25px;
 
-    padding: 22px;
+    padding: 26px;
 
     border: 1px solid #33444e;
     background: #122738;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.contacto h3 {
-    font-size: 14px;
+.contacto-info h3 {
+    font-size: 20px;
     margin-bottom: 7px;
 }
 
-.contacto p {
+.contacto-info p {
     color: #718089;
-    font-size: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+
+    max-width: 480px;
+}
+
+.formulario-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+
+    margin-top: 22px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-mensaje {
+    grid-column: 1 / -1;
+}
+
+.campo label {
+    color: #b88a32;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    background: #04010f;
+    border: 1px solid #33444e;
+    color: #d9d6c9;
+
+    padding: 10px 12px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #c9942d;
+}
+
+.formulario-contacto button {
+    grid-column: 1 / -1;
+    justify-self: start;
+    background: #c9942d;
+    border: none;
+    padding: 12px 22px;
+    color: #111a20;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 
-/* -------------------------
+/* -----------------------------------------------------------------------------------------
    ooter
-------------------------- */
+------------------------- ------------------------------------*/
 
 .footer {
     padding: 45px 9% 20px;
-
     border-top: 1px solid #263943;
 }
 
@@ -552,25 +634,25 @@ button {
 }
 
 .columnas h3 {
-    font-size: 12px;
+    font-size: 18px;
     margin-bottom: 13px;
 }
 
 .columnas h3 span {
     color: #b88a32;
-    font-size: 7px;
+    font-size: 12px;
 }
 
 .columnas h4 {
     color: #b88a32;
-    font-family: monospace;
-    font-size: 7px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
     margin-bottom: 15px;
 }
 
 .columnas p {
     color: #66757d;
-    font-size: 8px;
+    font-size: 14px;
     line-height: 1.7;
 
     max-width: 200px;
@@ -578,12 +660,9 @@ button {
 
 .columnas a {
     display: block;
-
     color: #66757d;
     text-decoration: none;
-
-    font-size: 8px;
-
+    font-size: 14px;
     margin-bottom: 9px;
 }
 
@@ -594,20 +673,18 @@ button {
 .final {
     margin-top: 35px;
     padding-top: 15px;
-
     border-top: 1px solid #263943;
-
     display: flex;
     justify-content: space-between;
 
     color: #46555d;
-    font-size: 7px;
+    font-size: 12px;
 }
 
 
-/* -------------------------
+/* ---------------------------------------------------------
    RESPONSIVE
-------------------------- */
+----------------------------------------------------------------- */
 
 @media (max-width: 900px) {
 
@@ -623,19 +700,13 @@ button {
         padding: 55px 7%;
     }
 
-    .hero {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 40px;
+    .hero .imagen {
+        min-height: 380px;
     }
 
     .hero .texto {
         width: 100%;
-    }
-
-    .hero .imagen {
-        width: 100%;
-        max-width: 340px;
+        padding: 40px 7%;
     }
 
     .productos {
@@ -675,7 +746,7 @@ button {
     }
 
     .hero h1 {
-        font-size: 28px;
+        font-size: 36px;
     }
 
     .productos {
@@ -695,11 +766,14 @@ button {
         grid-template-columns: 1fr;
     }
 
-    .solicitud,
-    .contacto {
+    .solicitud {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
+    }
+
+    .formulario-contacto {
+        grid-template-columns: 1fr;
     }
 
     .final {
