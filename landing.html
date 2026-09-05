@@ -8,35 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"> <!-- configurar las funetes en el css---------------   -------------> 
 
     <link rel="stylesheet" href="diseñolanding.css">
+    
 </head>
 
 
 
 <body>
 
-
-    <header class="navbar">
-
-        <div class="logo">
-            FORJA                      <!-- crear logo -->
-            <span>•09</span>
-        </div>
-
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#catalogo">Catálogo</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-
-        <div class="acciones">
-            <button>Iniciar sesión</button>
-            <div class="carrito">🛒</div>           <!-- buscar icono de carro -->
-        </div>
-
-        <!-- Separar navbar en otros archivo ----------------------------------------------------------->
-
-    </header>
+    <div id="navbar"></div>
 
     <!--  ---------------------------------------------------------------------->
     <!-- heroi ----------------------------------------------------------------------->
@@ -325,7 +304,7 @@
 
     <!--  ---------------------------------------------------------------->
 
-    <!-- reviews -- --------------------------------------------------->
+    <!-- reviews -- ------------------------------------------------------->
     <section class="reviews">
 
         <div class="titulo">
@@ -342,7 +321,7 @@
 
         <div class="comentarios">
 
-            <article>
+            <article>                                                               <!-- cambiar diseño a uno mas de reseña no sexd -->
 
                 <p>
                     "Pedí una placa de refuerzo a medida y
@@ -577,8 +556,14 @@
             </span>
 
         </div>
-
+        <!-- falta hacer independiente footer -->
     </footer>
+
+    <script>
+    fetch("navbar.html")
+    .then(r => r.text())
+    .then(data => document.getElementById("navbar").innerHTML = data);
+    </script>
 
 </body>
 

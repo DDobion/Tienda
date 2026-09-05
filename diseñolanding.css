@@ -31,78 +31,9 @@ button {
 }
 
 
-/* -------------------------
-   navbar
-------------------------- */
-
-
-.navbar {
-    height: 64px;
-    padding: 0 9%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border-bottom: 1px solid #26343d;
-    background: #0b1822;
-}
-
-.logo {
-    font-family:  Georgia, serif;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.logo span {
-    color: #b88a32;
-    font-size: 13px;
-}
-
-.navbar nav {
-    display: flex;
-    gap: 28px;
-}
-
-.navbar a {
-    color: #7e8990;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.navbar a:hover {
-    color: #c99a3b;
-}
-
-.acciones {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.acciones button {
-    background: transparent;
-    border: 1px solid #26343d;
-    color: #b6b8b2;
-    padding: 10px 18px;
-    font-size: 14px;
-}
-
-.carrito {
-    border: 1px solid #26343d;
-    width: 30px;
-    height: 30px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 16px;
-}
-
 
 /* -----------------------------------------------------------
-   HERO
+   hero
 -------------------------------------------------------------------- */
 
 .hero {
@@ -122,6 +53,7 @@ button {
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    
 }
 
 .hero .imagen img {
@@ -168,8 +100,7 @@ button {
 .hero h1 {
     font-size: 54px;
     line-height: 1.12;
-    margin-bottom: 20px;
-
+    margin-bottom: 20px;    
     color: #e0ddd3;
 }
 
@@ -300,10 +231,10 @@ button {
 --------------------------------------------------------------------------------------- */
 
 .licencia {
+    /* background: #5e441e; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     min-height: 350px;
 }
 
@@ -484,6 +415,7 @@ button {
 
 .dudas {
     border-top: 1px solid #253741;
+    margin-bottom: 10px;
 }
 
 .preguntas {
@@ -503,10 +435,8 @@ button {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-
     color: #b5b7b0;
     font-size: 16px;
-
     cursor: pointer;
     list-style: none;
 }
@@ -536,10 +466,8 @@ button {
 }
 
 .contacto {
-    margin-top: 25px;
-
+    margin-top: 70px;
     padding: 26px;
-
     border: 1px solid #33444e;
     background: #122738;
 }
@@ -561,8 +489,8 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
-
     margin-top: 22px;
+    
 }
 
 .campo {
@@ -623,6 +551,7 @@ button {
 ------------------------- ------------------------------------*/
 
 .footer {
+    background: #09141d;
     padding: 45px 9% 20px;
     border-top: 1px solid #263943;
 }
@@ -676,14 +605,13 @@ button {
     border-top: 1px solid #263943;
     display: flex;
     justify-content: space-between;
-
     color: #46555d;
     font-size: 12px;
 }
 
 
 /* ---------------------------------------------------------
-   RESPONSIVE
+   reponsivo
 ----------------------------------------------------------------- */
 
 @media (max-width: 900px) {
