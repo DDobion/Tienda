@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 0;                             /* !reorganizar controles de cajas  */
     box-sizing: border-box;
 }
 
@@ -10,7 +10,7 @@ html {
 
 body {
     background: #04010f;
-    color: #d9d6c9; /* color de titulos */
+    color: #d9d6c9; 
     font-family:  Arial, Helvetica, sans-serif;
     font-size: 16px;
 }
@@ -28,8 +28,12 @@ h3 {
 
 button {
     cursor: pointer;
+    
 }
-
+button:hover{
+    background-color: #c9942d;
+    
+}
 
 
 /* -----------------------------------------------------------
@@ -150,9 +154,9 @@ button {
 }
 
 
-/* -------------------------------------------------------
+/* ---------------------------------------------------------
    clasificacion de items 
-------------------------------------------------------------------------- */
+--------------------------------------------------------------------------- */
 
 /* .clasificaciones {
     background: #383412;
@@ -368,6 +372,7 @@ button {
 }
 
 
+
 /* ------------------------------------------------------------------------------
    reviews
 ------------------------------------------------------------------- */
@@ -544,6 +549,14 @@ button {
     font-size: 14px;
     font-weight: bold;
 }
+button:hover{
+    background-color:rgb(248, 183, 63);
+    box-shadow: 0 0 5px #c9942d;
+    color:#705112;
+    /* cambiar tamaño */
+}
+
+
 
 
 /* -----------------------------------------------------------------------------------------
@@ -611,9 +624,85 @@ button {
 
 
 /* ---------------------------------------------------------
+   envio falso 
+  -----------------------------------------------------------------------*/
+
+.confirmacion-envio {
+    grid-column: 1 / -1;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 4px;
+    padding: 10px 14px;
+
+    background: rgba(201, 148, 45, 0.1);
+    border: 1px solid #c9942d;
+    color: #d9c08a;
+
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.confirmacion-envio.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+    animation: destelloEnvio 0.35s ease;
+}  
+
+/* ---------------------------------------------------------
    reponsivo
 ----------------------------------------------------------------- */
 
+@media (max-width: 600px) {
+
+    .acciones button {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .titulo > p {
+        width: 100%;
+    }
+
+    .columnas {
+        grid-template-columns: 1fr;
+    }
+
+    .solicitud {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .formulario-contacto {
+        grid-template-columns: 1fr;
+    }
+
+    .final {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
 @media (max-width: 900px) {
 
     .navbar {
@@ -663,49 +752,5 @@ button {
 
     .columnas {
         grid-template-columns: 1fr 1fr;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .acciones button {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .productos {
-        grid-template-columns: 1fr;
-    }
-
-    .titulo {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .titulo > p {
-        width: 100%;
-    }
-
-    .columnas {
-        grid-template-columns: 1fr;
-    }
-
-    .solicitud {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .formulario-contacto {
-        grid-template-columns: 1fr;
-    }
-
-    .final {
-        flex-direction: column;
-        gap: 10px;
     }
 }

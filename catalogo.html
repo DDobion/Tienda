@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo · FORJA ·09</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/diseñolanding.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <!-- coso catálogo ------------------------------------------------------- -->
+    <section class="catalogo-encabezado">
+
+        <div class="etiqueta">
+            • Catálogo completo · FORJA ·09
+        </div>
+
+        <h1>
+            Cada pieza, forjada<br>
+            bajo el mismo estándar.
+        </h1>
+
+        <p>
+            Filtra por línea de producto o revisa el catálogo completo.
+            Cada caja abre la ficha técnica de la pieza.
+        </p>
+
+    </section>
+
+    <!-- Categorias ------------------------------------------------ ------------>
+    <section class="catalogo-filtros">
+
+        <div class="filtros">
+
+            <button class="filtro activo" data-categoria="todos">Todas</button>
+            <button class="filtro" data-categoria="ad">Daño Físico (AD)</button>
+            <button class="filtro" data-categoria="ap">Poder de Habilidad (AP)</button>
+            <button class="filtro" data-categoria="def">Defensa y Tanque</button>
+            <button class="filtro" data-categoria="sup">Soporte y Utilidad</button>
+            <button class="filtro" data-categoria="mov">Movilidad y Botas</button>
+
+        </div>
+
+    </section>
+
+    <!-- ?agregar buscador creo -->
+
+    <!-- cajas de productos --------------------------------------------------------->
+    <section class="catalogo-lista">
+
+        <div class="grid-productos" id="gridProductos">
+
+            
+            <article class="tarjeta-producto" data-categoria="ad">
+
+                <a href="producto.html" class="tarjeta-imagen">
+                    <img src="" alt="Nombre de la pieza">
+                </a>
+
+                <div class="tarjeta-info">
+
+                    <small class="tarjeta-categoria">PLT · AD</small>
+
+                    <h3 class="tarjeta-nombre">
+                        <a href="producto.html">Nombre de la pieza</a>
+                    </h3>
+
+                    <p class="tarjeta-descripcion">
+                        Descripción corta de la pieza y su efecto principal.
+                    </p>
+
+                    <div class="tarjeta-pie">
+                        <span class="tarjeta-precio">$0.00</span>
+                        <a href="producto.html" class="tarjeta-detalle">Ver detalle →</a>
+                    </div>
+
+                </div>   <!-- ?buscar como meter varios productos de golpe, preparar imagenes y descripciones -->
+
+                
+
+            </article>
+
+            <article class="tarjeta-producto" data-categoria="ap">
+
+                <a href="producto.html" class="tarjeta-imagen">
+                    <img src="" alt="Nombre de la pieza">
+                </a>
+
+                <div class="tarjeta-info">
+
+                    <small class="tarjeta-categoria">PLT · AP</small>
+
+                    <h3 class="tarjeta-nombre">
+                        <a href="producto.html">Nombre de la pieza</a>
+                    </h3>
+
+                    <p class="tarjeta-descripcion">
+                        Descripción corta de la pieza y su efecto principal.
+                    </p>
+
+                    <div class="tarjeta-pie">
+                        <span class="tarjeta-precio">$0.00</span>
+                        <a href="producto.html" class="tarjeta-detalle">Ver detalle →</a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="tarjeta-producto" data-categoria="def">
+
+                <a href="producto.html" class="tarjeta-imagen">
+                    <img src="" alt="Nombre de la pieza">
+                </a>
+
+                <div class="tarjeta-info">
+
+                    <small class="tarjeta-categoria">PLT · DEF</small>
+
+                    <h3 class="tarjeta-nombre">
+                        <a href="producto.html">Nombre de la pieza</a>
+                    </h3>
+
+                    <p class="tarjeta-descripcion">
+                        Descripción corta de la pieza y su efecto principal.
+                    </p>
+
+                    <div class="tarjeta-pie">
+                        <span class="tarjeta-precio">$0.00</span>
+                        <a href="producto.html" class="tarjeta-detalle">Ver detalle →</a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="tarjeta-producto" data-categoria="sup">
+
+                <a href="producto.html" class="tarjeta-imagen">
+                    <img src="" alt="Nombre de la pieza">
+                </a>
+
+                <div class="tarjeta-info">
+
+                    <small class="tarjeta-categoria">PLT · SUP</small>
+
+                    <h3 class="tarjeta-nombre">
+                        <a href="producto.html">Nombre de la pieza</a>
+                    </h3>
+
+                    <p class="tarjeta-descripcion">
+                        Descripción corta de la pieza y su efecto principal.
+                    </p>
+
+                    <div class="tarjeta-pie">
+                        <span class="tarjeta-precio">$0.00</span>
+                        <a href="producto.html" class="tarjeta-detalle">Ver detalle →</a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="tarjeta-producto" data-categoria="mov">
+
+                <a href="producto.html" class="tarjeta-imagen">
+                    <img src="" alt="Nombre de la pieza">
+                </a>
+
+                <div class="tarjeta-info">
+
+                    <small class="tarjeta-categoria">PLT · MOV</small>
+
+                    <h3 class="tarjeta-nombre">
+                        <a href="producto.html">Nombre de la pieza</a>
+                    </h3>
+
+                    <p class="tarjeta-descripcion">
+                        Descripción corta de la pieza y su efecto principal.
+                    </p>
+
+                    <div class="tarjeta-pie">
+                        <span class="tarjeta-precio">$0.00</span>
+                        <a href="producto.html" class="tarjeta-detalle">Ver detalle →</a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            
+
+        </div>
+
+        <p class="catalogo-vacio" id="catalogoVacio">
+            No hay piezas en esta línea todavía.
+        </p>
+
+    </section>
+
+    <!-- ----------------------------------------------------------------------------------- -->
+
+    <!-- footer---------------------------------------------->
+    <footer class="footer" id="contacto">
+
+        <div class="columnas">
+
+            <div>
+
+                <h3>FORJA <span>·09</span></h3>
+
+                <p>
+                    Taller de manufactura y comercio con licencia
+                    en el Distrito del Progreso, Piltover, y
+                    distribución en toda Runeterra.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>CATÁLOGO</h4>
+
+                <a href="catalogo.html?categoria=ad">Daño Físico (AD)</a>
+                <a href="catalogo.html?categoria=ap">Poder de Habilidad (AP)</a>
+                <a href="catalogo.html?categoria=def">Defensa y Tanque</a>
+                <a href="catalogo.html?categoria=sup">Soporte y Utilidad</a>
+                <a href="catalogo.html?categoria=mov">Movilidad y Botas</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>TALLER</h4>
+
+                <a href="index.html#nosotros">Nosotros</a>
+                <a href="index.html#dudas">Preguntas frecuentes</a>
+                <a>Política de devoluciones</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>CONTACTO</h4>
+
+                <a>Distrito del Progreso, Piltover</a>
+                <a>contacto@forja09.pn</a>
+                <a>Canal del gremio</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="final">
+
+            <span>
+                © Piltover · FORJA 09. Proyecto académico,
+                simulación sin fines comerciales. xd
+            </span>
+
+            <span>
+                EXP. · 09-006
+            </span>
+
+        </div>
+    </footer>
+
+    <script>
+        fetch("navbar.html")
+            .then(r => r.text())
+            .then(data => document.getElementById("navbar").innerHTML = data);
+        const botonesFiltro = document.querySelectorAll(".filtro");
+        const tarjetas = document.querySelectorAll(".tarjeta-producto");
+        const avisoVacio = document.getElementById("catalogoVacio");
+
+        function aplicarFiltro(categoria) {
+            let visibles = 0;
+
+            tarjetas.forEach(tarjeta => {
+                const coincide = categoria === "todos" || tarjeta.dataset.categoria === categoria;
+                tarjeta.style.display = coincide ? "" : "none";
+                if (coincide) visibles++;
+            });
+
+
+            avisoVacio.style.display = visibles === 0 ? "block" : "none";
+        }
+        botonesFiltro.forEach(boton => {
+            boton.addEventListener("click", () => {
+                botonesFiltro.forEach(b => b.classList.remove("activo"));
+                boton.classList.add("activo");
+                aplicarFiltro(boton.dataset.categoria);
+            });
+        });
+        const parametros = new URLSearchParams(window.location.search);
+        const categoriaInicial = parametros.get("categoria");
+        if (categoriaInicial) {
+            const botonInicial = document.querySelector(`.filtro[data-categoria="${categoriaInicial}"]`);
+            if (botonInicial) botonInicial.click();
+        }
+    </script> 
+
+</body>
+
+</html>

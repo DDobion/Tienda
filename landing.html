@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORJA - Distrito del Progreso</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"> <!-- configurar las funetes en el css---------------   -------------> 
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="diseñolanding.css">
+    <link rel="stylesheet" href="css/diseñolanding.css">
+
     
+    <!--todo, FALTA DE AGREGR TODO EL PANEL DE USUARIO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
+
 </head>
 
 
@@ -20,37 +23,37 @@
     <!--  ---------------------------------------------------------------------->
     <!-- heroi ----------------------------------------------------------------------->
     <section class="hero" id="inicio">
-        
-            <img src="img/hero.jpg" alt="Forja ·09">
-        
-            <div class="texto">
 
-                <div class="etiqueta">
-                    • Forjada en Piltover · Distribuida en toda Runeterra
-                </div>
+        <img src="img/hero.jpg" alt="Forja ·09">
 
-                <h1>
-                    La forja de<br>
-                    Piltover que<br>
-                    equipa a toda<br>
-                    Runeterra.
-                </h1>
+        <div class="texto">
 
-                <p>
-                    Desde el Distrito del Progreso, FORJA ·09 diseña y
-                    fabrica equipamiento de combate con licencia comercial
-                    propia y distribución certificada a cada región del
-                    continente.
-                </p>
+            <div class="etiqueta">
+                • Forjada en Piltover · Distribuida en toda Runeterra
+            </div>
 
-                <div class="botones">
-                    <button class="principal">
-                        Ver catálogo completo
-                    </button>
+            <h1>
+                La forja de<br>
+                Piltover que<br>
+                equipa a toda<br>
+                Runeterra.
+            </h1>
 
-                    
-                </div>
-            
+            <p>
+                Desde el Distrito del Progreso, FORJA ·09 diseña y
+                fabrica equipamiento de combate con licencia comercial
+                propia y distribución certificada a cada región del
+                continente.
+            </p>
+
+            <div class="botones">
+                <button class="principal" onclick="window.location.href='catalogo.html'">
+                    Ver catálogo completo
+                </button>
+
+
+            </div>
+
         </div>
 
 
@@ -72,7 +75,7 @@
                 </h2>
             </div>
 
-        
+
 
         </div>
 
@@ -89,7 +92,7 @@
                     calibrados para daño sostenido.
                 </p>
 
-                <a>Ver línea AD</a>
+                <a href="catalogo.html?categoria=ad">Ver línea AD</a>
             </article>
 
 
@@ -103,12 +106,12 @@
                     para maximizar cada habilidad canalizada.
                 </p>
 
-                <a>Ver línea AP</a>
+                <a href="catalogo.html?categoria=ap">Ver línea AP</a>
             </article>
 
 
             <article>
-                <small>PLT · DEF</small>
+                <small>PLT · DEF</small>                                <!-- cambiar el diseño de todos lo enlaces -->
 
                 <h3>Defensa y Tanque</h3>
 
@@ -117,7 +120,7 @@
                     para resistir asaltos prolongados.
                 </p>
 
-                <a>Ver línea defensiva</a>
+                <a href="catalogo.html?categoria=def">Ver línea defensiva</a>
             </article>
 
 
@@ -131,12 +134,12 @@
                     sostienen a un equipo completo en pie.
                 </p>
 
-                <a>Ver línea de soporte</a>
+                <a href="catalogo.html?categoria=sup">Ver línea de soporte</a>
             </article>
 
 
             <article>
-                <small>PLT · MOV</small>                <!-- actividar enlaces a catalogo de objetos -->
+                <small>PLT · MOV</small>
 
                 <h3>Movilidad y Botas</h3>
 
@@ -145,7 +148,7 @@
                     para ganar un terreno antes que el rival.
                 </p>
 
-                <a>Ver línea de movilidad</a>
+                <a href="catalogo.html?categoria=mov">Ver línea de movilidad</a>
             </article>
 
         </div>
@@ -232,13 +235,6 @@
                 certificación de forja
             </h2>
 
-            <!-- <p>
-                Si no encuentras la pieza exacta en catálogo,
-                el Taller diseña y fabrica bajo especificación,
-                con el mismo respaldo que cualquier producto
-                de línea.
-            </p> -->
-
         </div>
 
 
@@ -296,15 +292,15 @@
                 tiempo de forja y costo antes de comprometer el encargo.
             </p>
 
-            <button>Solicitar un encargo</button> <!-- no se si dejarlo -->
+            <button>Solicitar un encargo</button>
 
         </div>
 
     </section>
 
-    <!--  ---------------------------------------------------------------->
+    <!--  ------------------------------------------------------------------>
 
-    <!-- reviews -- ------------------------------------------------------->
+    <!-- reviews -- --------------------------------------------------------------->
     <section class="reviews">
 
         <div class="titulo">
@@ -314,14 +310,14 @@
                 taller
             </h2>
 
-            
+                                                                    <!-- ACTUALIZAR EL DISEÑO DE TARJETAS -->
 
         </div>
 
 
         <div class="comentarios">
 
-            <article>                                                               <!-- cambiar diseño a uno mas de reseña no sexd -->
+            <article>
 
                 <p>
                     "Pedí una placa de refuerzo a medida y
@@ -380,7 +376,7 @@
                 Antes de encargar una<br>
                 pieza
             </h2>
-     
+
 
         </div>
 
@@ -417,7 +413,7 @@
             <details>
                 <summary>¿Cuánto tarda el envío?</summary>
                 <p>
-                    Entre 3 y 10 días hábiles, según la región
+                    Entre 3 y 10 días hábiles, según la región   <!-- ?animacion fluida? o dejar asi -->
                     de destino dentro de Runeterra.
                 </p>
             </details>
@@ -438,7 +434,7 @@
                 </p>
             </details>
 
-    </div>
+        </div>
 
 
         <div class="contacto">
@@ -453,7 +449,7 @@
                 </p>
             </div>
 
-            <form class="formulario-contacto">
+            <form class="formulario-contacto" id="formularioContacto">
 
                 <div class="campo">
                     <label for="nombre">Nombre</label>
@@ -479,7 +475,11 @@
                     <textarea id="mensaje" name="mensaje" rows="3" placeholder="Describe tu duda o lo que necesitas cotizar"></textarea>
                 </div>
 
-                <button type="submit">Enviar mensaje</button>           <!-- poner animacion falsa de envio -->
+                <button type="submit">Enviar mensaje</button>
+
+                <div class="confirmacion-envio" id="confirmacionEnvio">
+                    ✓ Mensaje enviado. El taller te responderá pronto.
+                </div>
 
             </form>
 
@@ -489,7 +489,7 @@
 
     <!-- ------------------------------------------------------ -->
 
-    <!-- footer---------------------------------------------->
+    <!-- footer---------------------------------------------->      <!-- !FALTA CAMBIAR EL FOOTER INDEPENDIENTE -->
     <footer class="footer" id="contacto">
 
         <div class="columnas">
@@ -507,15 +507,15 @@
             </div>
 
 
-            <div>                                                           <!-- actividar enlaces a catalogo de objetos -->
+            <div>
 
                 <h4>CATÁLOGO</h4>
 
-                <a>Daño Físico (AD)</a>
-                <a>Poder de Habilidad (AP)</a>
-                <a>Defensa y Tanque</a>
-                <a>Soporte y Utilidad</a>
-                <a>Movilidad y Botas</a>
+                <a href="catalogo.html?categoria=ad">Daño Físico (AD)</a>
+                <a href="catalogo.html?categoria=ap">Poder de Habilidad (AP)</a>
+                <a href="catalogo.html?categoria=def">Defensa y Tanque</a>
+                <a href="catalogo.html?categoria=sup">Soporte y Utilidad</a>
+                <a href="catalogo.html?categoria=mov">Movilidad y Botas</a>
 
             </div>
 
@@ -526,7 +526,7 @@
 
                 <a>Nosotros</a>
                 <a>Preguntas frecuentes</a>
-                <a >Política de devoluciones</a>
+                <a>Política de devoluciones</a>
 
             </div>
 
@@ -537,7 +537,7 @@
 
                 <a>Distrito del Progreso, Piltover</a>
                 <a>contacto@forja09.pn</a>
-                <a>Canal del gremio</a>     <!-- colocar un espacio para que la gete se pueda unir a un chat -->
+                <a>Canal del gremio</a>
 
             </div>
 
@@ -556,13 +556,30 @@
             </span>
 
         </div>
-        <!-- falta hacer independiente footer -->
     </footer>
 
     <script>
-    fetch("navbar.html")
-    .then(r => r.text())
-    .then(data => document.getElementById("navbar").innerHTML = data);
+        fetch("navbar.html")
+            .then(r => r.text())
+            .then(data => document.getElementById("navbar").innerHTML = data);
+
+        
+        const formularioContacto = document.getElementById("formularioContacto");
+        const confirmacionEnvio = document.getElementById("confirmacionEnvio");
+        let temporizadorConfirmacion;
+
+        formularioContacto.addEventListener("submit", (evento) => {
+            evento.preventDefault();
+
+            confirmacionEnvio.classList.remove("mostrar"); 
+            void confirmacionEnvio.offsetWidth; 
+            confirmacionEnvio.classList.add("mostrar");
+
+            clearTimeout(temporizadorConfirmacion);
+            temporizadorConfirmacion = setTimeout(() => {
+                confirmacionEnvio.classList.remove("mostrar");
+            }, 3200);
+        });
     </script>
 
 </body>
