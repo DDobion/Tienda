@@ -9,14 +9,13 @@
 
     <link rel="stylesheet" href="css/diseñolanding.css">
     <link rel="stylesheet" href="css/catalogo.css">
-
 </head>
 
 <body>
 
     <div id="navbar"></div>
 
-    <!-- coso catálogo ------------------------------------------------------- -->
+    <!-- coso del catálogo -->
     <section class="catalogo-encabezado">
 
         <div class="etiqueta">
@@ -35,169 +34,25 @@
 
     </section>
 
-    <!-- Categorias ------------------------------------------------ ------------>
+    <!-- filtros de categorias -->
     <section class="catalogo-filtros">
 
         <div class="filtros">
-
             <button class="filtro activo" data-categoria="todos">Todas</button>
             <button class="filtro" data-categoria="ad">Daño Físico (AD)</button>
             <button class="filtro" data-categoria="ap">Poder de Habilidad (AP)</button>
             <button class="filtro" data-categoria="def">Defensa y Tanque</button>
             <button class="filtro" data-categoria="sup">Soporte y Utilidad</button>
             <button class="filtro" data-categoria="mov">Movilidad y Botas</button>
-
         </div>
 
     </section>
 
-    <!-- ?agregar buscador creo -->
-
-    <!-- cajas de productos --------------------------------------------------------->
+    <!-- cuadros de productos -->
     <section class="catalogo-lista">
 
         <div class="grid-productos" id="gridProductos">
-
             
-            <article class="tarjeta-producto" data-categoria="ad">
-
-                <a href="producto.html" class="tarjeta-imagen">
-                    <img src="" alt="Nombre de la pieza">
-                </a>
-
-                <div class="tarjeta-info">
-
-                    <small class="tarjeta-categoria">PLT · AD</small>
-
-                    <h3 class="tarjeta-nombre">
-                        <a href="producto.html">Nombre de la pieza</a>
-                    </h3>
-
-                    <p class="tarjeta-descripcion">
-                        Descripción corta de la pieza y su efecto principal.
-                    </p>
-
-                    <div class="tarjeta-pie">
-                        <span class="tarjeta-precio">$0.00</span>
-                        <a href="producto.html" class="tarjeta-detalle">Ver detalle →</a>
-                    </div>
-
-                </div>   <!-- ?buscar como meter varios productos de golpe, preparar imagenes y descripciones -->
-
-                
-
-            </article>
-
-            <article class="tarjeta-producto" data-categoria="ap">
-
-                <a href="producto.html" class="tarjeta-imagen">
-                    <img src="" alt="Nombre de la pieza">
-                </a>
-
-                <div class="tarjeta-info">
-
-                    <small class="tarjeta-categoria">PLT · AP</small>
-
-                    <h3 class="tarjeta-nombre">
-                        <a href="producto.html">Nombre de la pieza</a>
-                    </h3>
-
-                    <p class="tarjeta-descripcion">
-                        Descripción corta de la pieza y su efecto principal.
-                    </p>
-
-                    <div class="tarjeta-pie">
-                        <span class="tarjeta-precio">$0.00</span>
-                        <a href="producto.html" class="tarjeta-detalle">Ver detalle →</a>
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article class="tarjeta-producto" data-categoria="def">
-
-                <a href="producto.html" class="tarjeta-imagen">
-                    <img src="" alt="Nombre de la pieza">
-                </a>
-
-                <div class="tarjeta-info">
-
-                    <small class="tarjeta-categoria">PLT · DEF</small>
-
-                    <h3 class="tarjeta-nombre">
-                        <a href="producto.html">Nombre de la pieza</a>
-                    </h3>
-
-                    <p class="tarjeta-descripcion">
-                        Descripción corta de la pieza y su efecto principal.
-                    </p>
-
-                    <div class="tarjeta-pie">
-                        <span class="tarjeta-precio">$0.00</span>
-                        <a href="producto.html" class="tarjeta-detalle">Ver detalle →</a>
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article class="tarjeta-producto" data-categoria="sup">
-
-                <a href="producto.html" class="tarjeta-imagen">
-                    <img src="" alt="Nombre de la pieza">
-                </a>
-
-                <div class="tarjeta-info">
-
-                    <small class="tarjeta-categoria">PLT · SUP</small>
-
-                    <h3 class="tarjeta-nombre">
-                        <a href="producto.html">Nombre de la pieza</a>
-                    </h3>
-
-                    <p class="tarjeta-descripcion">
-                        Descripción corta de la pieza y su efecto principal.
-                    </p>
-
-                    <div class="tarjeta-pie">
-                        <span class="tarjeta-precio">$0.00</span>
-                        <a href="producto.html" class="tarjeta-detalle">Ver detalle →</a>
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article class="tarjeta-producto" data-categoria="mov">
-
-                <a href="producto.html" class="tarjeta-imagen">
-                    <img src="" alt="Nombre de la pieza">
-                </a>
-
-                <div class="tarjeta-info">
-
-                    <small class="tarjeta-categoria">PLT · MOV</small>
-
-                    <h3 class="tarjeta-nombre">
-                        <a href="producto.html">Nombre de la pieza</a>
-                    </h3>
-
-                    <p class="tarjeta-descripcion">
-                        Descripción corta de la pieza y su efecto principal.
-                    </p>
-
-                    <div class="tarjeta-pie">
-                        <span class="tarjeta-precio">$0.00</span>
-                        <a href="producto.html" class="tarjeta-detalle">Ver detalle →</a>
-                    </div>
-
-                </div>
-
-            </article>
-
-            
-
         </div>
 
         <p class="catalogo-vacio" id="catalogoVacio">
@@ -206,44 +61,9 @@
 
     </section>
 
-    <!-- !----------------------------------------------------------------------------------- -->
     <div id="footer"></div>
 
-    <script>
-        fetch("navbar.html")
-            .then(r => r.text())
-            .then(data => document.getElementById("navbar").innerHTML = data);
-        const botonesFiltro = document.querySelectorAll(".filtro");
-        const tarjetas = document.querySelectorAll(".tarjeta-producto");
-        const avisoVacio = document.getElementById("catalogoVacio");
-
-        function aplicarFiltro(categoria) {
-            let visibles = 0;
-
-            tarjetas.forEach(tarjeta => {
-                const coincide = categoria === "todos" || tarjeta.dataset.categoria === categoria;
-                tarjeta.style.display = coincide ? "" : "none";
-                if (coincide) visibles++;
-            });
-
-
-            avisoVacio.style.display = visibles === 0 ? "block" : "none";
-        }
-        botonesFiltro.forEach(boton => {
-            boton.addEventListener("click", () => {
-                botonesFiltro.forEach(b => b.classList.remove("activo"));
-                boton.classList.add("activo");
-                aplicarFiltro(boton.dataset.categoria);
-            });
-        });
-        const parametros = new URLSearchParams(window.location.search);
-        const categoriaInicial = parametros.get("categoria");
-        if (categoriaInicial) {
-            const botonInicial = document.querySelector(`.filtro[data-categoria="${categoriaInicial}"]`);
-            if (botonInicial) botonInicial.click();
-        }
-    </script> 
-
+   
     <script>
         fetch("navbar.html")
             .then(r => r.text())
@@ -253,6 +73,8 @@
             .then(data => document.getElementById("footer").innerHTML = data);
     </script>
 
+    
+    <script src="js/catalogo-render.js"></script>
 
 </body>
 

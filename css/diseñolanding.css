@@ -133,7 +133,6 @@ button:hover{
 
 .botones {
     margin-top: 22px;
-
     display: flex;
     align-items: center;
     gap: 15px;
@@ -148,10 +147,7 @@ button:hover{
     color: #101a20;
 }
 
-.botones span {
-    color: #56646b;
-    font-size: 13px;
-}
+
 
 
 /* ---------------------------------------------------------

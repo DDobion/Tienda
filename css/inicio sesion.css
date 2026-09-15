@@ -1,0 +1,104 @@
+/* body{
+    font-family: lato, 'Noto Sans KR', 'Noto Serif JP', 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;  
+    background-image: url("https://images.wallpapersden.com/image/download/league-of-legends-hd-cool-gaming_bG1la2qUmZqaraWkpJRoZWVlrWZqaWo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;       
+    background-position: center;  
+
+}
+form{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin:auto;
+    padding: 30px 40px 80px 40px;
+    display: flex;
+    flex-direction: column;  
+    gap: 10px;
+    
+}
+
+form input,
+form select{   
+    padding: 12px 15px;    
+    border-radius: 10px;      
+    border: 2px solid #d6d6d6;   
+    outline: none;            
+    font-size: 14px;
+    
+}
+form input[type="date"]{
+    
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid #d6d6d6;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+}
+form select{
+    appearance: none;        
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #333;
+}
+h1{
+    font-size: medium;
+}
+h1, h2{
+    text-align: center;
+}
+.button{ 
+    width: 70px;             
+    height: 70px;             
+    border-radius: 20px;       
+    border: 2px solid #d6d6d6;
+    background-color: white;
+    color:#6d6d6d;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 30px;       
+    font-size: large;
+}
+.button:hover{
+    background-color: #fd6d6d;
+    border-color: #fd6d6d;
+    color: white;
+    transform: scale(1.1);
+    
+}
+
+footer{
+    display: flex;
+    align-items: flex-end;   
+    text-align: justify;
+    margin-top: 40px;
+    color: #67686d;
+    width: 100%;
+    background-color: rgba(53, 53, 53, 0.5);
+  
+}
+footer p{
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+img.logo{
+    margin-bottom: 20px;
+    margin-left: 10px;
+    border: 3px solid #fd6d6d;
+    align-items:center;
+    box-shadow: 0 0 15px rgba(252, 214, 214, 0.6); 
+    
+}
+.error{
+    color: #fd6d6d;
+    font-size: 12px;
+} */
+
+/* !basura */

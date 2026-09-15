@@ -1,0 +1,350 @@
+[
+  {
+    "id": "filo-infinito",
+    "nombre": "Filo del Infinito",
+    "categoria": "ad",
+    "categoriaTexto": "PLT · AD",
+    "linea": "Daño Físico (AD)",
+    "precio": "$3,400.00",
+    "descripcionCorta": "Aumenta drásticamente el impacto físico y potencia los impactos críticos.",
+    "descripcion": "Pieza forjada con aleaciones densas de Piltover diseñada para maximizar la fuerza de choque en combates frontales prolongados.",
+    "material": "Acero Templado y Cristal Hextech",
+    "peso": "4.2 kg",
+    "origen": "Piltover",
+    "expediente": "EXP-0941",
+    "imagenes": [
+      "img/filo-1.jpg",
+      "img/filo-2.jpg",
+      "img/filo-3.jpg"
+    ],
+    "garantia": "90 días de forja",
+    "devoluciones": "15 días, sin muescas de combate",
+    "certificado": "Sí, emitido por el taller",
+    "tiempoEnvio": "3 a 5 días hábiles",
+    "cobertura": "Piltover, Zaun y Shurima",
+    "caracteristicas": [
+      "+70 Daño de ataque base garantizado.",
+      "Aumenta el daño de impacto crítico a 215%.",
+      "Forjado con núcleos de balanceo cinético.",
+      "Ideal para tiradores y duelistas pesados."
+    ],
+    "taller": [
+      "El taller diseñó esta hoja con acanaladuras de disipación térmica para evitar fatiga en impactos consecutivos.",
+      "Requiere calibración periódica de la empuñadura para mantener la alineación del centro de masa."
+    ],
+    "recomendado": ["Tiradores", "Juego Tardío", "Línea AD"]
+  },
+  {
+    "id": "sanguinaria",
+    "nombre": "La Sanguinaria",
+    "categoria": "ad",
+    "categoriaTexto": "PLT · AD",
+    "linea": "Daño Físico (AD)",
+    "precio": "$3,400.00",
+    "descripcionCorta": "Otorga robo de vida vital y genera una barrera protectora sobre daño excedente.",
+    "descripcion": "Espada de aleación carmesí tratada químicamente para absorber energía cinética y fluidos vitales en plena escaramuza.",
+    "material": "Hierro Carmesí y Válvulas Neumáticas",
+    "peso": "3.8 kg",
+    "origen": "Noxus / Taller 09",
+    "expediente": "EXP-0942",
+    "imagenes": [
+      "img/sanguinaria-1.jpg"
+    ],
+    "garantia": "60 días por corrosión",
+    "devoluciones": "10 días, sello biológico intacto",
+    "certificado": "Certificado de alquimia bélica",
+    "tiempoEnvio": "4 a 8 días hábiles",
+    "cobertura": "Todas las regiones de Runeterra",
+    "caracteristicas": [
+      "+80 Daño de ataque.",
+      "+18% Robo de vida garantizado.",
+      "Genera escudo de absorción de sobrecuración.",
+      "Excelente para duelistas en escaramuzas largas."
+    ],
+    "taller": [
+      "Canalizaciones internas recubiertas de polímeros que evitan la coagulación de residuos durante el combate.",
+      "Se sugiere limpieza con solventes neutros tras cada refriega."
+    ],
+    "recomendado": ["Duelistas", "Fase Media", "Línea AD"]
+  },
+  {
+    "id": "fuerza-de-la-trinidad",
+    "nombre": "Fuerza de la Trinidad",
+    "categoria": "ad",
+    "categoriaTexto": "PLT · AD",
+    "linea": "Daño Físico (AD)",
+    "precio": "$3,333.00",
+    "descripcionCorta": "Equilibrio absoluto entre daño sostenido, velocidad y ráfaga tras usar habilidades.",
+    "descripcion": "La cúspide del equilibrio en herrería: tres componentes ensamblados en una estructura tripartita con resonancia armónica.",
+    "material": "Bronce Forjado, Oro y Núcleo de Cuarzo",
+    "peso": "3.1 kg",
+    "origen": "Ionia / Piltover",
+    "expediente": "EXP-0943",
+    "imagenes": [
+      "img/trinidad-1.jpg"
+    ],
+    "garantia": "1 año (estructura garantizada)",
+    "devoluciones": "30 días de prueba en taller",
+    "certificado": "Sello de triple armonía",
+    "tiempoEnvio": "3 a 6 días hábiles",
+    "cobertura": "Todas las regiones de Runeterra",
+    "caracteristicas": [
+      "+45 Daño de ataque y +33% Velocidad de ataque.",
+      "+300 Vida base integrada.",
+      "Efecto Hoja Encantada: daño multiplicado tras lanzar habilidades.",
+      "Incrementa la velocidad de desplazamiento al impactar."
+    ],
+    "taller": [
+      "Cada hoja del tridente fue templada a una temperatura distinta para unificar flexibilidad y dureza en un solo ensamble."
+    ],
+    "recomendado": ["Luchadores", "Peleadores", "Línea AD"]
+  },
+  {
+    "id": "cuchilla-oscura",
+    "nombre": "La Cuchilla Oscura",
+    "categoria": "ad",
+    "categoriaTexto": "PLT · AD",
+    "linea": "Daño Físico (AD)",
+    "precio": "$3,100.00",
+    "descripcionCorta": "Destroza armaduras enemigas y otorga velocidad al infligir daño físico.",
+    "descripcion": "Hacha colosal de bordes biselados con dentaduras diseñadas para fracturar corazas pesadas con cada impacto sucesivo.",
+    "material": "Hierro Negro Forjado y Cuero Reforzado",
+    "peso": "6.5 kg",
+    "origen": "Noxus",
+    "expediente": "EXP-0944",
+    "imagenes": [
+      "img/cuchilla-1.jpg"
+    ],
+    "garantia": "90 días ante fracturas",
+    "devoluciones": "15 días sin uso en combate",
+    "certificado": "Certificado militar de Noxus",
+    "tiempoEnvio": "5 a 10 días hábiles",
+    "cobertura": "Runeterra continental",
+    "caracteristicas": [
+      "+55 Daño de ataque y +400 Vida.",
+      "Reduce la armadura del objetivo hasta un 24%.",
+      "Otorga aceleración de habilidades y movilidad continua."
+    ],
+    "taller": [
+      "Pieza de gran masa diseñada para guerreros con soporte exoesqueleto o fuerza aumentada químicamente."
+    ],
+    "recomendado": ["Bruisers", "Anti-Tanques", "Línea AD"]
+  },
+  {
+    "id": "sombrero-rabadon",
+    "nombre": "Sombrero Mortífero de Rabadon",
+    "categoria": "ap",
+    "categoriaTexto": "PLT · AP",
+    "linea": "Poder de Habilidad (AP)",
+    "precio": "$3,600.00",
+    "descripcionCorta": "Multiplica exponencialmente el poder mágico de cualquier hechicero o artífice.",
+    "descripcion": "Prenda ceremonial tejida con hilos de maná concentrado capaz de actuar como amplificador rúnico para conjuros de alto calibre.",
+    "material": "Seda Rúnica y Gemas de Zaun",
+    "peso": "0.6 kg",
+    "origen": "Bandle / Zaun",
+    "expediente": "EXP-0801",
+    "imagenes": [
+      "img/rabadon-1.jpg"
+    ],
+    "garantia": "180 días de estabilidad rúnica",
+    "devoluciones": "No admite devolución si se expone a vacío",
+    "certificado": "Acta de seguridad mágica",
+    "tiempoEnvio": "2 a 5 días hábiles",
+    "cobertura": "Todas las regiones de Runeterra",
+    "caracteristicas": [
+      "+140 Poder de Habilidad concentrado.",
+      "Aumenta el Poder de Habilidad total en un 35%.",
+      "Tejido aislante para evitar sobrecargas arcanas."
+    ],
+    "taller": [
+      "Cada hebra fue entrelazada en cámaras de aislamiento electromágico para prevenir detonaciones espontáneas."
+    ],
+    "recomendado": ["Magos de Ráfaga", "Juego Tardío", "Línea AP"]
+  },
+  {
+    "id": "reloj-arena-zhonya",
+    "nombre": "Reloj de Arena de Zhonya",
+    "categoria": "ap",
+    "categoriaTexto": "PLT · AP",
+    "linea": "Poder de Habilidad (AP)",
+    "precio": "$3,250.00",
+    "descripcionCorta": "Otorga estasis temporal volviendo inmune al portador por unos segundos.",
+    "descripcion": "Mecanismo cronológico de alta precisión que suspende la materia física del portador en una cápsula dorada impenetrable.",
+    "material": "Cristal Estasis y Bronce Dorado",
+    "peso": "1.8 kg",
+    "origen": "Targon / Piltover",
+    "expediente": "EXP-0812",
+    "imagenes": [
+      "img/zhonya-1.jpg"
+    ],
+    "garantia": "180 días (mecanismo cronológico)",
+    "devoluciones": "No admite devolución si el sello temporal fue roto",
+    "certificado": "Certificado de calibración rúnica",
+    "tiempoEnvio": "2 a 4 días hábiles",
+    "cobertura": "Todas las regiones de Runeterra",
+    "caracteristicas": [
+      "+120 Poder de Habilidad y +50 Armadura.",
+      "Activa única: Estasis dorada durante 2.5 segundos.",
+      "Inmunidad a todo daño e incapacidad de ser seleccionado."
+    ],
+    "taller": [
+      "Caja de engranajes sellada al vacío que reacciona a la aceleración del pulso cardiaco del portador."
+    ],
+    "recomendado": ["Magos", "Iniciadores", "Línea AP"]
+  },
+  {
+    "id": "baston-del-vacio",
+    "nombre": "Báculo del Vacío",
+    "categoria": "ap",
+    "categoriaTexto": "PLT · AP",
+    "linea": "Poder de Habilidad (AP)",
+    "precio": "$3,000.00",
+    "descripcionCorta": "Perfora la resistencia mágica permitiendo atravesar barreras defensivas.",
+    "descripcion": "Báculo tallado en obsidiana noxiana coronado con un foco que drena la resistencia a las corrientes arcanas.",
+    "material": "Obsidiana y Núcleo Corrupto",
+    "peso": "2.2 kg",
+    "origen": "Icathia / Taller 09",
+    "expediente": "EXP-0820",
+    "imagenes": [
+      "img/vacio-1.jpg"
+    ],
+    "garantia": "60 días",
+    "devoluciones": "15 días en estuche hermético",
+    "certificado": "Permiso de manipulación peligrosa",
+    "tiempoEnvio": "3 a 7 días hábiles",
+    "cobertura": "Piltover, Shurima y Demacia",
+    "caracteristicas": [
+      "+80 Poder de Habilidad.",
+      "40% de Penetración Mágica total.",
+      "Eficaz contra corazas y escudos arcanos."
+    ],
+    "taller": [
+      "La punta emite un silbido tenue debido a la fuga controlada de presión dimensional."
+    ],
+    "recomendado": ["Magos de Control", "Anti-Tanques", "Línea AP"]
+  },
+  {
+    "id": "coraza-del-muerto",
+    "nombre": "Coraza del Muerto",
+    "categoria": "def",
+    "categoriaTexto": "PLT · DEF",
+    "linea": "Defensa y Tanque",
+    "precio": "$2,900.00",
+    "descripcionCorta": "Acumula inercia mientras el portador se desplaza y descarga un golpe devastador.",
+    "descripcion": "Armadura pectoral rescatada de naufragios en Aguas Turbias, reforzada con placas de hierro y remaches marinos.",
+    "material": "Hierro Marino y Cota Salina",
+    "peso": "18.5 kg",
+    "origen": "Aguas Turbias",
+    "expediente": "EXP-0510",
+    "imagenes": [
+      "img/muerto-1.jpg"
+    ],
+    "garantia": "120 días contra perforación",
+    "devoluciones": "30 días sin abolladuras estructurales",
+    "certificado": "Garantía de placa reforzada",
+    "tiempoEnvio": "4 a 9 días hábiles (carga pesada)",
+    "cobertura": "Costas y continentes de Runeterra",
+    "caracteristicas": [
+      "+300 Vida y +45 Armadura.",
+      "Acumula hasta 60 de velocidad de movimiento adicional.",
+      "Descarga daño físico adicional y ralentiza al impactar."
+    ],
+    "taller": [
+      "Las placas se trataron con brea y salitre para evitar la corrosión en ambientes húmedos o salobres."
+    ],
+    "recomendado": ["Tanques", "Iniciadores Rápidos", "Línea DEF"]
+  },
+  {
+    "id": "presagio-de-randuin",
+    "nombre": "Presagio de Randuin",
+    "categoria": "def",
+    "categoriaTexto": "PLT · DEF",
+    "linea": "Defensa y Tanque",
+    "precio": "$2,700.00",
+    "descripcionCorta": "Reduce el impacto de los golpes críticos y ralentiza a los enemigos cercanos.",
+    "descripcion": "Escudo masivo de infantería pesada con amortiguadores de resorte para disipar proyectiles y hojas enemigas.",
+    "material": "Planchas de Acero y Muelles de Rebote",
+    "peso": "21.0 kg",
+    "origen": "Demacia / Taller 09",
+    "expediente": "EXP-0515",
+    "imagenes": [
+      "img/randuin-1.jpg"
+    ],
+    "garantia": "1 año por defecto de amortiguador",
+    "devoluciones": "15 días en caja de transporte",
+    "certificado": "Homologación balística demaciana",
+    "tiempoEnvio": "5 a 10 días hábiles (carga pesada)",
+    "cobertura": "Todas las regiones de Runeterra",
+    "caracteristicas": [
+      "+400 Vida y +55 Armadura.",
+      "Reduce el daño de golpes críticos recibidos en 30%.",
+      "Onda expansiva activa que ralentiza un 55% a los rivales."
+    ],
+    "taller": [
+      "Posee anclajes para instalar linternas o estandartes militares en la parte superior."
+    ],
+    "recomendado": ["Vanguardias", "Anti-Tiradores", "Línea DEF"]
+  },
+  {
+    "id": "redencion",
+    "nombre": "Redención",
+    "categoria": "sup",
+    "categoriaTexto": "PLT · SUP",
+    "linea": "Soporte y Utilidad",
+    "precio": "$2,300.00",
+    "descripcionCorta": "Invoca un haz de luz celestial que cura aliados y quema a los adversarios.",
+    "descripcion": "Campana sacra que resuena con frecuencias celestiales para bendecir una zona entera del campo de batalla.",
+    "material": "Plata Targoniana y Cintas de Seda",
+    "peso": "2.0 kg",
+    "origen": "Targon",
+    "expediente": "EXP-0301",
+    "imagenes": [
+      "img/redencion-1.jpg"
+    ],
+    "garantia": "90 días de tono armónico",
+    "devoluciones": "20 días en estuche original",
+    "certificado": "Bendición de campana",
+    "tiempoEnvio": "3 a 6 días hábiles",
+    "cobertura": "Todas las regiones de Runeterra",
+    "caracteristicas": [
+      "+200 Vida y +15% Eficacia de curación y escudos.",
+      "Rayo de luz con área amplia utilizable incluso tras caer en combate.",
+      "Cura a aliados y quema el 10% de vida máxima de enemigos."
+    ],
+    "taller": [
+      "El badajo interior está afinado en la nota Fa sostenido para inducir calma y concentración."
+    ],
+    "recomendado": ["Encantadores", "Curanderos", "Línea SUP"]
+  },
+  {
+    "id": "botas-de-rapidez",
+    "nombre": "Botas de Rapidez",
+    "categoria": "mov",
+    "categoriaTexto": "PLT · MOV",
+    "linea": "Movilidad y Botas",
+    "precio": "$900.00",
+    "descripcionCorta": "Calzado aerodinámico diseñado para reducir la severidad de las ralentizaciones.",
+    "descripcion": "Botas de cuero flexible tratadas con aceites livianos y suelas estriadas para tracción rápida en lodo y adoquín.",
+    "material": "Cuero de Dracocan y Suela Vulcanizada",
+    "peso": "1.1 kg",
+    "origen": "Zaun",
+    "expediente": "EXP-0105",
+    "imagenes": [
+      "img/botas-1.jpg"
+    ],
+    "garantia": "45 días por desprendimiento de suela",
+    "devoluciones": "7 días sin marcas de desgaste en suela",
+    "certificado": "Talla y horma verificada",
+    "tiempoEnvio": "2 a 4 días hábiles",
+    "cobertura": "Todas las regiones de Runeterra",
+    "caracteristicas": [
+      "+60 Velocidad de movimiento plana.",
+      "Reduce la duración e intensidad de ralentizaciones en un 25%.",
+      "Costuras dobles resistentes al desgaste por fricción."
+    ],
+    "taller": [
+      "Diseñadas a partir de calzado de mensajeros de Zaun que cruzan túneles anegados a alta velocidad."
+    ],
+    "recomendado": ["Roamers", "Fase Temprana", "Línea MOV"]
+  }
+]

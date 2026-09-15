@@ -1,5 +1,4 @@
 
-
 .producto-ruta {
     padding-bottom: 0;
 }
@@ -17,7 +16,7 @@
 
 
 /* -----------------------------------------------------------
-   ficha del producto
+   ficha producto
 -------------------------------------------------------------------- */
 
 .producto-ficha {
@@ -38,6 +37,12 @@
     background: #122738;
     border: 1px solid #33444e;
     overflow: hidden;
+
+    transition: border-color 0.25s ease;
+}
+
+.producto-imagen-principal:hover {
+    border-color: #c9942d;
 }
 
 .producto-imagen-principal img {
@@ -45,6 +50,12 @@
     height: 100%;
     object-fit: cover;
     display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.producto-imagen-principal:hover img {
+    transform: scale(1.06);
 }
 
 .producto-miniaturas {
@@ -59,13 +70,25 @@
     border: 1px solid #33444e;
     padding: 0;
     overflow: hidden;
+
+    transition: border-color 0.25s ease;
+}
+
+.miniatura:hover {
+    border-color: #c9942d;
 }
 
 .miniatura img {
-    width: 100%;                                             /* ?porque razon se agarra un efecto hover amarillo */
-    height: 100%;                                       /* * hover scale y un gradiant oscuro */
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
+
+    transition: transform 0.3s ease;
+}
+
+.miniatura:hover img {
+    transform: scale(1.1);
 }
 
 .producto-detalle {
@@ -78,12 +101,13 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
 }
-
+                                                    /* ! añadir linea para delimitar zona de detalles */
 .producto-nombre {
     font-family: Georgia, serif;
     font-weight: normal;
     font-size: 32px;
     color: #e0ddd3;
+
     margin: 10px 0 14px;
 }
 
@@ -91,6 +115,7 @@
     color: #718089;
     font-size: 15px;
     line-height: 1.7;
+
     margin-bottom: 20px;
 }
 
@@ -98,6 +123,7 @@
     color: #d9d6c9;
     font-family: 'JetBrains Mono', monospace;
     font-size: 26px;
+
     margin-bottom: 20px;
 }
 
@@ -152,7 +178,7 @@
 }
 
 .producto-acciones .secundario:hover {
-    border-color: #c9942d;                          /* boton cotizacion */
+    border-color: #c9942d;
     color: #c9942d;
     background-color: transparent;
 }
@@ -200,9 +226,177 @@
 }
 
 
-/* -----------------------------------------------------------
-   descripción detasllada
+/* ---------------------------------------------------------------------
+   descripción larga
 -------------------------------------------------------------------- */
+
+.extendido-columnas {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.extendido-bloque {
+    margin-bottom: 30px;
+}
+
+.extendido-bloque:last-child {
+    margin-bottom: 0;
+}
+
+.extendido-bloque h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 24px;
+    color: #e0ddd3;
+
+    margin-bottom: 16px;
+}
+
+.extendido-bloque p {
+    color: #718089;
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 620px;
+
+    margin-bottom: 14px;
+}
+
+.extendido-bloque p:last-child {
+    margin-bottom: 0;
+}
+
+.lista-caracteristicas {
+    list-style: none;
+    max-width: 620px;
+}
+
+.lista-caracteristicas li {
+    position: relative;
+
+    color: #b8b7b0;
+    font-size: 15px;
+    line-height: 1.6;
+
+    padding-left: 24px;
+    margin-bottom: 12px;
+}
+
+.lista-caracteristicas li:last-child {
+    margin-bottom: 0;
+}
+
+.lista-caracteristicas li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #c9942d;
+    font-weight: bold;
+}
+
+.etiquetas-recomendado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.etiquetas-recomendado span {
+    border: 1px solid #33444e;
+    color: #9e9c91;
+
+    padding: 8px 14px;
+
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+}
+
+
+/* ---------------------------------------------------------------
+   columna lateral garantia envio ayuda 
+------------------------------------------------------------------------- */
+
+.extendido-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.caja-lateral {
+    background: #122738;
+    border: 1px solid #33444e;
+    padding: 18px;
+}
+
+.caja-lateral > small {
+    color: #b88a32;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+.caja-lateral hr {
+    border: none;
+    border-top: 1px solid #33444e;
+    margin: 14px 0;
+}
+
+.caja-lateral div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #263943;
+}
+.caja-lateral .titulo-seccion {
+    display: block;
+    margin-top: 20px;           /* xd */
+}
+
+.caja-lateral div:last-child {
+    border-bottom: none;
+}
+
+.caja-lateral span {
+    color: #53636c;
+    font-size: 13px;
+}
+
+.caja-lateral b {
+    color: #b8b8b1;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: right;
+}
+
+.caja-ayuda p {
+    color: #718089;
+    font-size: 13px;
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+}
+
+.caja-ayuda a {
+    color: #c9942d;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.caja-ayuda a:hover {
+    text-decoration: underline;
+}
+
+
+/* -----------------------------------------------------------
+   responsivo
+-------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .extendido-columnas {
+        grid-template-columns: 1fr;
+    }
+}
 
 .producto-extendido p {
     color: #718089;
@@ -211,15 +405,12 @@
     max-width: 700px;
 }
 
-
 .producto-relacionados {
     border-top: 1px solid #253741;
 }
 
 
-/* -----------------------------------------------------------
-   responsivo
--------------------------------------------------------------------- */
+
 
 @media (max-width: 900px) {
 
