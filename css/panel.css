@@ -1,0 +1,371 @@
+/* -----------------------------------------------------------
+   aviso de sesión simulada
+-------------------------------------------------------------------- */
+
+.panel-aviso-seccion {
+    padding-bottom: 0;
+}
+
+.panel-aviso {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: rgba(201, 148, 45, 0.08);
+    border: 1px solid #33444e;
+
+    padding: 12px 16px;
+
+    color: #9e9c91;
+    font-size: 13px;
+}
+
+.panel-aviso span {
+    color: #c9942d;
+    font-size: 10px;
+}
+
+
+/* -----------------------------------------------------------
+   encabezado
+-------------------------------------------------------------------- */
+
+.panel-encabezado {
+    padding-bottom: 20px;
+}
+
+.panel-etiqueta {
+    color: #b88a32;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+
+.panel-encabezado h1 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 34px;
+    color: #e0ddd3;
+
+    margin: 10px 0 10px;
+}
+
+.panel-encabezado p {
+    color: #718089;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 480px;
+}
+
+
+/* -----------------------------------------------------------
+   layout: navegación + paneles
+-------------------------------------------------------------------- */
+
+.panel-contenido {
+    padding-top: 0;
+}
+
+.panel-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 30px;
+}
+
+.panel-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    align-self: start;
+
+    border: 1px solid #33444e;
+    padding: 10px;
+}
+
+.panel-tab {
+    background: transparent;
+    border: none;
+    text-align: left;
+
+    padding: 10px 12px;
+
+    color: #9e9c91;
+    font-size: 14px;
+}
+
+.panel-tab:hover {
+    background-color: #122738;
+    color: #d9d6c9;
+}
+
+.panel-tab.activo {
+    background: #122738;
+    color: #c9942d;
+    font-weight: bold;
+}
+
+.panel-salir {
+    margin-top: 10px;
+    padding-top: 12px;
+
+    border-top: 1px solid #33444e;
+
+    color: #9e9c91;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: left;
+    padding-left: 12px;
+}
+
+.panel-salir:hover {
+    color: #c9942d;
+}
+
+
+/* -----------------------------------------------------------
+   paneles (contenido de cada pestaña)
+-------------------------------------------------------------------- */
+
+.panel-panel {
+    display: none;
+
+    background: #122738;
+    border: 1px solid #33444e;
+    padding: 26px;
+}
+
+.panel-panel.activo {
+    display: block;
+}
+
+
+/* -----------------------------------------------------------
+   perfil: resumen superior
+-------------------------------------------------------------------- */
+
+.perfil-resumen {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+
+    border-bottom: 1px solid #33444e;
+}
+
+.perfil-avatar {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+
+    background: #04010f;
+    border: 1px solid #33444e;
+}
+
+.perfil-resumen-texto {
+    flex: 1;
+    min-width: 160px;
+}
+
+.perfil-nombre {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 19px;
+    color: #e0ddd3;
+
+    margin-bottom: 4px;
+}
+
+.perfil-correo {
+    color: #718089;
+    font-size: 13px;
+}
+
+.perfil-estadisticas {
+    display: flex;
+    gap: 26px;
+}
+
+.perfil-estadistica {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.perfil-estadistica b {
+    color: #c9942d;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.perfil-estadistica span {
+    color: #66757d;
+    font-size: 12px;
+}
+
+
+/* -----------------------------------------------------------
+   perfil: tarjeta única con secciones (estilo Mercado Libre)
+-------------------------------------------------------------------- */
+
+.perfil-tarjeta-cuenta {
+    background: #0c1c28;
+    border: 1px solid #33444e;
+    padding: 4px 20px;
+}
+
+.perfil-bloque {
+    padding: 20px 0;
+    border-bottom: 1px solid #263943;
+}
+
+.perfil-bloque-final {
+    border-bottom: none;
+}
+
+.perfil-bloque-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+
+.perfil-bloque-titulo h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 17px;
+    color: #d9d6c9;
+}
+
+.perfil-editar {
+    color: #c9942d;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.perfil-editar:hover {
+    text-decoration: underline;
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 6px 0;
+}
+
+.fila span {
+    color: #53636c;
+    font-size: 13px;
+}
+
+.fila b {
+    color: #b8b8b1;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: right;
+}
+
+
+/* -----------------------------------------------------------
+   historial simulado
+-------------------------------------------------------------------- */
+
+.historial-tabla {
+    display: flex;
+    flex-direction: column;
+}
+
+.historial-fila {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.3fr;
+    gap: 10px;
+    align-items: center;
+
+    padding: 12px 0;
+    border-bottom: 1px solid #263943;
+}
+
+.historial-fila:last-child {
+    border-bottom: none;
+}
+
+.historial-fila span {
+    color: #b8b7b0;
+    font-size: 13px;
+}
+
+.historial-encabezado {
+    border-bottom: 1px solid #33444e;
+}
+
+.historial-encabezado span {
+    color: #b88a32;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+
+.estado {
+    display: inline-block;
+    width: fit-content;
+
+    padding: 4px 10px;
+    border: 1px solid #33444e;
+
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+
+.estado-entregado {
+    border-color: #3f6b4e;
+    color: #7fbf95;
+}
+
+.estado-camino {
+    border-color: #6b5a1f;
+    color: #d9b24c;
+}
+
+.estado-proceso {
+    border-color: #33444e;
+    color: #9e9c91;
+}
+
+
+/* -----------------------------------------------------------
+   responsivo
+-------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .panel-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .panel-salir {
+        border-top: none;
+        margin-top: 0;
+        padding-left: 12px;
+        align-self: center;
+    }
+
+    .historial-fila {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .historial-encabezado {
+        display: none;
+    }
+}

@@ -1,7 +1,3 @@
-/* ---------------------------------------------------------------------------
-   navbar
------------------------------------------------------------------------------------------- */
-
 
 .navbar {
     height: 64px;
@@ -17,9 +13,9 @@
     cursor:pointer;
 
 } 
-.sesion:hover{
-    background-color: aqua;
-}                                       /* todo, arreglar dimensiones del navbar */
+/* .sesion:hover{
+    background-color: #b88a32;
+}    */                                    /* todo, arreglar dimensiones del navbar */
 
 .logo {
     font-family:  Georgia, serif;

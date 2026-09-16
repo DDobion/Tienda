@@ -1,0 +1,165 @@
+/* -----------------------------------------------------------
+   contenedor de página de autenticación
+-------------------------------------------------------------------- */
+
+.pagina-auth {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-contenedor {
+    width: 100%;
+    max-width: 420px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+.auth-logo {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    color: #d9d6c9;
+    text-decoration: none;
+
+    margin-bottom: 28px;
+}
+
+.auth-logo span {
+    color: #b88a32;
+    font-size: 13px;
+}
+
+
+/* -----------------------------------------------------------
+   tarjeta
+-------------------------------------------------------------------- */
+
+.auth-tarjeta {
+    width: 100%;
+
+    background: #122738;
+    border: 1px solid #33444e;
+    padding: 32px 28px;
+}
+
+.auth-etiqueta {
+    color: #b88a32;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+
+.auth-tarjeta h1 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 26px;
+    color: #e0ddd3;
+
+    margin: 10px 0 8px;
+}
+
+.auth-subtitulo {
+    color: #718089;
+    font-size: 14px;
+    line-height: 1.6;
+
+    margin-bottom: 24px;
+}
+
+
+/* -----------------------------------------------------------
+   formulario (reutiliza .campo de diseñolanding.css)
+-------------------------------------------------------------------- */
+
+.auth-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.auth-formulario .campo input {
+    width: 100%;
+}
+
+.auth-boton {
+    background: #c9942d;
+    border: none;
+    padding: 13px 18px;
+
+    color: #101a20;
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-top: 4px;
+}
+
+.auth-alterno {
+    color: #718089;
+    font-size: 13px;
+
+    margin-top: 20px;
+    text-align: center;
+}
+
+.auth-alterno a {
+    color: #c9942d;
+    text-decoration: none;
+}
+
+.auth-alterno a:hover {
+    text-decoration: underline;
+}
+
+
+/* -----------------------------------------------------------
+   mensaje "performativo" de confirmación
+-------------------------------------------------------------------- */
+
+.auth-mensaje {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    background: rgba(201, 148, 45, 0.1);
+    border: 1px solid #c9942d;
+    color: #d9c08a;
+
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    overflow: hidden;
+
+    transition: opacity 0.35s ease, max-height 0.35s ease, margin-top 0.35s ease, padding 0.35s ease;
+}
+
+.auth-mensaje.mostrar {
+    opacity: 1;
+    max-height: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 4px;
+}
+
+
+/* -----------------------------------------------------------
+   responsivo
+-------------------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .auth-tarjeta {
+        padding: 26px 20px;
+    }
+}

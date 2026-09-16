@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta · FORJA ·09</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/diseñolanding.css">
+    <link rel="stylesheet" href="css/auth.css">
+
+</head>
+
+<body class="pagina-auth">
+
+
+
+    <div class="auth-contenedor">
+
+        
+
+        <div class="auth-tarjeta">
+
+            <small class="auth-etiqueta">REGISTRO DE GREMIO</small>
+
+            <h1>Crear cuenta</h1>
+            <p class="auth-subtitulo">
+                Regístrate para llevar un historial de tus encargos y pedidos
+                en el taller.
+            </p>
+
+            <form id="formularioRegistro" class="auth-formulario">
+
+                <div class="campo">
+                    <label for="nombreRegistro">Nombre</label>
+                    <input type="text" id="nombreRegistro" name="nombre" placeholder="Tu nombre">
+                </div>
+
+                <div class="campo">
+                    <label for="correoRegistro">Correo</label>
+                    <input type="email" id="correoRegistro" name="correo" placeholder="tucorreo@dominio.com">
+                </div>
+
+                <div class="campo">
+                    <label for="contrasenaRegistro">Contraseña</label>
+                    <input type="password" id="contrasenaRegistro" name="contrasena" placeholder="••••••••">
+                </div>
+
+                <div class="campo">
+                    <label for="confirmarRegistro">Confirmar contraseña</label>
+                    <input type="password" id="confirmarRegistro" name="confirmar" placeholder="••••••••">
+                </div>
+
+                <button type="submit" class="auth-boton">Crear cuenta</button>
+
+                <div class="auth-mensaje" id="mensajeRegistro">
+                     Cuenta creada. Redirigiendo a inicio de sesión…
+                </div>
+
+            </form>
+
+            <p class="auth-alterno">
+                ¿Ya tienes cuenta? <a href="sesion.html">Inicia sesión</a>
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+        /* registro sim  */
+        const formularioRegistro = document.getElementById("formularioRegistro");
+        const mensajeRegistro = document.getElementById("mensajeRegistro");
+
+        formularioRegistro.addEventListener("submit", (evento) => {
+            evento.preventDefault();
+
+            mensajeRegistro.classList.add("mostrar");
+
+            setTimeout(() => {
+                window.location.href = "sesion.html";
+            }, 1600);
+        });
+    </script>
+
+
+
+</body>
+
+</html>
