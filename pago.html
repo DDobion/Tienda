@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Encargo · FORJA · 09</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/diseñolanding.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+    <link rel="stylesheet" href="css/pago.css">
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <section class="ruta">
+        <a href="catalogo.html">← Volver al catálogo</a>
+    </section>
+
+    <main class="pago">
+        <!-- Columna Izquierda -->
+        <section class="formulario">
+            
+            <!-- Dirección -->
+            <div class="caja">
+                <small>PASO 01 · DESTINO DE ENTREGA</small>
+                <h2>Dirección del destinatario</h2>
+                <hr>
+                <div class="campos">
+                    <div class="campo doble">
+                        <label for="nombre">Nombre y apellidos</label>
+                        <input type="text" id="nombre" placeholder="Ej. Roberto Valenzuela">
+                    </div>
+                    <div class="campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" placeholder="correo@ejemplo.com">
+                    </div>
+                    <div class="campo">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" placeholder="+52 449 000 0000">
+                    </div>
+                    <div class="campo doble">
+                        <label for="calle">Calle y número</label>
+                        <input type="text" id="calle" placeholder="Av. Fundidores #409">
+                    </div>
+                    <div class="campo">
+                        <label for="colonia">Colonia</label>
+                        <input type="text" id="colonia" placeholder="Centro Industrial">
+                    </div>
+                    <div class="campo">
+                        <label for="cp">Código Postal</label>
+                        <input type="text" id="cp" placeholder="20000">
+                    </div>
+                    <div class="campo">
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" id="ciudad" value="Aguascalientes">
+                    </div>
+                    <div class="campo">
+                        <label for="estado">Estado</label>
+                        <input type="text" id="estado" value="Aguascalientes">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Métodos -->
+            <div class="caja">
+                <small>PASO 02 · FORMA DE PAGO</small>
+                <h2>Selección de método</h2>
+                <hr>
+
+                <div class="metodos">
+                    <button type="button" class="metodo activo" onclick="cambiarMetodo('tarjeta')">
+                        Tarjeta Bancaria
+                    </button>
+                    <button type="button" class="metodo" onclick="cambiarMetodo('spei')">
+                        Transferencia SPEI
+                    </button>
+                    <button type="button" class="metodo" onclick="cambiarMetodo('oxxo')">
+                        Pago en OXXO
+                    </button>
+                </div>
+
+                <!-- Panel Tarjeta -->
+                <div id="panel-tarjeta" class="panel visible">
+                    <div class="tarjeta">
+                        <div class="chip"></div>
+                        <div class="marca">FORJA · 09</div>
+                        <div class="numero" id="ver-numero">•••• •••• •••• ••••</div>
+                        <div class="datos">
+                            <div>
+                                <small>TITULAR</small>
+                                <span id="ver-titular">NOMBRE DEL CLIENTE</span>
+                            </div>
+                            <div>
+                                <small>EXPIRA</small>
+                                <span id="ver-expira">MM/AA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="campos">
+                        <div class="campo doble">
+                            <label for="tarjeta-num">Número de Tarjeta</label>
+                            <input type="text" id="tarjeta-num" maxlength="19" placeholder="4532 0192 8374 9912">
+                        </div>
+                        <div class="campo doble">
+                            <label for="tarjeta-nom">Nombre impreso</label>
+                            <input type="text" id="tarjeta-nom" placeholder="Como figura en el plástico">
+                        </div>
+                        <div class="campo">
+                            <label for="tarjeta-exp">Vencimiento</label>
+                            <input type="text" id="tarjeta-exp" placeholder="12/28" maxlength="5">
+                        </div>
+                        <div class="campo">
+                            <label for="tarjeta-cvv">CVV</label>
+                            <input type="password" id="tarjeta-cvv" placeholder="•••" maxlength="4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel SPEI -->
+                <div id="panel-spei" class="panel">
+                    <p class="nota">Realiza la transferencia desde la app de tu banco con los datos del taller:</p>
+                    <div class="banco">
+                        <div><span>Banco</span> <b>STP / BBVA</b></div>
+                        <div><span>CLABE</span> <b class="oro">6461 8011 0400 9182 33</b></div>
+                        <div><span>Beneficiario</span> <b>Taller Forja 09</b></div>
+                    </div>
+                </div>
+
+                <!-- Panel OXXO -->
+                <div id="panel-oxxo" class="panel">
+                    <p class="nota">Al presionar confirmar se generará el código de barras para ventanilla:</p>
+                    <div class="banco">
+                        <div><span>Comisión OXXO</span> <b>$15.00 MXN</b></div>
+                        <div><span>Acreditación</span> <b>Inmediata</b></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+     
+        <aside class="resumen">
+            <div class="caja-resumen">
+                <small>EXPEDIENTE DE ORDEN</small>
+                <hr>
+
+                <div class="pieza">
+                    <div class="foto">
+                        <img src="img/cuchillo-damasco.jpg" onerror="this.src='https://images.unsplash.com/photo-1593618998160-e34014e67546?w=200&auto=format&fit=crop&q=80'" alt="Pieza">      <!-- !img -->
+                    </div>
+                    <div class="info">
+                        <h3>Cuchillo Forja 09 · Damasco</h3>
+                        <p>Cantidad: 1 pza</p>
+                        <b>$2,850.00</b>
+                    </div>
+                </div>
+
+                <small class="titulo-desglose">DESGLOSE</small>
+                <hr>
+                <div class="linea">
+                    <span>Subtotal</span>
+                    <b>$2,850.00</b>
+                </div>
+                <div class="linea">
+                    <span>Envío</span>
+                    <b class="gratis">GRATIS</b>
+                </div>
+                <div class="linea">
+                    <span>Certificado</span>
+                    <b>INCLUIDO</b>
+                </div>
+                <div class="linea total">
+                    <span>Total a pagar</span>
+                    <b class="oro">$2,850.00</b>
+                </div>
+
+                <button class="pagar" type="button" onclick="pagar()">
+                    Pagar y forjar pedido
+                </button>
+
+                <div class="seguridad">
+                    <span> Compra protegida por Forja 09</span>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Modal de confirmación (sin animaciones de martillo ni pulsos) -->
+    <div id="modal" class="modal">
+        <div class="exito">
+            <div class="icono">⚒</div> <!-- xd -->
+            <small>CONFIRMADO</small>
+            <h2>¡Tu encargo ha sido registrado!</h2>
+            <p>Hemos procesado tu compra con éxito. Se comenzará a preparar el paquete en el taller y te llegará la guía de rastreo por correo.</p>
+
+            <div class="detalles">
+                <div>
+                    <span>Expediente:</span>
+                    <b>#FJ09-84920</b>
+                </div>
+                <div>
+                    <span>Tiempo estimado:</span>
+                    <b>3 a 5 días hábiles</b>
+                </div>
+            </div>
+
+            <button class="pagar" type="button" onclick="window.location.href='catalogo.html'">Volver al catálogo</button>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch("navbar.html").then(r => r.text()).then(data => document.getElementById("navbar").innerHTML = data);
+        fetch("footer.html").then(r => r.text()).then(data => document.getElementById("footer").innerHTML = data);
+
+        // Actualizar tarjeta en pantalla
+        const inputNum = document.getElementById('tarjeta-num');
+        const inputNom = document.getElementById('tarjeta-nom');
+        const inputExp = document.getElementById('tarjeta-exp');
+
+        inputNum.addEventListener('input', (e) => {
+            let val = e.target.value.replace(/\D/g, '').substring(0, 16);
+            val = val.replace(/(.{4})/g, '$1 ').trim();
+            e.target.value = val;
+            document.getElementById('ver-numero').textContent = val || '•••• •••• •••• ••••';
+        });
+
+        inputNom.addEventListener('input', (e) => {
+            document.getElementById('ver-titular').textContent = e.target.value.toUpperCase() || 'NOMBRE DEL CLIENTE';
+        });
+
+        inputExp.addEventListener('input', (e) => {
+            let val = e.target.value.replace(/\D/g, '').substring(0, 4);
+            if (val.length >= 3) val = val.substring(0, 2) + '/' + val.substring(2);
+            e.target.value = val;
+            document.getElementById('ver-expira').textContent = val || 'MM/AA';
+        });
+
+        // Cambio de método
+        function cambiarMetodo(tipo) {
+            document.querySelectorAll('.metodo').forEach(btn => btn.classList.remove('activo'));
+            document.querySelectorAll('.panel').forEach(p => p.classList.remove('visible'));
+
+            if (tipo === 'tarjeta') {
+                document.querySelectorAll('.metodo')[0].classList.add('activo');
+                document.getElementById('panel-tarjeta').classList.add('visible');
+            } else if (tipo === 'spei') {
+                document.querySelectorAll('.metodo')[1].classList.add('activo');
+                document.getElementById('panel-spei').classList.add('visible');
+            } else {
+                document.querySelectorAll('.metodo')[2].classList.add('activo');
+                document.getElementById('panel-oxxo').classList.add('visible');
+            }
+        }
+
+        // Abrir modal de éxito de forma directa
+        function pagar() {
+            document.getElementById('modal').classList.add('mostrar');
+        }
+    </script>
+</body>
+</html>

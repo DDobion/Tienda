@@ -1,0 +1,527 @@
+
+/* ------------------------------------------------------------------------------------------------ */
+/* pago -----------------------------------------------------------------------------*/
+
+.ruta {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 10px 20px;
+}
+
+.ruta a {
+    color: #9e9c91;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+}
+
+.ruta a:hover {
+    color: #c9942d;
+}
+
+
+/* 1. Alineación superior perfecta y corte del sobrante */
+.pago {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px 80px 20px;
+    align-items: start; /* Quita el espacio vacío sobrante que se estiraba abajo */
+}
+
+/* 2. Igualar los topes superiores de ambas cajas */
+.formulario,
+.resumen {
+    margin: 0;
+    padding: 0;
+}
+
+.caja,
+.caja-resumen {
+    background: #122738;
+    border: 1px solid #33444e;
+    padding: 22px;
+    margin-top: 0; /* Asegura que ambas cajas comiencen exactamente en la misma línea */
+    box-sizing: border-box;
+}
+
+/* 3. Normalizar el espaciado de los títulos de arriba */
+.caja > small,
+.caja-resumen > small {
+    display: block;
+    color: #b88a32;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+}
+
+.caja h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 22px;
+    color: #e0ddd3;
+    margin: 8px 0 0 0;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+.caja {
+    background: #122738;
+    border: 1px solid #33444e;
+    padding: 22px;
+}
+
+.caja small {
+    color: #b88a32;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+.caja h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 22px;
+    color: #e0ddd3;
+    margin: 6px 0 0 0;
+}
+
+.caja hr {
+    border: none;
+    border-top: 1px solid #33444e;
+    margin: 16px 0;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* formulario .........................................................*/
+.campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo.doble {
+    grid-column: span 2;
+}
+
+.campo label {
+    color: #9e9c91;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.campo input {
+    background: #04010f;
+    border: 1px solid #33444e;
+    color: #d9d6c9;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #c9942d;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* metodos pago------------------------------------------------------------------- */
+.metodos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.metodo {
+    background: #04010f;
+    border: 1px solid #33444e;
+    color: #9e9c91;
+    padding: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.metodo:hover {
+    border-color: #c9942d;
+    color: #e0ddd3;
+}
+
+.metodo.activo {
+    border-color: #c9942d;
+    background: #193144;
+    color: #ffffff;
+}
+
+
+.panel {
+    display: none;
+}
+
+.panel.visible {
+    display: block;
+}
+
+.nota {
+    color: #718089;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.banco {
+    background: #04010f;
+    border: 1px solid #33444e;
+    padding: 16px;
+}
+
+.banco div {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #1a2833;
+    font-size: 13px;
+}
+
+.banco div:last-child {
+    border-bottom: none;
+}
+
+.banco span {
+    color: #53636c;
+}
+
+.banco b {
+    color: #d9d6c9;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Tarjeta ------------------------------------------------- */
+.tarjeta {
+    background: #0f2231;
+    border: 1px solid #486170;
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chip {
+    width: 36px;
+    height: 26px;
+    background: #c9942d;
+    border: 1px solid #ffe391;
+}
+
+.marca {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #c9942d;
+}
+
+.numero {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #f0ede6;
+}
+
+.datos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.datos small {
+    display: block;
+    color: #637785;
+    font-size: 9px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.datos span {
+    color: #d9d6c9;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* expediente ----------------------------------------------------------------------------------------- */
+
+.resumen {
+    display: block;
+}
+
+.caja-resumen {
+    background: #122738;
+    border: 1px solid #33444e;
+    padding: 22px;
+    display: block;
+}
+
+.caja-resumen > small {
+    color: #b88a32;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    display: block;
+}
+
+.caja-resumen hr {
+    border: none;
+    border-top: 1px solid #33444e;
+    margin: 14px 0;
+}
+
+.pieza {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.foto {
+    width: 65px;
+    height: 65px;
+    background: #04010f;
+    border: 1px solid #33444e;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.info h3 {
+    color: #e0ddd3;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 4px 0;
+}
+
+.info p {
+    color: #718089;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    margin: 0 0 4px 0;
+}
+
+.info b {
+    color: #c9942d;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+}
+
+.titulo-desglose {
+    display: block;
+    color: #b88a32;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    margin-top: 18px;
+}
+
+.linea {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #263943;
+}
+
+.linea span {
+    color: #53636c;
+    font-size: 13px;
+}
+
+.linea b {
+    color: #b8b8b1;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.linea.total {
+    border-top: 1px solid #33444e;
+    border-bottom: none;
+    padding-top: 12px;
+    margin-top: 6px;
+}
+
+.linea.total span {
+    color: #e0ddd3;
+    font-weight: bold;
+}
+
+.oro {
+    color: #c9942d !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.gratis {
+    color: #75c92d !important;
+}
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* boton ...................................................................... */
+.pagar {
+    display: block;
+    width: 100%;
+    background: #c9942d;
+    border: none;
+    padding: 13px 20px;
+    color: #101a20;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.pagar:hover {
+    background: #dba539;
+}
+
+.seguridad {
+    margin-top: 14px;
+    text-align: center;
+}
+
+.seguridad span {
+    color: #53636c;
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* mensaje compra -------------------------------------------------------------------------- */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 1, 15, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal.mostrar {
+    display: flex;
+}
+
+.exito {
+    background: #122738;
+    border: 1px solid #c9942d;
+    max-width: 440px;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+}
+
+.icono {
+    font-size: 32px;
+    color: #c9942d;
+    margin-bottom: 12px;
+}
+
+.exito small {
+    color: #b88a32;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.exito h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    color: #e0ddd3;
+    font-size: 22px;
+    margin: 8px 0 12px 0;
+}
+
+.exito p {
+    color: #718089;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.detalles {
+    background: #04010f;
+    border: 1px solid #33444e;
+    padding: 14px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.detalles div {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.detalles span {
+    color: #53636c;
+}
+
+.detalles b {
+    color: #d9d6c9;
+}
+
+
+@media (max-width: 900px) {
+    .pago {
+        grid-template-columns: 1fr;
+    }
+
+    .resumen {
+        order: -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .campos {
+        grid-template-columns: 1fr;
+    }
+
+    .campo.doble {
+        grid-column: span 1;
+    }
+
+    .metodos {
+        grid-template-columns: 1fr;
+    }
+}

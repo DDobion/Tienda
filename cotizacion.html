@@ -1,11 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Solicitar cotización · FORJA ·09</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/diseñolanding.css">
+    <link rel="stylesheet" href="css/cotizar.css">
+
 </head>
+
 <body>
-    <!-- tarjeta de cotización -->
+
+    <div id="navbar"></div>
+
+    <!-- migaja de pan --------------------------------------------- -->
+    <section class="cotizar-ruta">
+        <a href="catalogo.html">← Volver al catalogo</a>
+    </section>
+
+    <!-- encabezado --------------------------------------------- -->
+    <section class="cotizar-encabezado">
+
+        <small class="cotizar-etiqueta">SOLICITUD DE COTIZACIÓN</small>
+
+        <h1>Cotiza tu pieza con el taller</h1>
+
+        <p>
+            Cuéntanos qué necesitas y el equipo de FORJA ·09 te confirma
+            costo y tiempo de forja antes de comprometer el encargo.
+        </p>
+
+    </section>
+
+    <!-- formulario + panel lateral --------------------------------------------- -->
+    <section class="cotizar-contenido">
+
+        <div class="cotizar-layout">
+
+            <form class="cotizar-formulario" id="formularioCotizacion">
+
+                <div class="campo">
+                    <label for="nombreCotizacion">Nombre</label>
+                    <input type="text" id="nombreCotizacion" name="nombre" placeholder="Tu nombre">
+                </div>
+
+                <div class="campo">
+                    <label for="correoCotizacion">Correo</label>
+                    <input type="email" id="correoCotizacion" name="correo" placeholder="tucorreo@dominio.com">
+                </div>
+
+                <div class="campo">
+                    <label for="telefonoCotizacion">Teléfono (opcional)</label>
+                    <input type="tel" id="telefonoCotizacion" name="telefono" placeholder="Canal de contacto directo">
+                </div>
+
+                <div class="campo">
+                    <label for="piezaCotizacion">Pieza deseada</label>
+                    <input type="text" id="piezaCotizacion" name="pieza" placeholder="Nombre de la pieza o línea de producto">
+                </div>
+
+                <div class="campo">
+                    <label for="lineaCotizacion">Línea de producto</label>
+                    <select id="lineaCotizacion" name="linea">
+                        <option value="ad">Daño Físico (AD)</option>
+                        <option value="ap">Poder de Habilidad (AP)</option>
+                        <option value="def">Defensa y Tanque</option>
+                        <option value="sup">Soporte y Utilidad</option>
+                        <option value="mov">Movilidad y Botas</option>
+                        <option value="otro">Encargo fuera de catálogo</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="cantidadCotizacion">Cantidad</label>
+                    <input type="number" id="cantidadCotizacion" name="cantidad" value="1" min="1">
+                </div>
+
+                <div class="campo campo-mensaje">
+                    <label for="detalleCotizacion">Detalles del encargo</label>
+                    <textarea id="detalleCotizacion" name="detalle" rows="4" placeholder="Material, peso, propósito de combate o cualquier especificación relevante"></textarea>
+                </div>
+
+                <button type="submit" class="cotizar-boton">Solicitar cotización</button>
+
+                <div class="cotizar-mensaje" id="cotizarMensaje">
+                    ✓ Se está solicitando la cotización de <span id="cotizarMensajePieza">esta pieza</span>. El taller te contactará en menos de 24 horas.
+                </div>
+
+            </form>
+
+            <aside class="cotizar-lateral">
+
+                <div class="caja-lateral">
+
+                    <small>CÓMO FUNCIONA</small>
+                    <hr>
+
+                    <div class="cotizar-paso">
+                        <b>01</b>
+                        <span>El taller revisa tu solicitud y confirma disponibilidad de materiales.</span>
+                    </div>
+
+                    <div class="cotizar-paso">
+                        <b>02</b>
+                        <span>Recibes el costo y el tiempo de forja estimado por correo.</span>
+                    </div>
+
+                    <div class="cotizar-paso">
+                        <b>03</b>
+                        <span>Confirmas el encargo y la pieza entra a forja con número de expediente.</span>
+                    </div>
+
+                </div>
+
+                <div class="caja-lateral">
+
+                    <small>RESPALDO DEL TALLER</small>
+                    <hr>
+
+                    <div>
+                        <span>Certificado de forja</span>
+                        <b>Incluido</b>
+                    </div>
+
+                    <div>
+                        <span>Garantía</span>
+                        <b>90 días</b>
+                    </div>
+
+                    <div>
+                        <span>Tiempo de respuesta</span>
+                        <b>Menos de 24 horas</b>
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch("navbar.html")
+            .then(r => r.text())
+            .then(data => document.getElementById("navbar").innerHTML = data);
+        fetch("footer.html")
+            .then(r => r.text())
+            .then(data => document.getElementById("footer").innerHTML = data);
+
+        // Precarga el campo "pieza" si se llega desde una tarjeta de producto (?pieza=...).
+        const parametros = new URLSearchParams(window.location.search);
+        const piezaPrecargada = parametros.get("pieza");
+        const campoPieza = document.getElementById("piezaCotizacion");
+
+        if (piezaPrecargada) {
+            campoPieza.value = piezaPrecargada;
+        }
+
+        // Sin validación ni backend: solo muestra el mensaje de solicitud en pantalla.
+        const formularioCotizacion = document.getElementById("formularioCotizacion");
+        const cotizarMensaje = document.getElementById("cotizarMensaje");
+        const cotizarMensajePieza = document.getElementById("cotizarMensajePieza");
+
+        formularioCotizacion.addEventListener("submit", (evento) => {
+            evento.preventDefault();
+
+            cotizarMensajePieza.textContent = campoPieza.value.trim() || "esta pieza";
+
+            cotizarMensaje.classList.remove("mostrar");
+            void cotizarMensaje.offsetWidth;
+            cotizarMensaje.classList.add("mostrar");
+        });
+    </script>
+
 </body>
+
 </html>

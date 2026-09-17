@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/diseñolanding.css">
     <link rel="stylesheet" href="css/catalogo.css">
     <link rel="stylesheet" href="css/producto.css">
+    
 </head>
 
 <body>
@@ -20,14 +21,12 @@
         <a href="catalogo.html">← Volver al catálogo</a>
     </section>
 
-    <!-- Producto -->
+    <!-- Ficha de Producto -->
     <section class="producto-ficha">
         <div class="producto-galeria">
             <div class="producto-imagen-principal">
-                <img id="p-img-principal" src="" alt="Cargando...">
+                <img id="p-img-principal" src="" alt="Cargando pieza de forja...">
             </div>
-            <!-- !miniaturas, revisar cantidad y posicion -->
-            <div class="producto-miniaturas" id="p-miniaturas"></div>
         </div>
 
         <div class="producto-detalle">
@@ -42,8 +41,9 @@
             </div>
 
             <div class="producto-acciones">
-                <button class="principal">Agregar al pedido</button>    <!-- todom opciones de pago -->
-                <button class="secundario">Solicitar cotización</button>  <!-- todo,llevar a pagina de solicitud-->
+                <button class="principal" type="button" onclick="window.location.href ='pago.html'" >comprar</button>
+                <button class="secundario" type="button" onclick="window.location.href ='cotizacion.html'">
+                Solicitar cotización</button>
             </div>
 
             <div class="producto-especificaciones">
@@ -73,7 +73,7 @@
         </div>
     </section>
 
-    <!-- plantilla  -->
+    <!-- Información extendida --------------------------------------------->
     <section class="producto-extendido">
         <div class="extendido-columnas">
             <div class="extendido-principal">
@@ -94,22 +94,17 @@
             </div>
 
             <aside class="extendido-lateral">
-
                 <div class="caja-lateral">
-
                     <small>GARANTÍA Y DEVOLUCIONES</small>
                     <hr>
-
                     <div>
                         <span>Garantía de forja</span>
                         <b id="lateral-garantia">—</b>
                     </div>
-
                     <div>
                         <span>Devoluciones</span>
                         <b id="lateral-devoluciones">—</b>
                     </div>
-
                     <div>
                         <span>Certificado incluido</span>
                         <b id="lateral-certificado">—</b>
@@ -117,17 +112,14 @@
 
                     <small class="titulo-seccion">ENVÍO</small>
                     <hr>
-
                     <div>
                         <span>Tiempo estimado</span>
                         <b id="lateral-envio">—</b>
                     </div>
-
                     <div>
                         <span>Cobertura</span>
                         <b id="lateral-cobertura">—</b>
                     </div>
-
                 </div>
 
                 <div class="caja-lateral caja-ayuda">
@@ -137,34 +129,26 @@
                         Si necesitas una especificación distinta a la de catálogo,
                         el taller puede forjarla como encargo a medida.
                     </p>
-                    <a href="#contacto">Contactar al taller →</a>  <!-- todo, conectar a formulario preguntas -->
+                    <a href="index.html#contacto">Contactar al taller →</a>
                 </div>
-
             </aside>
         </div>
     </section>
 
-    <!-- Productos relacionados por categorisa-->
+    <!-- Productos relacionados -->
     <section class="producto-relacionados">
         <div class="titulo">
             <h2>Otras piezas de la misma línea</h2>
         </div>
-        <div class="grid-productos" id="grid-relacionados">
-            
-        </div>
+        <div class="grid-productos" id="grid-relacionados"></div>
     </section>
 
     <div id="footer"></div>
 
     <script>
-        
         fetch("navbar.html").then(r => r.text()).then(data => document.getElementById("navbar").innerHTML = data);
         fetch("footer.html").then(r => r.text()).then(data => document.getElementById("footer").innerHTML = data);
     </script>
-
-    <!-- base -->
     <script src="js/producto-render.js"></script>
-
-
 </body>
 </html>

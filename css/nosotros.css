@@ -1,0 +1,427 @@
+/* -----------------------------------------------------------
+   hero nosotros
+-------------------------------------------------------------------- */
+.nosotros-hero {
+    padding: 100px 9% 60px;
+    background: #04010f;
+    border-bottom: 1px solid #253741;
+}
+
+.nosotros-hero h1 {
+    font-size: 46px;
+    color: #e0ddd3;
+    line-height: 1.15;
+    margin: 12px 0 16px;
+}
+
+.nosotros-hero p {
+    color: #7d8b92;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 650px;
+}
+
+/* -----------------------------------------------------------
+   hitos (historia visual en bloques alternados)
+-------------------------------------------------------------------- */
+.hito {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    background: #060212;
+    border-bottom: 1px solid #253741;
+    min-height: 480px;
+}
+
+.hito.inverso {
+    grid-template-columns: 1fr 1.1fr;
+    background: #04010f;
+}
+
+.hito.inverso .visual {
+    order: 2;
+}
+
+.hito.inverso .info {
+    order: 1;
+}
+
+.hito .visual {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background: #091722;
+    overflow: hidden;
+}
+
+.hito .visual img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.hito:hover .visual img {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+.hito .plano {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(4, 1, 15, 0.9);
+    border: 1px solid #c9942d;
+    color: #c9942d;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 6px 10px;
+    z-index: 2;
+}
+
+.hito .info {
+    padding: 60px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hito .info h2 {
+    font-size: 32px;
+    color: #e0ddd3;
+    line-height: 1.2;
+    margin: 12px 0 14px;
+}
+
+.hito .info p {
+    color: #8f9fa7;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.hito .ficha {
+    display: flex;
+    gap: 30px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #1c2b36;
+}
+
+.hito .ficha div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hito .ficha span {
+    font-size: 11px;
+    color: #718089;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+}
+
+.hito .ficha b {
+    font-size: 14px;
+    color: #c9942d;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* -----------------------------------------------------------
+   galeria: 4 regiones
+-------------------------------------------------------------------- */
+.galeria {
+    padding: 70px 9%;
+    background: #060212;
+    border-bottom: 1px solid #253741;
+}
+
+.galeria .intro {
+    margin-bottom: 35px;
+}
+
+.galeria .intro h2 {
+    font-size: 32px;
+    color: #e0ddd3;
+    margin: 8px 0 10px;
+}
+
+.galeria .intro p {
+    color: #718089;
+    font-size: 15px;
+}
+
+.galeria .cuadricula {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.galeria .tarjeta {
+    background: #091722;
+    border: 1px solid #253741;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease;
+}
+
+.galeria .tarjeta:hover {
+    border-color: #c9942d;
+}
+
+.galeria .foto {
+    position: relative;
+    height: 220px;
+    background: #04010f;
+    overflow: hidden;
+}
+
+.galeria .foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.galeria .tarjeta:hover .foto img {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.galeria .region {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(4, 1, 15, 0.85);
+    border: 1px solid #c9942d;
+    color: #c9942d;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 3px 7px;
+}
+
+.galeria .cuerpo {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.galeria .cuerpo h3 {
+    font-size: 18px;
+    color: #e0ddd3;
+    margin-bottom: 8px;
+}
+
+.galeria .cuerpo p {
+    font-size: 13px;
+    color: #8f9fa7;
+    line-height: 1.5;
+}
+
+/* -----------------------------------------------------------
+   equipo artesanal
+-------------------------------------------------------------------- */
+.equipo {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    background: #04010f;
+    border-bottom: 1px solid #253741;
+    min-height: 440px;
+}
+
+.equipo .info {
+    padding: 60px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.equipo .info h2 {
+    font-size: 32px;
+    color: #e0ddd3;
+    line-height: 1.2;
+    margin: 12px 0 14px;
+}
+
+.equipo .info p {
+    color: #8f9fa7;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.equipo .lista {
+    list-style: none;
+    margin-top: 22px;
+    border-top: 1px solid #1c2b36;
+}
+
+.equipo .lista li {
+    padding: 10px 0;
+    border-bottom: 1px solid #1c2b36;
+    font-size: 13px;
+    color: #8f9fa7;
+}
+
+.equipo .lista span {
+    font-family: 'JetBrains Mono', monospace;
+    color: #c9942d;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.equipo .visual {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background: #091722;
+    overflow: hidden;
+}
+
+.equipo .visual img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+}
+
+.equipo .plano {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(4, 1, 15, 0.9);
+    border: 1px solid #c9942d;
+    color: #c9942d;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 6px 10px;
+    z-index: 2;
+}
+
+/* -----------------------------------------------------------
+   despacho e inspeccion
+-------------------------------------------------------------------- */
+.despacho {
+    padding: 70px 9%;
+    background: #060212;
+    border-bottom: 1px solid #253741;
+}
+
+.despacho .intro {
+    margin-bottom: 35px;
+}
+
+.despacho .intro h2 {
+    font-size: 32px;
+    color: #e0ddd3;
+    margin-top: 8px;
+}
+
+.despacho .tira {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.despacho .paso {
+    background: #091722;
+    border: 1px solid #253741;
+    overflow: hidden;
+}
+
+.despacho .media {
+    height: 160px;
+    background: #04010f;
+    position: relative;
+}
+
+.despacho .media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.65;
+}
+
+.despacho .datos {
+    padding: 22px;
+}
+
+.despacho .datos small {
+    font-family: 'JetBrains Mono', monospace;
+    color: #c9942d;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.despacho .datos h4 {
+    font-size: 17px;
+    color: #e0ddd3;
+    margin: 6px 0 8px;
+    font-family: Georgia, serif;
+}
+
+.despacho .datos p {
+    font-size: 13px;
+    color: #8f9fa7;
+    line-height: 1.55;
+}
+
+/* ==========================================================================
+   RESPONSIVO: NOSOTROS
+   ========================================================================== */
+
+/* --- Tablet --- */
+@media (max-width: 992px) {
+    .hito,
+    .hito.inverso,
+    .equipo {
+        grid-template-columns: 1fr;
+    }
+
+    .hito .visual,
+    .equipo .visual {
+        height: 300px;
+        min-height: 300px;
+        order: -1 !important;
+    }
+
+    .hito .info,
+    .equipo .info {
+        padding: 40px 7%;
+    }
+
+    .galeria .cuadricula {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .despacho .tira {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Móvil --- */
+@media (max-width: 600px) {
+    .nosotros-hero {
+        padding: 60px 7% 40px;
+    }
+
+    .nosotros-hero h1 {
+        font-size: 32px;
+    }
+
+    .galeria .cuadricula {
+        grid-template-columns: 1fr;
+    }
+
+    .hito .ficha {
+        flex-direction: column;
+        gap: 14px;
+    }
+}

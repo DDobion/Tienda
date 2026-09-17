@@ -5,6 +5,7 @@
     "categoria": "ad",
     "categoriaTexto": "PLT · AD",
     "linea": "Daño Físico (AD)",
+    "destacado": true,
     "precio": "$3,400.00",
     "descripcionCorta": "Aumenta drásticamente el impacto físico y potencia los impactos críticos.",
     "descripcion": "Pieza forjada con aleaciones densas de Piltover diseñada para maximizar la fuerza de choque en combates frontales prolongados.",
@@ -12,11 +13,7 @@
     "peso": "4.2 kg",
     "origen": "Piltover",
     "expediente": "EXP-0941",
-    "imagenes": [
-      "img/filo-1.jpg",
-      "img/filo-2.jpg",
-      "img/filo-3.jpg"
-    ],
+    "imagen": "img/filo-1.jpg",
     "garantia": "90 días de forja",
     "devoluciones": "15 días, sin muescas de combate",
     "certificado": "Sí, emitido por el taller",
@@ -47,9 +44,7 @@
     "peso": "3.8 kg",
     "origen": "Noxus / Taller 09",
     "expediente": "EXP-0942",
-    "imagenes": [
-      "img/sanguinaria-1.jpg"
-    ],
+    "imagen": "img/sanguinaria-1.jpg",
     "garantia": "60 días por corrosión",
     "devoluciones": "10 días, sello biológico intacto",
     "certificado": "Certificado de alquimia bélica",
@@ -80,9 +75,7 @@
     "peso": "3.1 kg",
     "origen": "Ionia / Piltover",
     "expediente": "EXP-0943",
-    "imagenes": [
-      "img/trinidad-1.jpg"
-    ],
+    "imagen": "img/trinidad-1.jpg",
     "garantia": "1 año (estructura garantizada)",
     "devoluciones": "30 días de prueba en taller",
     "certificado": "Sello de triple armonía",
@@ -112,9 +105,7 @@
     "peso": "6.5 kg",
     "origen": "Noxus",
     "expediente": "EXP-0944",
-    "imagenes": [
-      "img/cuchilla-1.jpg"
-    ],
+    "imagen": "img/cuchilla-1.jpg",
     "garantia": "90 días ante fracturas",
     "devoluciones": "15 días sin uso en combate",
     "certificado": "Certificado militar de Noxus",
@@ -136,6 +127,7 @@
     "categoria": "ap",
     "categoriaTexto": "PLT · AP",
     "linea": "Poder de Habilidad (AP)",
+    "destacado": true,
     "precio": "$3,600.00",
     "descripcionCorta": "Multiplica exponencialmente el poder mágico de cualquier hechicero o artífice.",
     "descripcion": "Prenda ceremonial tejida con hilos de maná concentrado capaz de actuar como amplificador rúnico para conjuros de alto calibre.",
@@ -143,9 +135,7 @@
     "peso": "0.6 kg",
     "origen": "Bandle / Zaun",
     "expediente": "EXP-0801",
-    "imagenes": [
-      "img/rabadon-1.jpg"
-    ],
+    "imagen": "img/rabadon-1.jpg",
     "garantia": "180 días de estabilidad rúnica",
     "devoluciones": "No admite devolución si se expone a vacío",
     "certificado": "Acta de seguridad mágica",
@@ -174,9 +164,7 @@
     "peso": "1.8 kg",
     "origen": "Targon / Piltover",
     "expediente": "EXP-0812",
-    "imagenes": [
-      "img/zhonya-1.jpg"
-    ],
+    "imagen": "img/zhonya-1.jpg",
     "garantia": "180 días (mecanismo cronológico)",
     "devoluciones": "No admite devolución si el sello temporal fue roto",
     "certificado": "Certificado de calibración rúnica",
@@ -205,9 +193,7 @@
     "peso": "2.2 kg",
     "origen": "Icathia / Taller 09",
     "expediente": "EXP-0820",
-    "imagenes": [
-      "img/vacio-1.jpg"
-    ],
+    "imagen": "img/vacio-1.jpg",
     "garantia": "60 días",
     "devoluciones": "15 días en estuche hermético",
     "certificado": "Permiso de manipulación peligrosa",
@@ -229,6 +215,7 @@
     "categoria": "def",
     "categoriaTexto": "PLT · DEF",
     "linea": "Defensa y Tanque",
+    "destacado": true,
     "precio": "$2,900.00",
     "descripcionCorta": "Acumula inercia mientras el portador se desplaza y descarga un golpe devastador.",
     "descripcion": "Armadura pectoral rescatada de naufragios en Aguas Turbias, reforzada con placas de hierro y remaches marinos.",
@@ -236,9 +223,7 @@
     "peso": "18.5 kg",
     "origen": "Aguas Turbias",
     "expediente": "EXP-0510",
-    "imagenes": [
-      "img/muerto-1.jpg"
-    ],
+    "imagen": "img/muerto-1.jpg",
     "garantia": "120 días contra perforación",
     "devoluciones": "30 días sin abolladuras estructurales",
     "certificado": "Garantía de placa reforzada",
@@ -267,9 +252,7 @@
     "peso": "21.0 kg",
     "origen": "Demacia / Taller 09",
     "expediente": "EXP-0515",
-    "imagenes": [
-      "img/randuin-1.jpg"
-    ],
+    "imagen": "img/randuin-1.jpg",
     "garantia": "1 año por defecto de amortiguador",
     "devoluciones": "15 días en caja de transporte",
     "certificado": "Homologación balística demaciana",
@@ -298,9 +281,7 @@
     "peso": "2.0 kg",
     "origen": "Targon",
     "expediente": "EXP-0301",
-    "imagenes": [
-      "img/redencion-1.jpg"
-    ],
+    "imagen": "img/redencion-1.jpg",
     "garantia": "90 días de tono armónico",
     "devoluciones": "20 días en estuche original",
     "certificado": "Bendición de campana",
@@ -324,14 +305,12 @@
     "linea": "Movilidad y Botas",
     "precio": "$900.00",
     "descripcionCorta": "Calzado aerodinámico diseñado para reducir la severidad de las ralentizaciones.",
-    "descripcion": "Botas de cuero flexible tratadas con aceites livianos y suelas estriadas para tracción rápida en lodo y adoquín.",
+    "descripcion": "Botas de cuero flexible tratadas con aceites livianos y sueras estriadas para tracción rápida en lodo y adoquín.",
     "material": "Cuero de Dracocan y Suela Vulcanizada",
     "peso": "1.1 kg",
     "origen": "Zaun",
     "expediente": "EXP-0105",
-    "imagenes": [
-      "img/botas-1.jpg"
-    ],
+    "imagen": "img/botas-1.jpg",
     "garantia": "45 días por desprendimiento de suela",
     "devoluciones": "7 días sin marcas de desgaste en suela",
     "certificado": "Talla y horma verificada",

@@ -1,0 +1,245 @@
+/* -----------------------------------------------------------
+   migaja de pan / encabezado
+-------------------------------------------------------------------- */
+
+.cotizar-ruta {
+    padding-bottom: 0;
+}
+
+.cotizar-ruta a {
+    color: #9e9c91;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+}
+
+.cotizar-ruta a:hover {
+    color: #c9942d;
+}
+
+.cotizar-encabezado {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.cotizar-etiqueta {
+    color: #b88a32;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+.cotizar-encabezado h1 {
+    font-size: 36px;
+    line-height: 1.15;
+    margin: 12px 0 12px;
+    color: #e0ddd3;
+}
+
+.cotizar-encabezado p {
+    color: #718089;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 520px;
+}
+
+
+/* -----------------------------------------------------------
+   layout: formulario + columna lateral
+-------------------------------------------------------------------- */
+
+.cotizar-contenido {
+    padding-top: 0;
+}
+
+.cotizar-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+
+/* -----------------------------------------------------------
+   formulario (reutiliza .campo de diseñolanding.css)
+-------------------------------------------------------------------- */
+
+.cotizar-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    background: #122738;
+    border: 1px solid #33444e;
+    padding: 26px;
+}
+
+.cotizar-formulario .campo-mensaje {
+    grid-column: 1 / -1;
+}
+
+.cotizar-boton {
+    grid-column: 1 / -1;
+    justify-self: start;
+
+    background: #c9942d;
+    border: none;
+    padding: 13px 22px;
+
+    color: #111a20;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cotizar-boton:hover {
+    background-color: #f8b73f;
+}
+
+
+/* -----------------------------------------------------------
+   mensaje de solicitud en pantalla
+-------------------------------------------------------------------- */
+
+.cotizar-mensaje {
+    grid-column: 1 / -1;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 4px;
+    padding: 12px 16px;
+
+    background: rgba(201, 148, 45, 0.1);
+    border: 1px solid #c9942d;
+    color: #d9c08a;
+
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.cotizar-mensaje.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+    animation: destelloEnvio 0.35s ease;
+}
+
+.cotizar-mensaje span {
+    color: #f0d9a8;
+    font-weight: bold;
+}
+
+
+/* -----------------------------------------------------------
+   columna lateral (reutiliza .caja-lateral de producto.css si se enlaza,
+   aquí se define localmente para que la página sea autosuficiente)
+-------------------------------------------------------------------- */
+
+.cotizar-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.caja-lateral {
+    background: #122738;
+    border: 1px solid #33444e;
+    padding: 18px;
+}
+
+.caja-lateral > small {
+    color: #b88a32;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+.caja-lateral hr {
+    border: none;
+    border-top: 1px solid #33444e;
+    margin: 14px 0;
+}
+
+.caja-lateral div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #263943;
+}
+
+.caja-lateral div:last-child {
+    border-bottom: none;
+}
+
+.caja-lateral span {
+    color: #53636c;
+    font-size: 13px;
+}
+
+.caja-lateral b {
+    color: #b8b8b1;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: right;
+}
+
+.cotizar-paso {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 10px 0;
+    border-bottom: 1px solid #263943;
+}
+
+.cotizar-paso:last-child {
+    border-bottom: none;
+}
+
+.cotizar-paso b {
+    flex-shrink: 0;
+
+    color: #c9942d;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.cotizar-paso span {
+    color: #9e9c91;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+
+/* -----------------------------------------------------------
+   responsivo
+-------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .cotizar-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .cotizar-formulario {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .cotizar-encabezado h1 {
+        font-size: 28px;
+    }
+}

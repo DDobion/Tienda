@@ -4,499 +4,543 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FORJA - Distrito del Progreso</title>
+    <title>FORJA ·09 - Distrito del Progreso</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="css/diseñolanding.css">
-
-    
-    <!--todo, FALTA DE AGREGAR TODO EL PANEL DE USUARIO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
-
 </head>
-
-
 
 <body>
 
     <div id="navbar"></div>
 
-    <!--  ---------------------------------------------------------------------->
-    <!-- heroi ----------------------------------------------------------------------->
+    <!-- hero -->
     <section class="hero" id="inicio">
-
         <img src="img/hero.jpg" alt="Forja ·09">
 
         <div class="texto">
-
-            <div class="etiqueta">
-                • Forjada en Piltover · Distribuida en toda Runeterra
-            </div>
-
             <h1>
-                La forja de<br>
-                Piltover que<br>
-                equipa a toda<br>
-                Runeterra.
+                Metal forjado con alma.<br>
+                Herramientas hechas<br>
+                para cuidarte.<br>
             </h1>
 
             <p>
-                Desde el Distrito del Progreso, FORJA ·09 diseña y
-                fabrica equipamiento de combate con licencia comercial
-                propia y distribución certificada a cada región del
-                continente.
+                En el corazón de Piltover no hacemos adornos de vitrina. Trabajamos el acero a fuego lento y a mano para darte equipamiento noble, probado y listo para acompañarte en cualquier camino de Runeterra.
             </p>
 
             <div class="botones">
-                <button class="principal" onclick="window.location.href='catalogo.html'"> <!-- todo, checar -->
-                    Ver catálogo completo
+                <button class="principal" onclick="window.location.href='catalogo.html'">
+                    Conoce nuestras piezas
                 </button>
-
-
             </div>
-
         </div>
-
-
-
     </section>
 
-    <!--  ------------------------------------------------------------------------->
-
-    <!-- calsificaciones de los itemos ------------------------------------------ -->
-    <section class="clasificaciones" id="catalogo">
-
-        <div class="titulo">
-
-            <div>
-                <h2>
-                    Cinco líneas de producto.<br>
-                    Un mismo estándar de<br>
-                    forja.
-                </h2>
-            </div>
-
-
-
+    <!-- clasificacion de items -->
+    <section class="clasificacion" id="catalogo">
+        <div class="intro">
+            <h2>Cinco formas de forjar. La misma entrega en cada golpe.</h2>
         </div>
 
-
-        <div class="productos">                             <!-- todo, Animmacion de las cajas -->
-
-            <article>
-                <small>PLT · AD</small>
-
-                <h3>Daño Físico (AD)</h3>
-
-                <p>
-                    Hojas, proyectiles y mecanismos de impacto
-                    calibrados para daño sostenido.
-                </p>
-
-                <a href="catalogo.html?categoria=ad">Ver línea AD</a>
+        <div class="tira">
+            <!-- 1. AD -->
+            <article class="item">
+                <div class="media">
+                    <img src="img/cat-ad-modelo.jpg" alt="Daño Físico (AD)" class="reposo">
+                    <img src="img/cat-ad-detalle.jpg" alt="Detalle AD" class="hover">
+                </div>
+                <div class="velo"></div>
+                <div class="info">
+                    <span class="codigo">PLT · AD</span>
+                    <h3>Daño Físico</h3>
+                    <p class="desc">
+                        Hojas firmes y balanceadas a pulso, templadas para responder de inmediato cuando más lo necesitas.
+                    </p>
+                    <a href="catalogo.html?categoria=ad" class="link">Ver piezas &rarr;</a>
+                </div>
             </article>
 
-
-            <article>
-                <small>PLT · AP</small>
-
-                <h3>Poder de Habilidad (AP)</h3>
-
-                <p>
-                    Núcleos arcanos y catalizadores diseñados
-                    para maximizar cada habilidad canalizada.
-                </p>
-
-                <a href="catalogo.html?categoria=ap">Ver línea AP</a>
+            <!-- 2. AP -->
+            <article class="item">
+                <div class="media">
+                    <img src="img/cat-ap-modelo.jpg" alt="Poder de Habilidad (AP)" class="reposo">
+                    <img src="img/cat-ap-detalle.jpg" alt="Detalle AP" class="hover">
+                </div>
+                <div class="velo"></div>
+                <div class="info">
+                    <span class="codigo">PLT · AP</span>
+                    <h3>Canalizadores Arcanos</h3>
+                    <p class="desc">
+                        Conductos mimados al milímetro para que tu energía fluya dócil y limpia, sin quemar tus palmas.
+                    </p>
+                    <a href="catalogo.html?categoria=ap" class="link">Ver piezas &rarr;</a>
+                </div>
             </article>
 
-
-            <article>
-                <small>PLT · DEF</small>                                <!-- cambiar el diseño de todos lo enlaces -->
-
-                <h3>Defensa y Tanque</h3>
-
-                <p>
-                    Placas y aleaciones de absorción certificadas
-                    para resistir asaltos prolongados.
-                </p>
-
-                <a href="catalogo.html?categoria=def">Ver línea defensiva</a>
+            <!-- 3. DEF -->
+            <article class="item">
+                <div class="media">
+                    <img src="img/cat-def-modelo.jpg" alt="Defensa y Tanque" class="reposo">
+                    <img src="img/cat-def-detalle.jpg" alt="Detalle DEF" class="hover">
+                </div>
+                <div class="velo"></div>
+                <div class="info">
+                    <span class="codigo">PLT · DEF</span>
+                    <h3>Defensa y Placas</h3>
+                    <p class="desc">
+                        Blindajes que absorben cada golpe para que tú solo te preocupes por seguir de pie junto a los tuyos.
+                    </p>
+                    <a href="catalogo.html?categoria=def" class="link">Ver piezas &rarr;</a>
+                </div>
             </article>
 
-
-            <article>
-                <small>PLT · SUP</small>
-
-                <h3>Soporte y Utilidad</h3>
-
-                <p>
-                    Compuestos de restauración y dispositivos que
-                    sostienen a un equipo completo en pie.
-                </p>
-
-                <a href="catalogo.html?categoria=sup">Ver línea de soporte</a>
+            <!-- 4. SUP -->
+            <article class="item">
+                <div class="media">
+                    <img src="img/cat-sup-modelo.jpg" alt="Soporte y Utilidad" class="reposo">
+                    <img src="img/cat-sup-detalle.jpg" alt="Detalle SUP" class="hover">
+                </div>
+                <div class="velo"></div>
+                <div class="info">
+                    <span class="codigo">PLT · SUP</span>
+                    <h3>Soporte y Utilidad</h3>
+                    <p class="desc">
+                        Mecanismos ligeros pensados para sanar, cubrir la retirada y sostener a tu equipo en las malas.
+                    </p>
+                    <a href="catalogo.html?categoria=sup" class="link">Ver piezas &rarr;</a>
+                </div>
             </article>
 
-
-            <article>
-                <small>PLT · MOV</small>
-
-                <h3>Movilidad y Botas</h3>
-
-                <p>
-                    Botas y mecanismos de propulsión ajustados
-                    para ganar un terreno antes que el rival.
-                </p>
-
-                <a href="catalogo.html?categoria=mov">Ver línea de movilidad</a>
+            <!-- 5. MOV -->
+            <article class="item">
+                <div class="media">
+                    <img src="img/cat-mov-modelo.jpg" alt="Movilidad y Botas" class="reposo">
+                    <img src="img/cat-mov-detalle.jpg" alt="Detalle MOV" class="hover">
+                </div>
+                <div class="velo"></div>
+                <div class="info">
+                    <span class="codigo">PLT · MOV</span>
+                    <h3>Botas y Movilidad</h3>
+                    <p class="desc">
+                        Ajuste suave y peso aligerado para devorar terreno sin fatigar tus piernas en marchas pesadas.
+                    </p>
+                    <a href="catalogo.html?categoria=mov" class="link">Ver piezas &rarr;</a>
+                </div>
             </article>
-
         </div>
-
     </section>
 
-    <!-- --------------------------------------------------------------------------- -->
-
-    <!-- licencia ----------------------------------------------------------------- -->
-    <section class="licencia" id="nosotros">
-
-        <div class="texto">
-
-            <h2>
-                Del Distrito del<br>
-                Progreso a cada<br>
-                región de<br>
-                Runeterra.
-            </h2>
-
+    <!-- barra de estadísticas -->
+    <section class="stats">
+        <div class="intro">
+            <h2>Cuentas claras y respeto por tu confianza</h2>
             <p>
-                FORJA ·09 opera desde el Distrito del Progreso,
-                en Piltover, con licencia comercial propia y una
-                red de distribución que llega a cada rincón del
-                continente.
+                Detrás de cada número hay personas reales. Cada lote que sale de nuestra mesa lleva el nombre del herrero que lo cuidó y el compromiso de responder por él.
             </p>
-
-            <p>
-                Compramos aleaciones en Zaun cuando son más
-                resistentes, importamos hielo templado de Freljord
-                cuando el filo lo exige, y encargamos catalizadores
-                de Shurima cuando el mercado local no alcanza.
-            </p>
-
         </div>
 
+        <div class="tira">
+            <article class="col">
+                <span class="num">100<small>%</small></span>
+                <span class="tag">Alcance de envío</span>
+                <p class="detalle">Llegamos directo a tus manos en Piltover, Zaun, el frío Freljord o las arenas de Shurima.</p>
+            </article>
 
-        <div class="registro">
+            <article class="col">
+                <span class="num">+14<small>k</small></span>
+                <span class="tag">Piezas distribuidas</span>
+                <p class="detalle">Más de catorce mil compañeros de viaje que hoy están en campo cumpliendo su deber.</p>
+            </article>
 
-            <small>
-                REGISTRO COMERCIAL · DISTRITO DEL PROGRESO
-            </small>
+            <article class="col">
+                <span class="num">48<small>hrs</small></span>
+                <span class="tag">Tiempo de forja</span>
+                <p class="detalle">Revisamos tu idea, encendemos el fogón y ponemos el primer golpe en marcha sin rodeos.</p>
+            </article>
 
-            <hr>
-
-            <div>
-                <span>Licencia</span>
-                <b>N.º 09 / Serie C</b>
-            </div>
-
-            <div>
-                <span>Actividad</span>
-                <b>Manufactura y comercio de equipamiento</b>
-            </div>
-
-            <div>
-                <span>Origen de materiales</span>
-                <b>Piltover, Zaun, Freljord, Shurima</b>
-            </div>
-
-            <div>
-                <span>Alcance de venta</span>
-                <b>Todas las regiones de Runeterra</b>
-            </div>
-
-            <div>
-                <span>Estado</span>
-                <b>Activo</b>
-            </div>
-
+            <article class="col">
+                <span class="num">99.2<small>%</small></span>
+                <span class="tag">Tasa de entrega conforme</span>
+                <p class="detalle">Si algo no queda a tu medida exacta, nos hacemos cargo de inmediato con garantía de 90 días.</p>
+            </article>
         </div>
-
     </section>
 
-    <!-- ------------------------------------------------------------------- -->
+    <!-- licencia / certificación -->
+    <section class="licencia-certificacion" id="nosotros">
+        <img src="img/fondoblanco.jpg" alt="Fondo Taller" class="licencia-fondo-img">
+        <div class="licencia-velo-claro"></div>
 
-    <!-- encargos ------------------------------------------------------------>
-    <section class="encargos">
-
-        <div class="titulo">
-
-            <h2>
-                Encargos a medida, con<br>
-                certificación de forja
-            </h2>
-
-        </div>
-
-
-        <div class="servicios">
-
-            <article>
-
-                <div class="icono">♥</div>
-
-                <h3>Diseño a especificación</h3>
-
+        <div class="licencia-contenedor">
+            <div class="licencia-editorial">
+                <span class="etiqueta">• PALABRA DE ARTESANO // PATENTE PILTOVER 09</span>
+                <h2>Forjamos con libertad para darte lo mejor de cuatro tierras.</h2>
                 <p>
-                    Definimos junto a ti el material, el peso y
-                    el propósito exacto de la pieza antes de forjarla.
+                    Elegimos ser independientes para no abaratar materiales ni apurar los tiempos de enfriamiento. Nos tomamos el trabajo de traer el mineral de donde mejor se da y lo moldeamos sin atajos para que sientas la diferencia al primer agarre.
                 </p>
 
-            </article>
+                <div class="materiales-desglose">
+                    <span class="materiales-titulo">El origen de lo que sostienes:</span>
+                    <div class="materiales-tags">
+                        <span><b>ZAUN</b> · Hierro curtido que no se quiebra</span>
+                        <span><b>FRELJORD</b> · Temple helado para un filo eterno</span>
+                        <span><b>SHURIMA</b> · Arenas que calman la energía</span>
+                    </div>
+                </div>
+            </div>
 
+            <div class="certificado-tarjeta">
+                <div class="certificado-cabecera">
+                    <div>
+                        <small>COMPROMISO DE CALIDAD</small>
+                        <h3>PATENTE N.º 09 / SERIE C</h3>
+                    </div>
+                    <div class="sello-digital">
+                        <span>TRABAJO</span>
+                        <b>HECHO OK</b>
+                    </div>
+                </div>
 
-            <article>
+                <hr class="certificado-divisor">
 
-                <div class="icono">♢</div>
+                <div class="certificado-datos">
+                    <div class="dato-fila">
+                        <span>Oficio</span>
+                        <b>Herrería y manufactura honesta</b>
+                    </div>
+                    <div class="dato-fila">
+                        <span>Tierras hermanas</span>
+                        <b>Piltover · Zaun · Freljord · Shurima</b>
+                    </div>
+                    <div class="dato-fila">
+                        <span>Cobertura de entrega</span>
+                        <b>Dondequiera que tengas un camino abierto</b>
+                    </div>
+                    <div class="dato-fila">
+                        <span>Nivel de ajuste</span>
+                        <b>Ajuste fino al pulso (tolerancia ±0.02mm)</b>
+                    </div>
+                    <div class="dato-fila">
+                        <span>Nuestra palabra</span>
+                        <b class="estado-vigente">● ACTIVA Y RESPALDADA EN TALLER</b>
+                    </div>
+                </div>
 
-                <h3>Certificación de forja</h3>
-
-                <p>
-                    Cada encargo sale con número de expediente
-                    propio que respalda su origen y las pruebas
-                    de calidad.
-                </p>
-
-            </article>
-
-
-            <article>
-
-                <div class="icono">⊙</div>
-
-                <h3>Inspección previa al envío</h3>
-
-                <p>
-                    Ninguna pieza sale del taller sin control de
-                    calidad y prueba de resistencia documentada.
-                </p>
-
-            </article>
-
+                <div class="certificado-pie">
+                    <span>FIRMADO Y VERIFICABLE EN LA ADUANA NORTE</span>
+                </div>
+            </div>
         </div>
-
-
-        <div class="solicitud">
-
-            <p>
-                Cuéntanos qué necesitas y el taller te confirma
-                tiempo de forja y costo antes de comprometer el encargo.
-            </p>
-
-            <button>Solicitar un encargo</button>
-
-        </div>
-
     </section>
 
-    <!--  ------------------------------------------------------------------>
-
-    <!-- reviews -- --------------------------------------------------------------->
-    <section class="reviews">
-
-        <div class="titulo">
-
-            <h2>
-                Clientes verificados por el<br>
-                taller
-            </h2>
-
-                                                                    <!-- !ACTUALIZAR EL DISEÑO DE TARJETAS -->
-
+    <!-- encargos -->
+    <section class="encargos" id="encargos">
+        <div class="encargos-cabecera">
+            <span class="etiqueta">• TRABAJEMOS JUNTOS // EL BANCO DE FORJA</span>
+            <h2>Cuéntanos qué necesitas para tu viaje</h2>
+            <p>Cada necesidad es distinta. Elige cómo quieres que trabajemos tu pieza y nos ponemos manos a la obra.</p>
         </div>
 
-
-        <div class="comentarios">
-
-            <article>
-
-                <p>
-                    "Pedí una placa de refuerzo a medida y
-                    llegó con la tolerancia exacta que pedí.
-                    No es lo común en un taller independiente."
-                </p>
-
-                <small>
-                    Comandante de Piltover · Muelles de Bandle
-                </small>
-
-            </article>
-
-
-            <article>
-
-                <p>
-                    "El catalizador que compré rindió el doble
-                    que uno de fabricación en serie. Volveré a
-                    encargar antes de la próxima campaña."
-                </p>
-
-                <small>
-                    Instructora de la Academia · Piltover
-                </small>
-
-            </article>
-
-
-            <article>
-
-                <p>
-                    "Confirmaron el pedido, avisaron el retraso
-                    si lo hubo, y el ticket de entrega coincide
-                    con lo pactado. Eso es raro de encontrar."
-                </p>
-
-                <small>
-                    Proveedor independiente · Zaun
-                </small>
-
-            </article>
-
+        <div class="tabs-nav">
+            <button type="button" class="tab-enlace activo" data-tab="tab-cero">01. Crearla desde cero</button>
+            <button type="button" class="tab-enlace" data-tab="tab-grabado">02. Grabados y runas</button>
+            <button type="button" class="tab-enlace" data-tab="tab-ajuste">03. Ajustar tu equipo actual</button>
         </div>
 
+        <!-- Panel 01 -->
+        <div class="tab-panel activo" id="tab-cero">
+            <div class="panel-visual">
+                <span class="plano-codigo">TRABAJO A MANO // DESDE CERO</span>
+                <img src="img/cat-ad-modelo.jpg" alt="Forja desde cero">
+            </div>
+            <div class="panel-info">
+                <span class="etiqueta">OPCIÓN 01</span>
+                <h3>Una pieza única nacida para tu mano</h3>
+                <p>Diseñamos y fundimos el arma completa adaptada a tu estatura, la fuerza de tu brazo y la forma en que combates.</p>
+                
+                <ul class="specs-lista">
+                    <li><span>Mineral puro:</span> Aleaciones escogidas a mano de Zaun o Freljord</li>
+                    <li><span>Equilibrio:</span> Balance fino al peso de tu empuñadura</li>
+                    <li><span>En el fogón:</span> 5 a 10 días de trabajo dedicado</li>
+                </ul>
+
+                <a href="cotizacion.html?tipo=cero" class="btn-forja">Empezar a diseñarla &rarr;</a>
+            </div>
+        </div>
+
+        <!-- Panel 02 -->
+        <div class="tab-panel" id="tab-grabado">
+            <div class="panel-visual">
+                <span class="plano-codigo">DETALLE FINO // GRABADO</span>
+                <img src="img/cat-ap-modelo.jpg" alt="Grabados y runas">
+            </div>
+            <div class="panel-info">
+                <span class="etiqueta">OPCIÓN 02</span>
+                <h3>Tu historia y tus símbolos marcados en el metal</h3>
+                <p>Inscripción cuidadosa y sellos personales que resisten el desgaste de los años sin debilitar la estructura del acero.</p>
+                
+                <ul class="specs-lista">
+                    <li><span>Opciones:</span> Runas antiguas, lemas personales o insignias de escuadra</li>
+                    <li><span>Cuidado:</span> Calado suave que respeta la solidez de la hoja</li>
+                    <li><span>Listo en:</span> 48 horas con prueba de firmeza</li>
+                </ul>
+
+                <a href="cotizacion.html?tipo=grabado" class="btn-forja">Pedir un grabado &rarr;</a>
+            </div>
+        </div>
+
+        <!-- Panel 03 -->
+        <div class="tab-panel" id="tab-ajuste">
+            <div class="panel-visual">
+                <span class="plano-codigo">CUIDADO DE EQUIPO // RESTAURACIÓN</span>
+                <img src="img/cat-def-modelo.jpg" alt="Ajuste y modificación">
+            </div>
+            <div class="panel-info">
+                <span class="etiqueta">OPCIÓN 03</span>
+                <h3>Nueva vida para tus piezas de confianza</h3>
+                <p>No tires lo que ya te ha protegido. Aliviamos peso, renovamos empuñaduras y reforzamos filos fatigados por el uso.</p>
+                
+                <ul class="specs-lista">
+                    <li><span>Mejoras:</span> Rebalanceo, alivio de carga o refuerzo de guardas</li>
+                    <li><span>Revisión:</span> Charla previa para evaluar el estado del metal</li>
+                    <li><span>En el banco:</span> 3 a 5 días con puesta a punto</li>
+                </ul>
+
+                <a href="cotizacion.html?tipo=ajuste" class="btn-forja">Revisar mi equipo &rarr;</a>
+            </div>
+        </div>
     </section>
 
-    <!-- -------------------------------------------------------------------- -->
+    <!-- productos destacados -->
+    <section class="destacados" id="destacados">
+        <div class="destacados-cabecera">
+            <div>
+                <span class="etiqueta">• LAS FAVORITAS // PREFERIDAS POR VIAJEROS</span>
+                <h2>Las piezas que más nos piden</h2>
+            </div>
+        </div>
+        <div class="contenedor-destacados" id="contenedorDestacados"></div>
+    </section>
 
-    <!-- dudasdudosas --------------------------------------------------------------->
+    <!-- reviews -->
+    <section class="reviews" id="testimonios">
+        <div class="encabezado">
+            <h2>Voces de quienes ya confían en nosotros</h2>
+            <p>Lo que dicen los exploradores, guardias y artesanos tras probar nuestras piezas en el camino real.</p>
+        </div>
+
+        <div class="panel">
+            <aside class="resumen">
+                <span class="tag">• BITÁCORA DEL TALLER</span>
+                <div class="puntaje">
+                    <h2>4.9</h2>
+                    <div class="estrellas">★★★★★</div>
+                </div>
+                <p class="nota">Basado en <b>1,420 opiniones</b> de personas que usan nuestro equipo a diario (+14k piezas en campo).</p>
+
+                <div class="barras">
+                    <div class="barra-fila">
+                        <span>5★</span>
+                        <div class="pista"><div class="relleno" style="width: 93%;"></div></div>
+                        <small>93%</small>
+                    </div>
+                    <div class="barra-fila">
+                        <span>4★</span>
+                        <div class="pista"><div class="relleno" style="width: 6%;"></div></div>
+                        <small>6%</small>
+                    </div>
+                    <div class="barra-fila">
+                        <span>3★</span>
+                        <div class="pista"><div class="relleno" style="width: 1%;"></div></div>
+                        <small>1%</small>
+                    </div>
+                </div>
+
+                <div class="metricas">
+                    <div><span>Tolerancia de forja</span><b>99.2%</b></div>
+                    <div><span>Entregas conformes</span><b>100%</b></div>
+                </div>
+            </aside>
+
+            <div class="cajas">
+                <article class="caja">
+                    <div class="top">
+                        <span class="estrellas">★★★★★</span>
+                        <small class="expediente">EXP-0941 · CLIENTE VERIFICADO</small>
+                    </div>
+                    <p class="texto">"Pedí una placa a medida temiendo que bailara en la montura, pero calzó como un guante a la primera. Da gusto tratar con herreros que escuchan lo que uno pide."</p>
+                    <div class="usuario">
+                        <div class="icono-persona">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="datos">
+                            <b>Capitán de Patrulla</b>
+                            <span>Distrito Norte · Piltover</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="caja">
+                    <div class="top">
+                        <span class="estrellas">★★★★★</span>
+                        <small class="expediente">EXP-0801 · CLIENTE VERIFICADO</small>
+                    </div>
+                    <p class="texto">"El catalizador no se calienta en la mano ni tras horas de práctica. Se nota el cariño y el tiempo que le metieron al tallado. Sin duda vuelvo a encargar."</p>
+                    <div class="usuario">
+                        <div class="icono-persona">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="datos">
+                            <b>Instructora Arcana</b>
+                            <span>Academia de Ciencias</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="caja">
+                    <div class="top">
+                        <span class="estrellas">★★★★★</span>
+                        <small class="expediente">EXP-0944 · CLIENTE VERIFICADO</small>
+                    </div>
+                    <p class="texto">"Tuvimos un percance con la crecida del río y me avisaron al momento. La pieza llegó perfecta y la atención fue de diez. Gente muy derecha y cumplidora."</p>
+                    <div class="usuario">
+                        <div class="icono-persona">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="datos">
+                            <b>Herrero de Enlace</b>
+                            <span>Zaun · Nivel Medio</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="caja">
+                    <div class="top">
+                        <span class="estrellas">★★★★★</span>
+                        <small class="expediente">EXP-0515 · CLIENTE VERIFICADO</small>
+                    </div>
+                    <p class="texto">"El paquete vino empacado a prueba de todo. Da tranquilidad abrir la caja y ver la firma del artesano que responde por tu arma antes de cruzar la frontera."</p>
+                    <div class="usuario">
+                        <div class="icono-persona">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="datos">
+                            <b>Guía de Caravana</b>
+                            <span>Frontera de Shurima</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- dudas / preguntas frecuentes -->
     <section class="dudas">
-
         <div class="titulo">
-
-            <h2>
-                Antes de encargar una<br>
-                pieza
-            </h2>
-
-
+            <h2>Queremos que encargues con total tranquilidad</h2>
         </div>
-
 
         <div class="preguntas">
-
             <details>
-                <summary>¿Los productos tienen garantía?</summary>
+                <summary>¿Qué respaldo tengo si la pieza sufre algún daño?</summary>
                 <p>
-                    Sí, cada pieza incluye certificado de forja con
-                    cobertura contra defectos de material o de
-                    manufactura durante los primeros 90 días.
+                    Cuentas con 90 días de garantía total. Si el metal presenta alguna falla en su estructura o en la fundición, la traes de vuelta al taller y la reparamos o forjamos de nuevo sin hacer preguntas difíciles.
                 </p>
             </details>
 
             <details>
-                <summary>¿Cómo se determinan los precios?</summary>
+                <summary>¿Cómo calculan el costo de mi encargo?</summary>
                 <p>
-                    El precio depende del material usado, la
-                    complejidad del diseño y la línea de producto
-                    a la que pertenece la pieza.
+                    Somos transparentes desde el día uno: solo cobramos el metal de calidad que usamos, las horas reales de trabajo en el yunque y la dificultad de tu diseño. Sin tarifas ocultas de última hora.
                 </p>
             </details>
 
             <details>
-                <summary>¿Cuál es la política de devoluciones?</summary>
+                <summary>¿Puedo cambiar de opinión si no me acomoda?</summary>
                 <p>
-                    Aceptamos devoluciones dentro de los primeros
-                    15 días siempre que la pieza no haya sido
-                    usada en combate.
+                    Claro que sí. Tienes 15 días desde que la recibes para sostenerla y revisarla con calma. Si sientes que no es para ti y aún no la has usado en combate, te devolvemos tu dinero o ajustamos el diseño.
                 </p>
             </details>
 
             <details>
-                <summary>¿Cuánto tarda el envío?</summary>
+                <summary>¿Cuánto tardará en llegar a mis manos?</summary>
                 <p>
-                    Entre 3 y 10 días hábiles, según la región   <!-- ?animacion fluida? o dejar asi -->
-                    de destino dentro de Runeterra.
+                    Normalmente toma entre 3 y 10 días hábiles según la distancia de tu región. Siempre te mantenemos al tanto de en qué tramo de la ruta va tu paquete.
                 </p>
             </details>
 
             <details>
-                <summary>¿A qué zonas llega el envío?</summary>
+                <summary>¿Llegan hasta mi zona?</summary>
                 <p>
-                    Distribuimos a Piltover, Zaun, Freljord,
-                    Shurima y el resto de las regiones registradas.
+                    Hacemos envíos frecuentes a Piltover, Zaun, Freljord y Shurima. Si vives en un punto más apartado, escríbenos y buscamos la forma de hacértela llegar con transporte de confianza.
                 </p>
             </details>
 
             <details>
-                <summary>¿Cómo sé que un producto es auténtico y de buena calidad?</summary>
+                <summary>¿Cómo compruebo que la forjaron ustedes?</summary>
                 <p>
-                    Cada producto lleva grabado su código de lote,
-                    verificable contra el registro comercial del taller.
+                    Cada pieza lleva grabada a mano su marca de taller única y viene acompañada de su ficha de banco para que verifiques su autenticidad dondequiera que vayas.
                 </p>
             </details>
-
         </div>
 
-
         <div class="contacto">
-
             <div class="contacto-info">
-                <h3>¿Más dudas?</h3>
-
+                <h3>¿Tienes una idea en mente?</h3>
                 <p>
-                    Cuéntanos qué necesitas y un asesor del taller
-                    te responde directo, ya sea una duda puntual
-                    o la cotización de una pieza.
+                    Escríbenos con total libertad. Te atiende directamente alguien del equipo para resolver tus dudas o ayudarte a calcular un presupuesto sin compromiso.
                 </p>
             </div>
 
             <form class="formulario-contacto" id="formularioContacto">
-
                 <div class="campo">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+                    <label for="nombre">¿Cómo te llamas?</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre o apodo" required>
                 </div>
 
                 <div class="campo">
-                    <label for="correo">Correo</label>
-                    <input type="email" id="correo" name="correo" placeholder="tucorreo@dominio.com">
+                    <label for="correo">¿A qué correo te respondemos?</label>
+                    <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
                 </div>
 
                 <div class="campo">
-                    <label for="motivo">Motivo</label>
+                    <label for="motivo">¿De qué trata tu mensaje?</label>
                     <select id="motivo" name="motivo">
-                        <option value="duda">Duda general</option>
-                        <option value="cotizacion">Cotización de una pieza</option>
-                        <option value="encargo">Seguimiento de un encargo</option>
+                        <option value="duda">Tengo una duda general</option>
+                        <option value="cotizacion">Quiero cotizar una pieza a medida</option>
+                        <option value="encargo">Consultar por un pedido en curso</option>
                     </select>
                 </div>
 
                 <div class="campo campo-mensaje">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="3" placeholder="Describe tu duda o lo que necesitas cotizar"></textarea>
+                    <label for="mensaje">Cuéntanos sobre tu encargo</label>
+                    <textarea id="mensaje" name="mensaje" rows="3" placeholder="Explícanos qué tipo de pieza buscas, para qué la usarás o qué detalles tienes pensados" required></textarea>
                 </div>
 
-                <button type="submit">Enviar mensaje</button>
+                <button type="submit">Enviar mensaje al taller</button>
 
                 <div class="confirmacion-envio" id="confirmacionEnvio">
-                    ✓ Mensaje enviado. El taller te responderá pronto.
+                    ✓ Mensaje recibido en el taller. Te responderemos muy pronto.
                 </div>
-
             </form>
-
         </div>
-
     </section>
 
     <div id="footer"></div>
 
-    <!-- animacion del formulario -->
-
     <script>
-        fetch("navbar.html")
-            .then(r => r.text())
-            .then(data => document.getElementById("navbar").innerHTML = data);
-
-        
         const formularioContacto = document.getElementById("formularioContacto");
         const confirmacionEnvio = document.getElementById("confirmacionEnvio");
         let temporizadorConfirmacion;
@@ -524,6 +568,76 @@
             .then(data => document.getElementById("footer").innerHTML = data);
     </script>
 
-</body>
+    <script>
+        const testimoniosCarrusel = document.getElementById("testimoniosCarrusel");
+        const testimoniosAnterior = document.getElementById("testimoniosAnterior");
+        const testimoniosSiguiente = document.getElementById("testimoniosSiguiente");
 
+        function desplazarTestimonios(direccion) {
+            const tarjeta = testimoniosCarrusel.querySelector(".testimonio-tarjeta");
+            if (!tarjeta) return;
+
+            const estiloCarrusel = getComputedStyle(testimoniosCarrusel);
+            const espacio = parseFloat(estiloCarrusel.columnGap || estiloCarrusel.gap) || 0;
+            const distancia = tarjeta.getBoundingClientRect().width + espacio;
+
+            testimoniosCarrusel.scrollBy({ left: direccion * distancia, behavior: "smooth" });
+        }
+
+        if (testimoniosAnterior && testimoniosSiguiente) {
+            testimoniosAnterior.addEventListener("click", () => desplazarTestimonios(-1));
+            testimoniosSiguiente.addEventListener("click", () => desplazarTestimonios(1));
+        }
+    </script>
+
+    <script>
+    document.querySelectorAll('.tab-enlace').forEach(boton => {
+        boton.addEventListener('click', () => {
+            const tabId = boton.getAttribute('data-tab');
+
+            document.querySelectorAll('.tab-enlace').forEach(b => b.classList.remove('activo'));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('activo'));
+
+            boton.classList.add('activo');
+            document.getElementById(tabId).classList.add('activo');
+        });
+    });
+    </script>
+    
+    <script>
+        fetch("data/productos.json")
+            .then(r => r.json())
+            .then(datos => {
+                const destacados = datos.filter(p => p.destacado);
+                const contenedor = document.getElementById("contenedorDestacados");
+                if (!contenedor) return;
+
+                contenedor.innerHTML = destacados.map((p, i) => {
+                   
+                    const foto = p.imagen || "img/cat-ad-modelo.jpg";
+                    const textoDesc = p.descripcionCorta || p.descripcion || "";
+
+                return `
+                    <article class="item-destacado">
+                        <div class="item-media">
+                            <img src="${foto}" alt="${p.nombre}">
+                            <span class="tag-lote">LOT // 0${i + 1}</span>
+                        </div>
+                        <div class="item-info">
+                            <small>${p.categoriaTexto || "PLT · " + p.categoria.toUpperCase()}</small>
+                            <h3>${p.nombre}</h3>
+                            <p>${textoDesc}</p>
+                            <div class="item-pie">
+                                <span class="precio">${p.precio}</span>
+                                <a href="producto.html?id=${p.id}" class="btn-accion">Ver &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join("");
+        })
+        .catch(err => console.error("Error al cargar destacados:", err));
+    </script>
+
+</body>
 </html>
