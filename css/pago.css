@@ -20,7 +20,7 @@
 }
 
 
-/* 1. Alineación superior perfecta y corte del sobrante */
+
 .pago {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
@@ -28,10 +28,10 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px 20px 80px 20px;
-    align-items: start; /* Quita el espacio vacío sobrante que se estiraba abajo */
+    align-items: start; 
 }
 
-/* 2. Igualar los topes superiores de ambas cajas */
+
 .formulario,
 .resumen {
     margin: 0;
@@ -43,11 +43,11 @@
     background: #122738;
     border: 1px solid #33444e;
     padding: 22px;
-    margin-top: 0; /* Asegura que ambas cajas comiencen exactamente en la misma línea */
+    margin-top: 0; 
     box-sizing: border-box;
 }
 
-/* 3. Normalizar el espaciado de los títulos de arriba */
+
 .caja > small,
 .caja-resumen > small {
     display: block;

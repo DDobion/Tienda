@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         article.className = "tarjeta-producto";
         article.dataset.categoria = item.categoria;
 
-        const imagenPrincipal = (item.imagenes && item.imagenes.length > 0) ? item.imagenes[0] : "";
+       const imagenPrincipal = item.imagen || (item.imagenes && item.imagenes.length > 0 ? item.imagenes[0] : "");
         const urlDetalle = `producto.html?id=${encodeURIComponent(item.id)}`;
 
         article.innerHTML = `

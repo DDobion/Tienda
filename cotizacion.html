@@ -16,7 +16,7 @@
 
     <div id="navbar"></div>
 
-    <!-- migaja de pan --------------------------------------------- -->
+   
     <section class="cotizar-ruta">
         <a href="catalogo.html">← Volver al catalogo</a>
     </section>
@@ -154,7 +154,7 @@
             .then(r => r.text())
             .then(data => document.getElementById("footer").innerHTML = data);
 
-        // Precarga el campo "pieza" si se llega desde una tarjeta de producto (?pieza=...).
+        
         const parametros = new URLSearchParams(window.location.search);
         const piezaPrecargada = parametros.get("pieza");
         const campoPieza = document.getElementById("piezaCotizacion");
@@ -163,7 +163,7 @@
             campoPieza.value = piezaPrecargada;
         }
 
-        // Sin validación ni backend: solo muestra el mensaje de solicitud en pantalla.
+       
         const formularioCotizacion = document.getElementById("formularioCotizacion");
         const cotizarMensaje = document.getElementById("cotizarMensaje");
         const cotizarMensajePieza = document.getElementById("cotizarMensajePieza");
