@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto · FORJA ·09</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <section class="contacto">
+        <div class="panel">
+            
+            <!-- Formulario -->
+            <form class="caja" id="formulario">
+                <span class="etiqueta">PASO 01 · CANAL DIRECTO</span>
+                <h1>Envíanos un mensaje</h1>
+
+                <div class="campo">
+                    <label for="nombre">NOMBRE Y APELLIDOS</label>
+                    <input type="text" id="nombre" placeholder="Ej. Roberto Valenzuela" >
+                </div>
+
+                <div class="fila">
+                    <div class="campo">
+                        <label for="correo">CORREO ELECTRÓNICO</label>
+                        <input type="email" id="correo" placeholder="correo@ejemplo.com" >
+                    </div>
+                    <div class="campo">
+                        <label for="telefono">TELÉFONO</label>
+                        <input type="tel" id="telefono" placeholder="+52 449 000 0000">
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">MENSAJE O CONSULTA</label>
+                    <textarea id="mensaje" rows="4" placeholder="Escribe tu consulta sobre forja, licencias o encargos..." ></textarea>
+                </div>
+
+                <button type="submit" class="boton">ENVIAR MENSAJE</button>
+
+                <div class="aviso" id="aviso">
+                    ✓ CONSULTA REGISTRADA. RESPONDEREMOS A TU CORREO EN MENOS DE 24 HRS.
+                </div>
+            </form>
+
+            <!-- Lateral -->
+            <aside class="lateral">
+                <div class="caja">
+                    <span class="etiqueta">EXPEDIENTE DE CONTACTO</span>
+                    <h2>Nuestras Redes</h2>
+                    <p class="desc">Síguenos para ver piezas recién terminadas, pruebas de forja en vivo y avisos de llegada de nuevos lotes.</p>
+
+                    <div class="lista">
+                        <div class="item">
+                            <span>Instagram</span>
+                            <a href="#">@armeria_piltover</a>
+                        </div>
+                        <div class="item">
+                            <span>TikTok</span>
+                            <a href="#">@taller_forja</a>
+                        </div>
+                        <div class="item">
+                            <span>X (Twitter)</span>
+                            <a href="#">@ArmeriaNorte</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="caja">
+                    <span class="etiqueta">DISPONIBILIDAD DE BANCO</span>
+                    <div class="lista">
+                        <div class="item">
+                            <span>Atención al Cliente</span>
+                            <b class="verde">10:00 AM - 7:00 PM</b>
+                        </div>
+                        <div class="item">
+                            <span>Correo Directo</span>
+                            <b>contacto@armeria.com</b>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch("navbar.html").then(r => r.text()).then(d => document.getElementById("navbar").innerHTML = d);
+        fetch("footer.html").then(r => r.text()).then(d => document.getElementById("footer").innerHTML = d);
+
+        const form = document.getElementById("formulario");
+        const aviso = document.getElementById("aviso");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            aviso.classList.remove("visible");
+            void aviso.offsetWidth;
+            aviso.classList.add("visible");
+            form.reset();
+            setTimeout(() => {
+                aviso.classList.remove("visible");
+            }, 4000);
+        });
+    </script>
+</body>
+</html>

@@ -97,7 +97,7 @@ button:hover {
     color: #7d8b92;
     font-size: 18px;
     line-height: 1.7;
-    max-width: 350px;
+    max-width: 500px;
 }
 
 .hero::after {
@@ -122,10 +122,13 @@ button:hover {
 .principal {
     background: #c9942d;
     border: none;
-    padding: 12px 18px;
     font-size: 15px;
     font-weight: bold;
     color: #101a20;
+    padding: 16px 36px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
 }
 
 /* ---------------------------------------------------------
@@ -576,172 +579,164 @@ button:hover {
     color: #7e8183;
     letter-spacing: 1px;
 }
+/* ------------------------------------------------------------------------------------
+   Proceso de Certificación 
+-------------------------------------------------------------------------------------- */
+.pilares-certificacion {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(88, 87, 87, 0.5);
+}
+
+.pilares-etiqueta {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #a37925;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.pilares-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pilares-lista p {
+    font-size: 13px;
+    color: #5f5e5d;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.pilares-lista b {
+    color: #686868;
+    font-weight: 600;
+}
+
 
 /* ------------------------------------------------------------------------------------
-   encargos 
+   Más motivos para elegirnos 
 -------------------------------------------------------------------------------------- */
 .encargos {
-    background: #232324;
-    border-top: 1px solid #253741;
-    border-bottom: 1px solid #253741;
-    padding: 70px 9%;
+ 
+    background: radial-gradient(circle at 50% 10%, #1a171c 0%, #0d0b0e 80%);
+    padding: 85px 9%;
+    border-top: 1px solid rgba(201, 148, 45, 0.25);
+    border-bottom: 1px solid rgba(201, 148, 45, 0.25);
 }
 
 .encargos-cabecera {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .encargos-cabecera h2 {
     font-size: 34px;
-    color: #e0ddd3;
-    margin: 8px 0 10px;
+    font-weight: bold;
+    color: #ebdcb9; /* Dorado marfil tenue */
+    letter-spacing: -0.5px;
 }
 
-.encargos-cabecera p {
-    color: #718089;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.tabs-nav {
-    display: flex;
-    gap: 10px;
-    border-bottom: 1px solid #b1b4b6;
-    margin-bottom: 35px;
-}
-
-.tabs-nav button.tab-enlace {
-    background: transparent !important;
-    box-shadow: none !important;
-    border: none;
-    border-bottom: 2px solid transparent;
-    color: #8f9091;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    padding: 12px 18px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.tabs-nav button.tab-enlace:hover {
-    color: #e0ddd3 !important;
-    border-bottom-color: #ccd4da;
-}
-
-.tabs-nav button.tab-enlace.activo {
-    color: #c9942d !important;
-    border-bottom-color: #c9942d;
-}
-
-.tab-panel {
-    display: none;
-    grid-template-columns: 1fr 1fr; 
-    gap: 0;                          
-    padding: 0;                      
-    background: #494949;
-    border: 1px solid #253741;
-    overflow: hidden;                
-}
-
-.tab-panel.activo {
+.grid-motivos {
     display: grid;
-    animation: aparecerTab 0.3s ease;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
 }
 
-@keyframes aparecerTab {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.panel-visual {
+.tarjeta-motivo {
     position: relative;
-    width: 100%;
-    min-height: 100%;              
-    background: #04010f;
-}
-
-.panel-visual img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;              
-    display: block;
-}
-
-.plano-codigo {
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    background: rgba(4, 1, 15, 0.9);
-    border: 1px solid #c9942d;
-    color: #c9942d;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    padding: 5px 9px;
-    z-index: 2;
-}
-
-.panel-info {
-    padding: 40px;                   
+    border-radius: 0; /* Sin bordes redondeados */
+    padding: 38px 24px 115px 24px;
+    text-decoration: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
 }
 
-.panel-info .etiqueta {
-    align-self: flex-start;
+/* --- Nuevas Tonalidades de Tarjetas --- */
+
+/* 1. Cobre Forjado (Encargos) */
+.tarjeta-motivo:nth-child(1) {
+    background: linear-gradient(180deg, #2b1a14 0%, #120905 100%);
 }
 
-.panel-info h3 {
-    font-size: 26px;
-    color: #e0ddd3;
-    margin: 14px 0 10px;
+/* 2. Neón Zaun (Minerales) */
+.tarjeta-motivo:nth-child(2) {
+    background: linear-gradient(180deg, #12241d 0%, #060f0b 100%);
 }
 
-.panel-info p {
-    color: #c1c7ca;
+/* 3. Magia Arcana (Envíos) */
+.tarjeta-motivo:nth-child(3) {
+    background: linear-gradient(180deg, #23162b 0%, #0f0714 100%);
+}
+
+/* 4. Acero Noche (Garantía) */
+.tarjeta-motivo:nth-child(4) {
+    background: linear-gradient(180deg, #1c2024 0%, #090b0d 100%);
+}
+
+/* Hover con brillo dorado y sombra profunda */
+.tarjeta-motivo:hover {
+    transform: translateY(-5px);
+    border-color: #d4a343;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.8);
+}
+
+.tarjeta-motivo h3 {
+    font-size: 21px;
+    font-weight: bold;
+    color: #f5f0e6;
+    margin-bottom: 14px;
+    line-height: 1.3;
+}
+
+.tarjeta-motivo p {
     font-size: 14px;
+    color: #a69f97;
     line-height: 1.6;
 }
 
-.specs-lista {
-    list-style: none;
-    margin: 20px 0 26px;
-    padding: 0;
-    border-top: 1px solid #1c2b36;
+/* Ícono en la esquina inferior */
+.icono-esquina {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(212, 163, 67, 0.22) 0%, rgba(212, 163, 67, 0.02) 75%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4a343;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.specs-lista li {
-    padding: 10px 0;
-    border-bottom: 1px solid #1c2b36;
-    font-size: 13px;
-    color: #bfc4c7;
+.tarjeta-motivo:hover .icono-esquina {
+    transform: scale(1.12);
+    color: #f7c768;
 }
 
-.specs-lista span {
-    color: #e0ddd3;
-    font-weight: bold;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    margin-right: 6px;
+/* Responsivo */
+@media (max-width: 1024px) {
+    .grid-motivos {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.btn-forja {
-    align-self: flex-start;
-    background: #bb954a;
-    color: #101a20;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 12px 22px;
-    transition: background-color 0.2s ease;
+@media (max-width: 600px) {
+    .grid-motivos {
+        grid-template-columns: 1fr;
+    }
 }
 
-.btn-forja:hover {
-    background: #f8b73f;
-}
+
 
 /* ------------------------------------------------------------------------------------
    destacados 
@@ -1206,7 +1201,9 @@ button:hover {
     color: #718089;
     font-size: 14px;
     line-height: 1.6;
-    max-width: 480px;
+    max-width:  1000px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .formulario-contacto {

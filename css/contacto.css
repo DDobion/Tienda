@@ -1,0 +1,227 @@
+:root {
+    --bg-profundo: #04010f;
+    --bg-panel: #091722;
+    --metal-oscuro: #22313a;
+    --metal-medio: #3c4b54;
+    --metal-texto: #8f9fa7;
+    --claro-arena: #dad6ca;
+    --claro-pergamino: #e8e5dc;
+    --claro-brillo: #f5f4ef;
+    --dorado-base: #c9942d;
+    --dorado-brillo: #f8b73f;
+    --dorado-sombra: rgba(201, 148, 45, 0.15);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-profundo);
+    color: var(--claro-arena);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contacto {
+    margin: 0;
+    padding: 30px 8% 80px;
+    background-color: var(--bg-profundo);
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.contacto * {
+    box-sizing: border-box;
+}
+
+.panel {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Cajas */
+.caja {
+    background-color: var(--bg-panel);
+    border: 1px solid var(--metal-oscuro);
+    padding: 36px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.caja:hover {
+    border-color: var(--dorado-base);
+    box-shadow: 0 0 15px var(--dorado-sombra);
+}
+
+.etiqueta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--dorado-base);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.caja h1,
+.caja h2 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    color: var(--claro-brillo);
+    margin: 0 0 24px 0;
+    font-weight: normal;
+}
+
+.caja h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.desc {
+    color: var(--metal-texto);
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--metal-oscuro);
+}
+
+/* Campos */
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.campo label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--metal-texto);
+    letter-spacing: 1px;
+}
+
+.campo input,
+.campo textarea {
+    background-color: var(--bg-profundo);
+    border: 1px solid var(--metal-medio);
+    color: var(--claro-pergamino);
+    padding: 13px 16px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: var(--dorado-base);
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+/* Boton y aviso */
+.boton {
+    width: 100%;
+    background-color: var(--dorado-base);
+    border: none;
+    padding: 15px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--bg-profundo);
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton:hover {
+    background-color: var(--dorado-brillo);
+    box-shadow: 0 0 14px var(--dorado-sombra);
+}
+
+.aviso {
+    display: none;
+    margin-top: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--claro-arena);
+    line-height: 1.5;
+}
+
+.aviso.visible {
+    display: block;
+    animation: aparecer 0.3s ease forwards;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Lista */
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    padding-bottom: 4px;
+}
+
+.item span {
+    color: var(--metal-texto);
+}
+
+.item a,
+.item b {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--claro-pergamino);
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.item a:hover {
+    color: var(--dorado-base);
+}
+
+.item .verde {
+    color: #48bb78;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .fila {
+        grid-template-columns: 1fr;
+    }
+    .caja {
+        padding: 24px;
+    }
+}
