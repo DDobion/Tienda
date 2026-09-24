@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito · FORJA ·09</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/carrito.css">
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <section class="carrito">
+        <div class="panel">
+
+      
+            <div class="lista">
+                <span class="etiqueta">ORDEN · EN BANCO</span>
+                <h1>Piezas en Espera</h1>
+
+                <article class="item">
+                    <img src="img/cat-ad-modelo.jpg" alt="Filo del Infinito">
+                    
+                    <div class="info">
+                        <small>PLT · AD</small>
+                        <h2>Filo del Infinito</h2>
+                        <span>EXP-0941</span>
+                    </div>
+
+                    <div class="control">
+                        <button type="button" class="menos">−</button>
+                        <input type="number" value="1" min="1" readonly>
+                        <button type="button" class="mas">+</button>
+                    </div>
+
+                    <div class="subtotal">
+                        <b>$3,400.00</b>
+                        <button type="button" class="quitar">Eliminar</button>
+                    </div>
+                </article>
+
+                <article class="item">
+                    <img src="img/cat-ap-modelo.jpg" alt="Sombrero de Rabadon">
+                    
+                    <div class="info">
+                        <small>PLT · AP</small>
+                        <h2>Sombrero Mortífero</h2>
+                        <span>EXP-0801</span>
+                    </div>
+
+                    <div class="control">
+                        <button type="button" class="menos">−</button>
+                        <input type="number" value="1" min="1" readonly>
+                        <button type="button" class="mas">+</button>
+                    </div>
+
+                    <div class="subtotal">
+                        <b>$3,600.00</b>
+                        <button type="button" class="quitar">Eliminar</button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Resumen lateral -->
+            <aside class="resumen">
+                <div class="caja">
+                    <span class="etiqueta">CUENTAS</span>
+                    <h2>Resumen</h2>
+
+                    <div class="filas">
+                        <div class="fila">
+                            <span>Subtotal piezas</span>
+                            <b>$7,000.00</b>
+                        </div>
+                        <div class="fila">
+                            <span>Envío regional</span>
+                            <b>$120.00</b>
+                        </div>
+                        <div class="fila">
+                            <span>Aseguramiento</span>
+                            <b>$45.00</b>
+                        </div>
+                    </div>
+
+                    <div class="total">
+                        <span>Total a pagar</span>
+                        <b>$7,165.00</b>
+                    </div>
+
+                    <button type="button" class="boton" onclick="window.location.href='pago.html'">
+                        FINALIZAR COMPRA
+                    </button>
+                    
+                    <a href="catalogo.html" class="seguir">← Continuar viendo armas</a>
+                </div>
+            </aside>
+
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch("navbar.html").then(r => r.text()).then(d => document.getElementById("navbar").innerHTML = d);
+        fetch("footer.html").then(r => r.text()).then(d => document.getElementById("footer").innerHTML = d);
+    </script>
+</body>
+</html>
