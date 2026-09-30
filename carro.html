@@ -3,96 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito · FORJA ·09</title>
+    <title>Carrito · FORJA · 09</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/carrito.css">
 </head>
-<body>
+<body class="carro-body">
 
     <div id="navbar"></div>
 
-    <section class="carrito">
-        <div class="panel">
+    <section class="carro-seccion-principal">
+        <div class="carro-contenedor-panel">
 
-      
-            <div class="lista">
-                <span class="etiqueta">ORDEN · EN BANCO</span>
-                <h1>Piezas en Espera</h1>
-
-                <article class="item">
-                    <img src="img/cat-ad-modelo.jpg" alt="Filo del Infinito">
+            <!-- Columna Izquierda: Lista de Piezas -->
+            <div class="carro-columna-lista">
+                
+                <div class="carro-encabezado-lista">
                     
-                    <div class="info">
-                        <small>PLT · AD</small>
-                        <h2>Filo del Infinito</h2>
-                        <span>EXP-0941</span>
-                    </div>
-
-                    <div class="control">
-                        <button type="button" class="menos">−</button>
-                        <input type="number" value="1" min="1" readonly>
-                        <button type="button" class="mas">+</button>
-                    </div>
-
-                    <div class="subtotal">
-                        <b>$3,400.00</b>
-                        <button type="button" class="quitar">Eliminar</button>
-                    </div>
-                </article>
-
-                <article class="item">
-                    <img src="img/cat-ap-modelo.jpg" alt="Sombrero de Rabadon">
+                    <h1 class="carro-titulo-principal">Piezas en Espera</h1>
                     
-                    <div class="info">
-                        <small>PLT · AP</small>
-                        <h2>Sombrero Mortífero</h2>
-                        <span>EXP-0801</span>
-                    </div>
+                    <!-- Control global para Seleccionar Todo -->
+                    <label class="carro-checkbox-todos">
+                        <input type="checkbox" id="carro-select-all" checked>
+                        <span>Seleccionar todas las piezas</span>
+                    </label>
+                </div>
 
-                    <div class="control">
-                        <button type="button" class="menos">−</button>
-                        <input type="number" value="1" min="1" readonly>
-                        <button type="button" class="mas">+</button>
-                    </div>
+                <!-- Caja Contenedora de Items -->
+                <div class="carro-caja-items">
 
-                    <div class="subtotal">
-                        <b>$3,600.00</b>
-                        <button type="button" class="quitar">Eliminar</button>
-                    </div>
-                </article>
+                    <!-- Producto 1 -->
+                    <article class="carro-tarjeta-item" data-precio="3400">
+                        <div class="carro-item-seleccion">
+                            <input type="checkbox" class="carro-item-check" checked>
+                        </div>
+
+                        <div class="carro-item-foto">
+                            <img src="img/cat-ad-modelo.jpg" alt="Filo del Infinito">
+                        </div>
+                        
+                        <div class="carro-item-detalles">
+                            <span class="carro-item-categoria">PLT · AD</span>
+                            <h2 class="carro-item-nombre">Filo del Infinito</h2>
+                            <span class="carro-item-codigo">EXP-0941</span>
+                        </div>
+
+                        <div class="carro-item-controles">
+                            <button type="button" class="carro-btn-menos">−</button>
+                            <input type="number" class="carro-input-cantidad" value="1" min="1" readonly>
+                            <button type="button" class="carro-btn-mas">+</button>
+                        </div>
+
+                        <div class="carro-item-precio-caja">
+                            <b class="carro-item-subtotal-texto">$3,400.00</b>
+                            <button type="button" class="carro-btn-eliminar">Eliminar</button>
+                        </div>
+                    </article>
+
+                    <!-- Producto 2 -->
+                    <article class="carro-tarjeta-item" data-precio="3600">
+                        <div class="carro-item-seleccion">
+                            <input type="checkbox" class="carro-item-check" checked>
+                        </div>
+
+                        <div class="carro-item-foto">
+                            <img src="img/cat-ap-modelo.jpg" alt="Sombrero Mortífero">
+                        </div>
+                        
+                        <div class="carro-item-detalles">
+                            <span class="carro-item-categoria">PLT · AP</span>
+                            <h2 class="carro-item-nombre">Sombrero Mortífero</h2>
+                            <span class="carro-item-codigo">EXP-0801</span>
+                        </div>
+
+                        <div class="carro-item-controles">
+                            <button type="button" class="carro-btn-menos">−</button>
+                            <input type="number" class="carro-input-cantidad" value="1" min="1" readonly>
+                            <button type="button" class="carro-btn-mas">+</button>
+                        </div>
+
+                        <div class="carro-item-precio-caja">
+                            <b class="carro-item-subtotal-texto">$3,600.00</b>
+                            <button type="button" class="carro-btn-eliminar">Eliminar</button>
+                        </div>
+                    </article>
+
+                </div>
             </div>
 
-            <!-- Resumen lateral -->
-            <aside class="resumen">
-                <div class="caja">
-                    <span class="etiqueta">CUENTAS</span>
-                    <h2>Resumen</h2>
+            <!-- Columna Derecha: Resumen de Cuentas -->
+            <aside class="carro-columna-resumen">
+                <div class="carro-caja-resumen">
+                    <span class="carro-etiqueta-gold">CUENTAS</span>
+                    <h2 class="carro-titulo-resumen">Resumen</h2>
 
-                    <div class="filas">
-                        <div class="fila">
+                    <div class="carro-filas-desglose">
+                        <div class="carro-fila-linea">
                             <span>Subtotal piezas</span>
-                            <b>$7,000.00</b>
+                            <b id="carro-resumen-subtotal">$7,000.00</b>
                         </div>
-                        <div class="fila">
+                        <div class="carro-fila-linea">
                             <span>Envío regional</span>
-                            <b>$120.00</b>
+                            <b id="carro-resumen-envio">$120.00</b>
                         </div>
-                        <div class="fila">
+                        <div class="carro-fila-linea">
                             <span>Aseguramiento</span>
-                            <b>$45.00</b>
+                            <b id="carro-resumen-seguro">$45.00</b>
                         </div>
                     </div>
 
-                    <div class="total">
+                    <div class="carro-bloque-total">
                         <span>Total a pagar</span>
-                        <b>$7,165.00</b>
+                        <b id="carro-resumen-total">$7,165.00</b>
                     </div>
 
-                    <button type="button" class="boton" onclick="window.location.href='pago.html'">
+                    <button type="button" class="carro-btn-finalizar" onclick="window.location.href='pago.html'">
                         FINALIZAR COMPRA
                     </button>
                     
-                    <a href="catalogo.html" class="seguir">← Continuar viendo armas</a>
+                    <a href="catalogo.html" class="carro-enlace-volver">← Continuar viendo armas</a>
                 </div>
             </aside>
 
@@ -102,8 +130,102 @@
     <div id="footer"></div>
 
     <script>
+        // Carga de Navbar y Footer externos
         fetch("navbar.html").then(r => r.text()).then(d => document.getElementById("navbar").innerHTML = d);
         fetch("footer.html").then(r => r.text()).then(d => document.getElementById("footer").innerHTML = d);
+
+        // Lógica interactiva del Carrito
+        document.addEventListener("DOMContentLoaded", () => {
+            const selectAllCheck = document.getElementById("carro-select-all");
+            const itemChecks = document.querySelectorAll(".carro-item-check");
+            const items = document.querySelectorAll(".carro-tarjeta-item");
+
+            const COSTO_ENVIO = 120;
+            const COSTO_SEGURO = 45;
+
+            function formatearMoneda(monto) {
+                return "$" + monto.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            }
+
+            function calcularTotales() {
+                let subtotalAcumulado = 0;
+                let hayItemsSeleccionados = false;
+
+                document.querySelectorAll(".carro-tarjeta-item").forEach(item => {
+                    const check = item.querySelector(".carro-item-check");
+                    const inputCant = item.querySelector(".carro-input-cantidad");
+                    const textoSubtotal = item.querySelector(".carro-item-subtotal-texto");
+                    const precioUnitario = parseFloat(item.getAttribute("data-precio"));
+                    const cantidad = parseInt(inputCant.value) || 1;
+
+                    const totalItem = precioUnitario * cantidad;
+                    textoSubtotal.textContent = formatearMoneda(totalItem);
+
+                    if (check && check.checked) {
+                        subtotalAcumulado += totalItem;
+                        hayItemsSeleccionados = true;
+                    }
+                });
+
+                const envioActual = hayItemsSeleccionados ? COSTO_ENVIO : 0;
+                const seguroActual = hayItemsSeleccionados ? COSTO_SEGURO : 0;
+                const totalFinal = subtotalAcumulado + envioActual + seguroActual;
+
+                document.getElementById("carro-resumen-subtotal").textContent = formatearMoneda(subtotalAcumulado);
+                document.getElementById("carro-resumen-envio").textContent = formatearMoneda(envioActual);
+                document.getElementById("carro-resumen-seguro").textContent = formatearMoneda(seguroActual);
+                document.getElementById("carro-resumen-total").textContent = formatearMoneda(totalFinal);
+            }
+
+            // Eventos Checkbox Seleccionar Todos
+            if (selectAllCheck) {
+                selectAllCheck.addEventListener("change", (e) => {
+                    const estado = e.target.checked;
+                    document.querySelectorAll(".carro-item-check").forEach(chk => chk.checked = estado);
+                    calcularTotales();
+                });
+            }
+
+            // Eventos Checkbox Individuales
+            document.querySelectorAll(".carro-item-check").forEach(chk => {
+                chk.addEventListener("change", () => {
+                    const todosChecks = document.querySelectorAll(".carro-item-check");
+                    const marcados = document.querySelectorAll(".carro-item-check:checked");
+                    if (selectAllCheck) {
+                        selectAllCheck.checked = (todosChecks.length === marcados.length);
+                    }
+                    calcularTotales();
+                });
+            });
+
+            // Botones mas / menos / eliminar
+            items.forEach(item => {
+                const btnMas = item.querySelector(".carro-btn-mas");
+                const btnMenos = item.querySelector(".carro-btn-menos");
+                const inputCant = item.querySelector(".carro-input-cantidad");
+                const btnEliminar = item.querySelector(".carro-btn-eliminar");
+
+                btnMas.addEventListener("click", () => {
+                    inputCant.value = parseInt(inputCant.value) + 1;
+                    calcularTotales();
+                });
+
+                btnMenos.addEventListener("click", () => {
+                    if (parseInt(inputCant.value) > 1) {
+                        inputCant.value = parseInt(inputCant.value) - 1;
+                        calcularTotales();
+                    }
+                });
+
+                btnEliminar.addEventListener("click", () => {
+                    item.remove();
+                    calcularTotales();
+                });
+            });
+
+            // Cálculo inicial
+            calcularTotales();
+        });
     </script>
 </body>
 </html>
