@@ -285,12 +285,32 @@
 
     <div id="footer"></div>
 
+    <!-- Carga del gestor de sesiones -->
+    <script src="js/sesion.js"></script>
     <script>
-       
-        fetch("navbar.html").then(r => r.text()).then(data => document.getElementById("navbar").innerHTML = data);
-        fetch("footer.html").then(r => r.text()).then(data => document.getElementById("footer").innerHTML = data);
+        // 1. Proteger ruta: solo accesible si hay sesión de cliente
+        protegerRuta("cliente");
 
+        // 2. Cargar Navbar y aplicar verificación
+        fetch("navbar.html")
+            .then(r => r.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+                verificarSesion(); // Oculta 'Iniciar sesión' y deja visible solo el 'Carro'
+            })
+            .catch(() => {
+                verificarSesion();
+            });
 
+        // 3. Cargar Footer dinámico
+        fetch("footer.html")
+            .then(r => r.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            })
+            .catch(() => {});
+
+        // 4. Navegación por pestañas (Perfil / Entregas)
         const pestañas = document.querySelectorAll(".panel-tab");
         const paneles = document.querySelectorAll(".panel-panel");
 
@@ -318,15 +338,16 @@
             });
         });
 
-       
+        // 5. Botón Cerrar sesión operativo
         const btnSalir = document.getElementById("btn-cerrar-sesion");
         if (btnSalir) {
             btnSalir.addEventListener("click", (e) => {
                 e.preventDefault();
+                cerrarSesion();
             });
         }
     </script>
-
+    <script src="js/sesion.js"></script>
 </body>
 
 </html>

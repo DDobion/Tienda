@@ -22,7 +22,28 @@
 
 
 /* -------------------------------------------------------------------
-   filtros
+   oferta
+----------------------------------------------------------------------------------------- */
+
+.cartel-oferta-catalogo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(201, 148, 45, 0.95);
+    color: #101a20;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    border: 1px solid #ffe391;
+}
+
+
+/* -------------------------------------------------------------------
+   filtros y buscador
 ----------------------------------------------------------------------------------------- */
 
 .catalogo-filtros {
@@ -30,13 +51,21 @@
     padding-bottom: 0;
 }
 
+.contenedor-filtros-busqueda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-top: 1px solid #33444e;
+    border-bottom: 1px solid #33444e;
+    padding: 14px 0;
+}
+
 .filtros {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    border-top: 1px solid #33444e;
-    border-bottom: 1px solid #33444e;
-    padding: 18px 0;
 }
 
 .filtro {
@@ -46,6 +75,8 @@
     padding: 9px 14px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .filtro:hover {
@@ -61,6 +92,42 @@
     font-weight: bold;
 }
 
+/* Buscador */
+.buscador-catalogo {
+    display: flex;
+    align-items: center;
+}
+
+.buscador-catalogo input {
+    background: #122738;
+    border: 1px solid #33444e;
+    color: #e0ddd3;
+    padding: 9px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    outline: none;
+    width: 220px;
+    transition: border-color 0.2s ease;
+}
+
+.buscador-catalogo input::placeholder {
+    color: #718089;
+}
+
+.buscador-catalogo input:focus {
+    border-color: #c9942d;
+}
+
+@media (max-width: 768px) {
+    .contenedor-filtros-busqueda {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .buscador-catalogo input {
+        width: 100%;
+    }
+}
 
 /* --------------------------------------------------------------
    cuadrícula de productos

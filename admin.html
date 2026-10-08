@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración · FORJA · 09</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/diseñolanding.css">
+    <link rel="stylesheet" href="css/panel.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <section class="panel-encabezado">
+        <small class="panel-etiqueta">PANEL DE CONTROL</small>
+        <h1>Administración del Taller</h1>
+        <p>Control de inventario, seguimiento de pedidos, gestión de clientes y promociones activas.</p>
+    </section>
+
+    <section class="panel-contenido">
+        <div class="panel-layout">
+
+            <!-- Navegación lateral -->
+            <nav class="panel-nav">
+                <button class="panel-tab activo" data-panel="productos">Productos</button>
+                <button class="panel-tab" data-panel="pedidos">Pedidos</button>
+                <button class="panel-tab" data-panel="clientes">Clientes</button>
+                <button class="panel-tab" data-panel="ofertas">Ofertas</button>
+
+                <a href="sesion.html" class="panel-salir" id="btn-salir">Cerrar sesión</a>
+            </nav>
+
+            <div class="panel-paneles">
+
+                <!-- 1. PRODUCTOS -->
+                <div class="panel-panel activo" id="panel-productos">
+                    
+                    <div class="admin-barra">
+                        <div class="entregas-header-bloque">
+                            <span class="panel-etiqueta">INVENTARIO</span>
+                            <h2>Inventario de Productos</h2>
+                            <small class="admin-subtitulo">Administra las piezas forjadas, precios y disponibilidad por región.</small>
+                        </div>
+                        <button class="admin-boton" id="btn-abrir-modal">+ Nuevo producto</button>
+                    </div>
+
+                    <!-- Métricas de inventario -->
+                    <div class="metricas-grid">
+                        <div class="metrica-caja">
+                            <span class="metrica-etiqueta">Piezas en forja</span>
+                            <b class="metrica-numero" id="total-productos">0</b>
+                            <span class="metrica-sub">Catálogo activo</span>
+                        </div>
+                        <div class="metrica-caja">
+                            <span class="metrica-etiqueta">Regiones</span>
+                            <b class="metrica-numero">4</b>
+                            <span class="metrica-sub">PLT · ZAU · SHR · FRJ</span>
+                        </div>
+                        <div class="metrica-caja">
+                            <span class="metrica-etiqueta">Líneas de arma</span>
+                            <b class="metrica-numero">5</b>
+                            <span class="metrica-sub">AD, AP, DEF, SUP, MOV</span>
+                        </div>
+                        <div class="metrica-caja">
+                            <span class="metrica-etiqueta">Disponibilidad</span>
+                            <b class="metrica-numero">Óptima</b>
+                            <span class="metrica-sub">0 fuera de forja</span>
+                        </div>
+                    </div>
+
+                    <!-- Controles de búsqueda y filtros -->
+                    <div class="tabla-controles">
+                        <input type="text" id="filtro-buscar" class="control-buscar" placeholder="Buscar por nombre, código o material...">
+                        <select id="filtro-categoria" class="control-select">
+                            <option value="todos">Todas las categorías</option>
+                            <option value="ad">Daño Físico (AD)</option>
+                            <option value="ap">Poder de Habilidad (AP)</option>
+                            <option value="def">Defensa (DEF)</option>
+                            <option value="sup">Soporte (SUP)</option>
+                            <option value="mov">Movilidad (MOV)</option>
+                        </select>
+                        <select id="filtro-region" class="control-select">
+                            <option value="todos">Todas las regiones</option>
+                            <option value="Piltover">Piltover</option>
+                            <option value="Zaun">Zaun</option>
+                            <option value="Shurima">Shurima</option>
+                            <option value="Freljord">Freljord</option>
+                        </select>
+                    </div>
+
+                    <!-- Tabla estructurada con imágenes y columna de oferta propia -->
+                    <div class="historial-tabla">
+                        <div class="historial-fila tabla-admin-encabezado">
+                            <span>Producto</span>
+                            <span>Categoría</span>
+                            <span>Origen</span>
+                            <span>Precio</span>
+                            <span>Oferta</span>
+                            <span>Stock</span>
+                            <span style="text-align: right;">Acciones</span>
+                        </div>
+                        <div id="cuerpo-productos">
+                            <!-- Filas inyectadas dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. PEDIDOS -->
+                <div class="panel-panel" id="panel-pedidos">
+                    <div class="entregas-header-bloque">
+                        <span class="panel-etiqueta">ENCARGOS</span>
+                        <h2>Gestión de Pedidos</h2>
+                        <small class="admin-subtitulo">Revisa el estado de entrega, destino y guías de transporte de cada orden.</small>
+                    </div>
+
+                    <div class="historial-tabla">
+                        <div class="historial-fila tabla-pedidos-encabezado">
+                            <span>Orden</span>
+                            <span>Fecha</span>
+                            <span>Cliente</span>
+                            <span>Pieza solicitada</span>
+                            <span>Total</span>
+                            <span>Estado</span>
+                            <span style="text-align: right;">Detalle</span>
+                        </div>
+
+                        <div class="historial-fila fila-pedido">
+                            <span class="entrega-codigo">#EXP-0801</span>
+                            <span class="admin-fecha">02 Oct 2026</span>
+                            <span>Viktor Ramos</span>
+                            <span>Sombrero Mortífero</span>
+                            <span class="producto-precio">$3,600.00</span>
+                            <div><span class="estado estado-camino">En camino</span></div>
+                            <div style="text-align: right;">
+                                <button class="btn-ver-detalle" onclick="abrirModalPedido('0801')">Ver envío ↗</button>
+                            </div>
+                        </div>
+
+                        <div class="historial-fila fila-pedido">
+                            <span class="entrega-codigo">#EXP-0941</span>
+                            <span class="admin-fecha">05 Oct 2026</span>
+                            <span>Jayce Talis</span>
+                            <span>Filo del Infinito</span>
+                            <span class="producto-precio">$3,400.00</span>
+                            <div><span class="estado estado-proceso">En proceso</span></div>
+                            <div style="text-align: right;">
+                                <button class="btn-ver-detalle" onclick="abrirModalPedido('0941')">Ver envío ↗</button>
+                            </div>
+                        </div>
+
+                        <div class="historial-fila fila-pedido">
+                            <span class="entrega-codigo">#EXP-0720</span>
+                            <span class="admin-fecha">28 Sep 2026</span>
+                            <span>Caitlyn K.</span>
+                            <span>Malla de Espinas</span>
+                            <span class="producto-precio">$2,700.00</span>
+                            <div><span class="estado estado-entregado">Entregado</span></div>
+                            <div style="text-align: right;">
+                                <button class="btn-ver-detalle" onclick="abrirModalPedido('0720')">Ver envío ↗</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. CLIENTES -->
+                <div class="panel-panel" id="panel-clientes">
+                    <div class="entregas-header-bloque">
+                        <span class="panel-etiqueta">REGISTRO & CRM</span>
+                        <h2>Clientes del Gremio</h2>
+                        <small class="admin-subtitulo">Historial acumulado, valor de compra (LTV) y fidelidad de clientes.</small>
+                    </div>
+
+                    <div class="historial-tabla">
+                        <div class="historial-fila tabla-clientes-encabezado">
+                            <span>Cliente</span>
+                            <span>Correo</span>
+                            <span>Región</span>
+                            <span>Nivel Gremio</span>
+                            <span>Gasto Total</span>
+                            <span>Compras</span>
+                            <span style="text-align: right;">Expediente</span>
+                        </div>
+
+                        <div class="historial-fila fila-cliente">
+                            <span class="producto-titulo">Viktor Ramos</span>
+                            <span class="cliente-correo">viktor@zaun.com</span>
+                            <span class="producto-origen">Zaun</span>
+                            <div><span class="estado estado-camino">Plata</span></div>
+                            <span class="producto-precio">$14,200.00</span>
+                            <span>4 órdenes</span>
+                            <div style="text-align: right;">
+                                <button class="btn-ver-detalle" onclick="abrirModalCliente('viktor')">Ficha ↗</button>
+                            </div>
+                        </div>
+
+                        <div class="historial-fila fila-cliente">
+                            <span class="producto-titulo">Jayce Talis</span>
+                            <span class="cliente-correo">jayce@piltover.com</span>
+                            <span class="producto-origen">Piltover</span>
+                            <div><span class="estado estado-entregado">Oro VIP</span></div>
+                            <span class="producto-precio">$28,500.00</span>
+                            <span>6 órdenes</span>
+                            <div style="text-align: right;">
+                                <button class="btn-ver-detalle" onclick="abrirModalCliente('jayce')">Ficha ↗</button>
+                            </div>
+                        </div>
+
+                        <div class="historial-fila fila-cliente">
+                            <span class="producto-titulo">Caitlyn Kiramman</span>
+                            <span class="cliente-correo">caitlyn@piltover.com</span>
+                            <span class="producto-origen">Piltover</span>
+                            <div><span class="estado estado-proceso">Bronce</span></div>
+                            <span class="producto-precio">$6,800.00</span>
+                            <span>2 órdenes</span>
+                            <div style="text-align: right;">
+                                <button class="btn-ver-detalle" onclick="abrirModalCliente('caitlyn')">Ficha ↗</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. OFERTAS -->
+                <div class="panel-panel" id="panel-ofertas">
+                    <div class="admin-barra">
+                        <div class="entregas-header-bloque">
+                            <span class="panel-etiqueta">PROMOCIONES</span>
+                            <h2>Ofertas y Cupones</h2>
+                            <small class="admin-subtitulo">Gestiona los descuentos especiales, envíos bonificados y códigos de gremio.</small>
+                        </div>
+                        <button class="admin-boton" id="btn-nueva-oferta">+ Nueva oferta</button>
+                    </div>
+
+                    <div class="entregas-tarjetas-grid" id="contenedor-ofertas">
+                        <!-- Tarjetas inyectadas dinámicamente -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL 1: GESTIÓN DE PRODUCTO (DISEÑO AMPLIO Y LIMPIO) -->
+    <div class="modal" id="modal-producto">
+        <div class="modal-caja modal-caja-amplia">
+            
+            <div class="modal-encabezado">
+                <div>
+                    <span class="panel-etiqueta" id="modal-prod-etiqueta">INVENTARIO</span>
+                    <h3 id="modal-prod-titulo">Forjar Nueva Pieza</h3>
+                </div>
+                <button type="button" class="modal-cerrar" onclick="cerrarModales()">✕</button>
+            </div>
+
+            <form id="form-producto" class="form-layout-limpio modal-scrollable">
+                <input type="hidden" id="prod-edit-id" value="">
+
+                <!-- CUERPO PRINCIPAL: 2 COLUMNAS CLARAS -->
+                <div class="prod-grid-principal">
+                    
+                    <!-- COLUMNA IZQUIERDA: Imagen y Oferta -->
+                    <aside class="prod-col-lateral">
+                        <div class="prod-bloque-foto">
+                            <span class="form-tag-guia">VISTA PREVIA</span>
+                            <img id="prod-preview-img" src="img/productos/ad/espadon.jpg" alt="Preview" class="prod-img-grande">
+                            
+                            <input type="text" id="prod-imagen" class="control-input" placeholder="Ruta: img/... o URL">
+                            
+                            <label class="btn-subir-archivo" for="prod-archivo">📁 Seleccionar imagen local</label>
+                            <input type="file" id="prod-archivo" accept="image/*" style="display:none;">
+                            <span id="prod-nombre-archivo" class="prod-archivo-texto">Sin archivo local</span>
+                        </div>
+
+                        <!-- Apartado de Ofertas integrado sin romper la columna -->
+                        <div class="prod-bloque-oferta">
+                            <span class="form-tag-guia">PROMOCIÓN ACTIVA</span>
+                            <select id="prod-oferta-asignada" class="control-select w-100">
+                                <option value="ninguna">Sin oferta vinculada</option>
+                                <option value="HEXTECH20">Cupón HEXTECH20 (-20%)</option>
+                                <option value="FORJA09">Cupón FORJA09 (Envío gratis)</option>
+                                <option value="VIP15">Gremio VIP15 (-15%)</option>
+                            </select>
+                        </div>
+                    </aside>
+
+                    <!-- COLUMNA DERECHA: Especificaciones y Ficha Técnica -->
+                    <main class="prod-col-campos">
+                        
+                        <div class="form-grupo-fila">
+                            <div class="form-campo flex-2">
+                                <label for="prod-nombre">Nombre de la pieza *</label>
+                                <input type="text" id="prod-nombre" class="control-input" placeholder="Ej. Filo del Infinito" required>
+                            </div>
+                            <div class="form-campo flex-1">
+                                <label for="prod-expediente">Expediente</label>
+                                <input type="text" id="prod-expediente" class="control-input mono" placeholder="EXP-1002">
+                            </div>
+                        </div>
+
+                        <div class="form-grupo-fila">
+                            <div class="form-campo">
+                                <label for="prod-categoria">Categoría</label>
+                                <select id="prod-categoria" class="control-select w-100">
+                                    <option value="ad">Daño Físico (AD)</option>
+                                    <option value="ap">Poder de Habilidad (AP)</option>
+                                    <option value="def">Defensa (DEF)</option>
+                                    <option value="sup">Soporte (SUP)</option>
+                                    <option value="mov">Movilidad (MOV)</option>
+                                </select>
+                            </div>
+                            <div class="form-campo">
+                                <label for="prod-precio">Precio ($ MXN) *</label>
+                                <input type="text" id="prod-precio" class="control-input mono" placeholder="$3,400.00" required>
+                            </div>
+                            <div class="form-campo">
+                                <label for="prod-origen">Región</label>
+                                <select id="prod-origen" class="control-select w-100">
+                                    <option value="Piltover">Piltover</option>
+                                    <option value="Zaun">Zaun</option>
+                                    <option value="Shurima">Shurima</option>
+                                    <option value="Freljord">Freljord</option>
+                                    <option value="Noxus">Noxus</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-divisor"></div>
+
+                        <div class="form-grupo-fila">
+                            <div class="form-campo flex-2">
+                                <label for="prod-material">Materiales / Aleación</label>
+                                <input type="text" id="prod-material" class="control-input" placeholder="Acero Damasco, Incrustaciones de Oro">
+                            </div>
+                            <div class="form-campo flex-1">
+                                <label for="prod-peso">Peso</label>
+                                <input type="text" id="prod-peso" class="control-input mono" placeholder="4.1 kg">
+                            </div>
+                        </div>
+
+                        <div class="form-campo">
+                            <label for="prod-desc-corta">Resumen breve (Catálogo)</label>
+                            <input type="text" id="prod-desc-corta" class="control-input" placeholder="Hoja de corte masivo equilibrada para combate táctico...">
+                        </div>
+
+                        <div class="form-campo">
+                            <label for="prod-desc">Descripción técnica de taller</label>
+                            <textarea id="prod-desc" rows="3" class="control-textarea" placeholder="Procedencia, especificaciones de temple y advertencias de uso..."></textarea>
+                        </div>
+
+                    </main>
+                </div>
+
+                <!-- BOTONERA DE ACCIÓN -->
+                <div class="modal-pie-acciones">
+                    <button type="button" class="btn-cancelar" onclick="cerrarModales()">Cancelar</button>
+                    <button type="submit" class="admin-boton" id="btn-guardar-prod">Guardar pieza</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 4: CONFIRMACIÓN DE ELIMINAR (Reemplaza el confirm() nativo feo) -->
+    <div class="modal" id="modal-eliminar">
+        <div class="modal-caja modal-caja-alerta">
+            <div class="modal-encabezado">
+                <span class="panel-etiqueta" style="color: #e06c6c;">DESTRUCCIÓN DE PIEZA</span>
+                <button type="button" class="modal-cerrar" onclick="cerrarModales()">✕</button>
+            </div>
+            <div class="alerta-cuerpo">
+                <p>¿Estás seguro de que deseas retirar <b id="eliminar-nombre-pieza" style="color: #f8b73f;"></b> del inventario?</p>
+                <small class="admin-subtitulo">Esta acción no se puede deshacer. Se removerá del registro general de la forja.</small>
+            </div>
+            <div class="modal-pie-acciones">
+                <button type="button" class="btn-cancelar" onclick="cerrarModales()">Cancelar</button>
+                <button type="button" class="admin-boton btn-peligro" id="btn-confirmar-eliminar">Sí, eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: DETALLES DE PEDIDO / ENVÍO -->
+<div class="modal" id="modal-pedido">
+    <div class="modal-caja modal-caja-ancha">
+        <div class="modal-encabezado">
+            <div>
+                <span class="panel-etiqueta" id="modal-ped-codigo">ORDEN #EXP-0801</span>
+                <h3 id="modal-ped-titulo">Hoja de Ruta y Despacho</h3>
+            </div>
+            <button type="button" class="modal-cerrar" onclick="cerrarModales()">✕</button>
+        </div>
+
+        <div class="modal-cuerpo-grid">
+            <div class="modal-bloque">
+                <span class="modal-dato-etiqueta">Destinatario</span>
+                <b class="modal-dato-valor" id="modal-ped-cliente">Viktor Ramos</b>
+                <span class="modal-dato-sub" id="modal-ped-correo">viktor@zaun.com</span>
+            </div>
+
+            <div class="modal-bloque">
+                <span class="modal-dato-etiqueta">Dirección de Entrega</span>
+                <b class="modal-dato-valor" id="modal-ped-direccion">Laboratorio Subterráneo Nivel 4, Taller Químico #12</b>
+                <span class="modal-dato-sub" id="modal-ped-region">Distrito Bajo · Zaun</span>
+            </div>
+
+            <div class="modal-bloque">
+                <span class="modal-dato-etiqueta">Transporte & Seguimiento</span>
+                <b class="modal-dato-valor" id="modal-ped-guia">Guía: #TRK-88102-ZAU</b>
+                <span class="modal-dato-sub" id="modal-ped-courier">Mensajería Fluvial Express</span>
+            </div>
+
+            <div class="modal-bloque">
+                <span class="modal-dato-etiqueta">Método de Pago</span>
+                <b class="modal-dato-valor" id="modal-ped-pago">Transferencia Hextech / Pagado</b>
+                <span class="modal-dato-sub" id="modal-ped-total">Total: $3,600.00 MXN</span>
+            </div>
+        </div>
+
+        <div class="modal-pie-acciones">
+            <div class="fila" style="width: 100%; align-items: center;">
+                <span>Estado actual: <b id="modal-ped-estado" class="estado estado-camino">En camino</b></span>
+                <!-- Sin alert(), llama directo a la función con el diseño de la página -->
+                <button type="button" class="admin-boton" onclick="imprimirGuia()">Imprimir Guía de Envío</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- MODAL 3: FICHA DE CLIENTE (CRM) -->
+    <div class="modal" id="modal-cliente">
+        <div class="modal-caja modal-caja-ancha">
+            <div class="modal-encabezado">
+                <div>
+                    <span class="panel-etiqueta">EXPEDIENTE DEL GREMIO</span>
+                    <h3 id="modal-cli-nombre">Jayce Talis</h3>
+                </div>
+                <button type="button" class="modal-cerrar" onclick="cerrarModales()">✕</button>
+            </div>
+
+            <div class="modal-cuerpo-grid">
+                <div class="modal-bloque">
+                    <span class="modal-dato-etiqueta">Contacto Directo</span>
+                    <b class="modal-dato-valor" id="modal-cli-correo">jayce@piltover.com</b>
+                    <span class="modal-dato-sub" id="modal-cli-tel">+52 449 201 9920</span>
+                </div>
+
+                <div class="modal-bloque">
+                    <span class="modal-dato-etiqueta">Domicilio Principal</span>
+                    <b class="modal-dato-valor" id="modal-cli-dir">Torre de la Innovación #09, Piso 14</b>
+                    <span class="modal-dato-sub" id="modal-cli-ciudad">Distrito Alto · Piltover</span>
+                </div>
+
+                <div class="modal-bloque">
+                    <span class="modal-dato-etiqueta">Historial en Forja</span>
+                    <b class="modal-dato-valor" id="modal-cli-gastos">$28,500.00 MXN</b>
+                    <span class="modal-dato-sub" id="modal-cli-ordenes">6 piezas forjadas adquiridas</span>
+                </div>
+
+                <div class="modal-bloque">
+                    <span class="modal-dato-etiqueta">Preferencia de Armas</span>
+                    <b class="modal-dato-valor" id="modal-cli-pref">Daño Físico (AD) & Hextech</b>
+                    <span class="modal-dato-sub">Cliente frecuente de forja mayor</span>
+                </div>
+            </div>
+
+            <div class="modal-nota-admin">
+                <span class="modal-dato-etiqueta">Nota interna del taller:</span>
+                <p id="modal-cli-nota">Comprador prioritario. Enviar folletos de ofertas para componentes de precisión antes de lanzamientos públicos.</p>
+            </div>
+
+            <!-- Solo el menú desplegable y su botón de envío directo -->
+            <div class="oferta-caja-simple">
+                <label for="select-oferta-rapida" class="modal-dato-etiqueta">Selecciona beneficio a otorgar:</label>
+                <div class="oferta-fila-accion">
+                    <select id="select-oferta-rapida" class="control-select">
+                        <option value="HEXTECH20">Cupón HEXTECH20 (-20% en armas mágicas)</option>
+                        <option value="FORJA09">Cupón FORJA09 (Envío prioritario gratis)</option>
+                        <option value="VIP15">Descuento Exclusivo Gremio (-15% total)</option>
+                    </select>
+                    <button type="button" class="admin-boton" onclick="enviarOfertaDirecta()">Asignar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 5: GESTIÓN DE OFERTA (CREAR / EDITAR) -->
+    <div class="modal" id="modal-oferta">
+        <div class="modal-caja modal-caja-oferta">
+            <div class="modal-encabezado">
+                <div>
+                    <span class="panel-etiqueta" id="modal-ofe-etiqueta">PROMOCIÓN</span>
+                    <h3 id="modal-ofe-titulo">Nueva Oferta de Taller</h3>
+                </div>
+                <button type="button" class="modal-cerrar" onclick="cerrarModales()">✕</button>
+            </div>
+
+            <form id="form-oferta" class="form-layout-limpio">
+                <input type="hidden" id="ofe-edit-id" value="">
+
+                <div class="form-grupo-fila">
+                    <div class="form-campo flex-1">
+                        <label for="ofe-codigo">Código de Cupón *</label>
+                        <input type="text" id="ofe-codigo" class="control-input mono" placeholder="Ej. HEXTECH20" required>
+                    </div>
+                    <div class="form-campo flex-1">
+                        <label for="ofe-estado">Estado</label>
+                        <select id="ofe-estado" class="control-select w-100">
+                            <option value="Activa">Activa</option>
+                            <option value="Pausada">Pausada</option>
+                            <option value="Expirada">Expirada</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-campo">
+                    <label for="ofe-titulo">Título / Beneficio *</label>
+                    <input type="text" id="ofe-titulo" class="control-input" placeholder="Ej. 20% Descuento Armas Mágicas" required>
+                </div>
+
+                <div class="form-grupo-fila">
+                    <div class="form-campo flex-1">
+                        <label for="ofe-vigencia">Vigencia / Vencimiento</label>
+                        <input type="text" id="ofe-vigencia" class="control-input" placeholder="Ej. 30 Octubre, 2026">
+                    </div>
+                    <div class="form-campo flex-1">
+                        <label for="ofe-usos">Usos registrados</label>
+                        <input type="text" id="ofe-usos" class="control-input mono" placeholder="Ej. 48 veces" readonly>
+                    </div>
+                </div>
+
+                <div class="modal-pie-acciones">
+                    <button type="button" class="btn-cancelar" onclick="cerrarModales()">Cancelar</button>
+                    <button type="submit" class="admin-boton" id="btn-guardar-ofe">Guardar oferta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 6: CONFIRMACIÓN DE ELIMINAR OFERTA -->
+    <div class="modal" id="modal-eliminar-oferta">
+        <div class="modal-caja modal-caja-alerta">
+            <div class="modal-encabezado">
+                <span class="panel-etiqueta" style="color: #e06c6c;">CANCELACIÓN DE PROMOCIÓN</span>
+                <button type="button" class="modal-cerrar" onclick="cerrarModales()">✕</button>
+            </div>
+            <div class="alerta-cuerpo">
+                <p>¿Deseas dar de baja la promoción <b id="eliminar-nombre-oferta" style="color: #f8b73f;"></b>?</p>
+                <small class="admin-subtitulo">El cupón dejará de estar disponible para asignar a clientes y productos.</small>
+            </div>
+            <div class="modal-pie-acciones">
+                <button type="button" class="btn-cancelar" onclick="cerrarModales()">Cancelar</button>
+                <button type="button" class="admin-boton btn-peligro" id="btn-confirmar-eliminar-ofe">Sí, dar de baja</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor del aviso flotante (Toast) -->
+    <div id="toast-aviso" class="toast-notificacion">
+        <span class="toast-icono">✓</span>
+        <span id="toast-texto">Acción realizada.</span>
+    </div>
+
+    <div id="footer"></div>
+
+
+    <!-- Se incluye UNA sola vez -->
+    <script src="js/sesion.js"></script>
+    <script>
+    // 1. Proteger ruta administrativa
+    protegerRuta("admin");
+
+    // 2. Salir / Cerrar sesión
+    const btnSalir = document.getElementById("btn-salir");
+    if (btnSalir) {
+        btnSalir.addEventListener("click", (e) => {
+            e.preventDefault();
+            cerrarSesion();
+        });
+    }
+
+    // 3. Navegación de pestañas (Tabs)
+    const pestanas = document.querySelectorAll(".panel-tab");
+    const paneles = document.querySelectorAll(".panel-panel");
+
+    pestanas.forEach(tab => {
+        tab.addEventListener("click", () => {
+            pestanas.forEach(t => t.classList.remove("activo"));
+            paneles.forEach(p => p.classList.remove("activo"));
+            tab.classList.add("activo");
+            const obj = document.getElementById(`panel-${tab.dataset.panel}`);
+            if (obj) obj.classList.add("activo");
+        });
+    });
+
+    // 4. Base de datos y renderizado dinámico de Productos
+    let listaProductos = [];
+    const contenedor = document.getElementById("cuerpo-productos");
+
+    function renderizarFilas(lista) {
+        if (!contenedor) return;
+        contenedor.innerHTML = "";
+        lista.forEach(item => {
+            const expId = item.expediente || item.id;
+            const tieneOferta = item.oferta && item.oferta !== "ninguna";
+            const unidadesStock = "12 uds.";
+
+            const fila = document.createElement("div");
+            fila.className = "historial-fila fila-producto";
+            fila.innerHTML = `
+                <div class="producto-identidad">
+                    <img src="${item.imagen || 'img/productos/ad/espadon.jpg'}" class="producto-miniatura" alt="${item.nombre}" onerror="this.src='img/productos/ad/espadon.jpg'">
+                    <div class="producto-textos">
+                        <span class="producto-titulo">${item.nombre}</span>
+                        <span class="producto-sub">${expId}</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="estado estado-proceso">${item.categoriaTexto || (item.categoria ? item.categoria.toUpperCase() : 'AD')}</span>
+                </div>
+                <span class="producto-origen">${(item.origen || 'Piltover').split('/')[0].trim()}</span>
+                <span class="producto-precio">${item.precio}</span>
+                <div>
+                    ${tieneOferta 
+                        ? `<span class="tag-oferta">${item.oferta}</span>` 
+                        : `<span class="tag-sin-oferta">—</span>`}
+                </div>
+                <div class="celda-stock-info">
+                    <span class="estado estado-entregado">En stock</span>
+                    <span class="stock-unidades">${unidadesStock}</span>
+                </div>
+                <div class="producto-acciones">
+                    <button class="btn-accion-icono" title="Editar" onclick="abrirModalEditarProducto('${expId}')">✎</button>
+                    <button class="btn-accion-icono btn-eliminar" title="Eliminar" onclick="solicitarEliminarProducto('${expId}')">🗑</button>
+                </div>
+            `;
+            contenedor.appendChild(fila);
+        });
+        
+        const totalEl = document.getElementById("total-productos");
+        if (totalEl) totalEl.textContent = lista.length;
+    }
+
+    fetch("productos.json")
+        .then(res => res.json())
+        .then(datos => {
+            listaProductos = datos;
+            renderizarFilas(listaProductos);
+        })
+        .catch(() => {
+            listaProductos = [
+                { id: "EXP-1001", nombre: "Espadón", expediente: "EXP-1001", imagen: "img/productos/ad/espadon.jpg", categoria: "ad", categoriaTexto: "PLT · AD", origen: "Piltover", precio: "$1,300.00", material: "Acero Templado", peso: "3.6 kg", descripcionCorta: "Hoja de acero al carbono", descripcion: "Pieza de forja tradicional", oferta: "ninguna" },
+                { id: "EXP-1002", nombre: "Filo del Infinito", expediente: "EXP-1002", imagen: "img/productos/ad/filoinfinito.jpg", categoria: "ad", categoriaTexto: "PLT · AD", origen: "Piltover", precio: "$3,400.00", material: "Acero Damasco y Oro", peso: "4.1 kg", descripcionCorta: "Espada de ceremonia y asalto", descripcion: "Obra de precisión de Piltover", oferta: "HEXTECH20" },
+                { id: "EXP-2001", nombre: "Gorra Mortal de Rabadon", expediente: "EXP-2001", imagen: "img/productos/ap/rabadon.jpg", categoria: "ap", categoriaTexto: "ZAU · AP", origen: "Zaun", precio: "$3,600.00", material: "Fieltro e hilo de cobre", peso: "0.7 kg", descripcionCorta: "Tocado de artífice", descripcion: "Prenda de trabajo de alta gama", oferta: "ninguna" }
+            ];
+            renderizarFilas(listaProductos);
+        });
+
+    // Filtros y buscador de Productos
+    const inputBuscar = document.getElementById("filtro-buscar");
+    const selectCat = document.getElementById("filtro-categoria");
+    const selectReg = document.getElementById("filtro-region");
+
+    function aplicarFiltros() {
+        const txt = inputBuscar.value.toLowerCase();
+        const cat = selectCat.value.toLowerCase();
+        const reg = selectReg.value.toLowerCase();
+
+        const filtrados = listaProductos.filter(p => {
+            const coincideTexto = p.nombre.toLowerCase().includes(txt) || (p.expediente && p.expediente.toLowerCase().includes(txt));
+            const coincideCat = (cat === "todos") || (p.categoria && p.categoria.toLowerCase() === cat);
+            const coincideReg = (reg === "todos") || (p.origen && p.origen.toLowerCase().includes(reg));
+            return coincideTexto && coincideCat && coincideReg;
+        });
+
+        renderizarFilas(filtrados);
+    }
+
+    if (inputBuscar) inputBuscar.addEventListener("input", aplicarFiltros);
+    if (selectCat) selectCat.addEventListener("change", aplicarFiltros);
+    if (selectReg) selectReg.addEventListener("change", aplicarFiltros);
+
+    // 5. Gestión del Modal de Producto (Crear / Editar)
+    const modalProd = document.getElementById("modal-producto");
+    const formProd = document.getElementById("form-producto");
+    const previewImg = document.getElementById("prod-preview-img");
+    const inputImgUrl = document.getElementById("prod-imagen");
+    const inputImgFile = document.getElementById("prod-archivo");
+    const labelNombreArchivo = document.getElementById("prod-nombre-archivo");
+
+    if (inputImgUrl) {
+        inputImgUrl.addEventListener("input", () => {
+            if (inputImgUrl.value.trim() !== "" && previewImg) {
+                previewImg.src = inputImgUrl.value.trim();
+            }
+        });
+    }
+
+    if (inputImgFile) {
+        inputImgFile.addEventListener("change", function () {
+            if (this.files && this.files[0]) {
+                const archivo = this.files[0];
+                if (labelNombreArchivo) labelNombreArchivo.innerText = archivo.name;
+                const lector = new FileReader();
+                lector.onload = (e) => {
+                    if (previewImg) previewImg.src = e.target.result;
+                    if (inputImgUrl) inputImgUrl.value = e.target.result;
+                };
+                lector.readAsDataURL(archivo);
+            }
+        });
+    }
+
+    const btnAbrirModal = document.getElementById("btn-abrir-modal");
+    if (btnAbrirModal) {
+        btnAbrirModal.onclick = () => {
+            if (formProd) formProd.reset();
+            document.getElementById("prod-edit-id").value = "";
+            document.getElementById("modal-prod-etiqueta").innerText = "INVENTARIO";
+            document.getElementById("modal-prod-titulo").innerText = "Forjar Nueva Pieza";
+            document.getElementById("btn-guardar-prod").innerText = "Guardar pieza";
+            if (previewImg) previewImg.src = "img/productos/ad/espadon.jpg";
+            if (labelNombreArchivo) labelNombreArchivo.innerText = "Sin archivo local";
+            modalProd.classList.add("abierto");
+        };
+    }
+
+    function abrirModalEditarProducto(expId) {
+        const prod = listaProductos.find(p => (p.expediente === expId || p.id === expId));
+        if (!prod) return;
+
+        document.getElementById("prod-edit-id").value = expId;
+        document.getElementById("modal-prod-etiqueta").innerText = `EDITANDO · ${expId}`;
+        document.getElementById("modal-prod-titulo").innerText = `Modificar ${prod.nombre}`;
+        document.getElementById("btn-guardar-prod").innerText = "Actualizar pieza";
+
+        document.getElementById("prod-nombre").value = prod.nombre || "";
+        document.getElementById("prod-expediente").value = prod.expediente || prod.id || "";
+        document.getElementById("prod-categoria").value = (prod.categoria || "ad").toLowerCase();
+        document.getElementById("prod-precio").value = prod.precio || "";
+        document.getElementById("prod-origen").value = (prod.origen || "Piltover").split("/")[0].trim();
+        document.getElementById("prod-imagen").value = prod.imagen || "";
+        if (previewImg) previewImg.src = prod.imagen || "img/productos/ad/espadon.jpg";
+        if (labelNombreArchivo) labelNombreArchivo.innerText = "Imagen cargada en registro";
+        
+        document.getElementById("prod-material").value = prod.material || "";
+        document.getElementById("prod-peso").value = prod.peso || "";
+        document.getElementById("prod-desc-corta").value = prod.descripcionCorta || "";
+        document.getElementById("prod-desc").value = prod.descripcion || "";
+        document.getElementById("prod-oferta-asignada").value = prod.oferta || "ninguna";
+
+        modalProd.classList.add("abierto");
+    }
+
+    if (formProd) {
+        formProd.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const editId = document.getElementById("prod-edit-id").value;
+            const nombre = document.getElementById("prod-nombre").value.trim();
+            const expediente = document.getElementById("prod-expediente").value.trim() || `EXP-${Math.floor(1000 + Math.random() * 9000)}`;
+            const categoria = document.getElementById("prod-categoria").value;
+            const precio = document.getElementById("prod-precio").value.trim();
+            const origen = document.getElementById("prod-origen").value;
+            const imagen = document.getElementById("prod-imagen").value.trim() || (previewImg ? previewImg.src : "");
+            const material = document.getElementById("prod-material").value.trim();
+            const peso = document.getElementById("prod-peso").value.trim();
+            const descCorta = document.getElementById("prod-desc-corta").value.trim();
+            const desc = document.getElementById("prod-desc").value.trim();
+            const oferta = document.getElementById("prod-oferta-asignada").value;
+
+            if (editId) {
+                const indice = listaProductos.findIndex(p => (p.expediente === editId || p.id === editId));
+                if (indice !== -1) {
+                    listaProductos[indice] = {
+                        ...listaProductos[indice],
+                        nombre,
+                        expediente,
+                        categoria,
+                        categoriaTexto: `${origen.substring(0, 3).toUpperCase()} · ${categoria.toUpperCase()}`,
+                        precio,
+                        origen,
+                        imagen,
+                        material,
+                        peso,
+                        descripcionCorta: descCorta,
+                        descripcion: desc,
+                        oferta
+                    };
+                    mostrarToast(`✓ Se editó "${nombre}" correctamente.`);
+                }
+            } else {
+                const nuevo = {
+                    id: expediente.toLowerCase(),
+                    expediente,
+                    nombre,
+                    categoria,
+                    categoriaTexto: `${origen.substring(0, 3).toUpperCase()} · ${categoria.toUpperCase()}`,
+                    precio,
+                    origen,
+                    imagen,
+                    material,
+                    peso,
+                    descripcionCorta: descCorta,
+                    descripcion: desc,
+                    oferta
+                };
+                listaProductos.unshift(nuevo);
+                mostrarToast(`✓ Se agregó "${nombre}" al inventario.`);
+            }
+
+            aplicarFiltros();
+            modalProd.classList.remove("abierto");
+        });
+    }
+
+    // 6. Eliminación de Producto con Modal
+    let idParaEliminar = null;
+
+    function solicitarEliminarProducto(expId) {
+        const prod = listaProductos.find(p => (p.expediente === expId || p.id === expId));
+        if (!prod) return;
+        idParaEliminar = expId;
+        document.getElementById("eliminar-nombre-pieza").innerText = `"${prod.nombre}" (${expId})`;
+        document.getElementById("modal-eliminar").classList.add("abierto");
+    }
+
+    const btnConfirmarEliminar = document.getElementById("btn-confirmar-eliminar");
+    if (btnConfirmarEliminar) {
+        btnConfirmarEliminar.addEventListener("click", () => {
+            if (!idParaEliminar) return;
+            const prod = listaProductos.find(p => (p.expediente === idParaEliminar || p.id === idParaEliminar));
+            const nombre = prod ? prod.nombre : idParaEliminar;
+
+            listaProductos = listaProductos.filter(p => !(p.expediente === idParaEliminar || p.id === idParaEliminar));
+            aplicarFiltros();
+            cerrarModales();
+            mostrarToast(`✓ Se eliminó "${nombre}" del catálogo.`);
+            idParaEliminar = null;
+        });
+    }
+
+    // 7. GESTIÓN COMPLETA DE OFERTAS (CRUD Demostrativo)
+    let listaOfertas = [
+        {
+            id: "HEXTECH20",
+            codigo: "HEXTECH20",
+            titulo: "20% Descuento Armas Mágicas",
+            vigencia: "30 Octubre, 2026",
+            estado: "Activa",
+            usos: "48 veces"
+        },
+        {
+            id: "FORJA09",
+            codigo: "FORJA09",
+            titulo: "Envío gratis a todo Runaterra",
+            vigencia: "Sin fecha límite",
+            estado: "Activa",
+            usos: "130 veces"
+        }
+    ];
+
+    const contenedorOfertas = document.getElementById("contenedor-ofertas");
+    const modalOferta = document.getElementById("modal-oferta");
+    const formOferta = document.getElementById("form-oferta");
+
+    function renderizarOfertas() {
+        if (!contenedorOfertas) return;
+        contenedorOfertas.innerHTML = "";
+
+        listaOfertas.forEach(ofe => {
+            const card = document.createElement("article");
+            card.className = "entrega-card";
+            card.innerHTML = `
+                <div class="entrega-card-header">
+                    <div class="entrega-card-info">
+                        <span class="entrega-codigo">CÓDIGO: ${ofe.codigo}</span>
+                        <h3>${ofe.titulo}</h3>
+                        <small class="entrega-linea">Válido hasta: ${ofe.vigencia}</small>
+                    </div>
+                    <span class="estado ${ofe.estado === 'Activa' ? 'estado-entregado' : 'estado-proceso'}">${ofe.estado}</span>
+                </div>
+                <div class="fila" style="align-items: center; justify-content: space-between; margin-top: 14px;">
+                    <div>
+                        <span style="color: #8a9ba8; font-size: 12px;">Usos registrados: </span>
+                        <b style="color: #e0ddd3; font-family: 'JetBrains Mono', monospace;">${ofe.usos}</b>
+                    </div>
+                    <div class="producto-acciones">
+                        <button class="btn-accion-icono" title="Editar" onclick="abrirModalEditarOferta('${ofe.id}')">✎</button>
+                        <button class="btn-accion-icono btn-eliminar" title="Eliminar" onclick="solicitarEliminarOferta('${ofe.id}')">🗑</button>
+                    </div>
+                </div>
+            `;
+            contenedorOfertas.appendChild(card);
+        });
+    }
+
+    renderizarOfertas();
+
+    const btnNuevaOferta = document.getElementById("btn-nueva-oferta");
+    if (btnNuevaOferta) {
+        btnNuevaOferta.onclick = () => {
+            if (formOferta) formOferta.reset();
+            document.getElementById("ofe-edit-id").value = "";
+            document.getElementById("modal-ofe-etiqueta").innerText = "NUEVA PROMOCIÓN";
+            document.getElementById("modal-ofe-titulo").innerText = "Crear Cupón de Taller";
+            document.getElementById("btn-guardar-ofe").innerText = "Guardar oferta";
+            document.getElementById("ofe-usos").value = "0 veces";
+            modalOferta.classList.add("abierto");
+        };
+    }
+
+    function abrirModalEditarOferta(id) {
+        const ofe = listaOfertas.find(o => o.id === id);
+        if (!ofe) return;
+
+        document.getElementById("ofe-edit-id").value = ofe.id;
+        document.getElementById("modal-ofe-etiqueta").innerText = `EDITANDO · ${ofe.codigo}`;
+        document.getElementById("modal-ofe-titulo").innerText = "Modificar Promoción";
+        document.getElementById("btn-guardar-ofe").innerText = "Actualizar oferta";
+
+        document.getElementById("ofe-codigo").value = ofe.codigo;
+        document.getElementById("ofe-estado").value = ofe.estado;
+        document.getElementById("ofe-titulo").value = ofe.titulo;
+        document.getElementById("ofe-vigencia").value = ofe.vigencia;
+        document.getElementById("ofe-usos").value = ofe.usos;
+
+        modalOferta.classList.add("abierto");
+    }
+
+    if (formOferta) {
+        formOferta.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const editId = document.getElementById("ofe-edit-id").value;
+            const codigo = document.getElementById("ofe-codigo").value.trim().toUpperCase();
+            const estado = document.getElementById("ofe-estado").value;
+            const titulo = document.getElementById("ofe-titulo").value.trim();
+            const vigencia = document.getElementById("ofe-vigencia").value.trim() || "Sin fecha límite";
+            const usos = document.getElementById("ofe-usos").value.trim() || "0 veces";
+
+            if (editId) {
+                const index = listaOfertas.findIndex(o => o.id === editId);
+                if (index !== -1) {
+                    listaOfertas[index] = { ...listaOfertas[index], codigo, estado, titulo, vigencia, usos };
+                    mostrarToast(`✓ Se editó el cupón "${codigo}" con éxito.`);
+                }
+            } else {
+                const nueva = { id: codigo, codigo, estado, titulo, vigencia, usos };
+                listaOfertas.unshift(nueva);
+                mostrarToast(`✓ Se agregó el cupón "${codigo}" a promociones.`);
+            }
+
+            renderizarOfertas();
+            modalOferta.classList.remove("abierto");
+        });
+    }
+
+    let idOfertaEliminar = null;
+
+    function solicitarEliminarOferta(id) {
+        const ofe = listaOfertas.find(o => o.id === id);
+        if (!ofe) return;
+        idOfertaEliminar = id;
+        document.getElementById("eliminar-nombre-oferta").innerText = `"${ofe.codigo}" - ${ofe.titulo}`;
+        document.getElementById("modal-eliminar-oferta").classList.add("abierto");
+    }
+
+    const btnConfirmarEliminarOfe = document.getElementById("btn-confirmar-eliminar-ofe");
+    if (btnConfirmarEliminarOfe) {
+        btnConfirmarEliminarOfe.addEventListener("click", () => {
+            if (!idOfertaEliminar) return;
+            const ofe = listaOfertas.find(o => o.id === idOfertaEliminar);
+            const nombre = ofe ? ofe.codigo : idOfertaEliminar;
+
+            listaOfertas = listaOfertas.filter(o => o.id !== idOfertaEliminar);
+            renderizarOfertas();
+            cerrarModales();
+            mostrarToast(`✓ Se eliminó la oferta "${nombre}".`);
+            idOfertaEliminar = null;
+        });
+    }
+
+    // 8. Modales de Pedidos y Clientes
+    const datosPedidos = {
+        "0801": { codigo: "#EXP-0801", pieza: "Sombrero Mortífero", cliente: "Viktor Ramos", correo: "viktor@zaun.com", direccion: "Laboratorio Subterráneo Nivel 4, Taller Químico #12", region: "Distrito Bajo · Zaun", guia: "#TRK-88102-ZAU", courier: "Transporte Subterráneo Red Express", pago: "Crédito de Taller / Liquidado", total: "$3,600.00 MXN", estado: "En camino", estadoClase: "estado-camino" },
+        "0941": { codigo: "#EXP-0941", pieza: "Filo del Infinito", cliente: "Jayce Talis", correo: "jayce@piltover.com", direccion: "Torre de Innovación #09, Piso 14", region: "Distrito Alto · Piltover", guia: "#TRK-55201-PLT", courier: "Dirigible Postal de Piltover", pago: "Bono Hextech / Liquidado", total: "$3,400.00 MXN", estado: "En proceso", estadoClase: "estado-proceso" },
+        "0720": { codigo: "#EXP-0720", pieza: "Malla de Espinas", cliente: "Caitlyn Kiramman", correo: "caitlyn@piltover.com", direccion: "Mansión Kiramman, Paseo del Sol #4", region: "Distrito Residencial · Piltover", guia: "#TRK-10029-ENT", courier: "Mensajería Oficial de Vigilantes", pago: "Visa Oficial / Liquidado", total: "$2,700.00 MXN", estado: "Entregado", estadoClase: "estado-entregado" }
+    };
+
+    const datosClientes = {
+        "viktor": { nombre: "Viktor Ramos", correo: "viktor@zaun.com", tel: "+52 449 812 3456", dir: "Laboratorio Subterráneo Nivel 4, Taller Químico #12", ciudad: "Distrito Bajo · Zaun", gastos: "$14,200.00 MXN", ordenes: "4 piezas adquiridas", pref: "Poder de Habilidad (AP) & Quimtech", nota: "Solicita aleaciones resistentes a ácidos fuertes." },
+        "jayce": { nombre: "Jayce Talis", correo: "jayce@piltover.com", tel: "+52 449 201 9920", dir: "Torre de la Innovación #09, Piso 14", ciudad: "Distrito Alto · Piltover", gastos: "$28,500.00 MXN", ordenes: "6 piezas adquiridas", pref: "Daño Físico (AD) & Precisión Hextech", nota: "Cliente VIP del consejo." },
+        "caitlyn": { nombre: "Caitlyn Kiramman", correo: "caitlyn@piltover.com", tel: "+52 449 555 1290", dir: "Mansión Kiramman, Paseo del Sol #4", ciudad: "Distrito Residencial · Piltover", gastos: "$6,800.00 MXN", ordenes: "2 piezas adquiridas", pref: "Defensa Pesada & Armas a Distancia", nota: "Requiere facturación oficial." }
+    };
+
+    let ordenActiva = "#EXP-0801";
+
+    function abrirModalPedido(id) {
+        const data = datosPedidos[id];
+        if (!data) return;
+
+        ordenActiva = data.codigo;
+        document.getElementById("modal-ped-codigo").innerText = `ORDEN ${data.codigo}`;
+        document.getElementById("modal-ped-titulo").innerText = data.pieza;
+        document.getElementById("modal-ped-cliente").innerText = data.cliente;
+        document.getElementById("modal-ped-correo").innerText = data.correo;
+        document.getElementById("modal-ped-direccion").innerText = data.direccion;
+        document.getElementById("modal-ped-region").innerText = data.region;
+        document.getElementById("modal-ped-guia").innerText = `Guía: ${data.guia}`;
+        document.getElementById("modal-ped-courier").innerText = data.courier;
+        document.getElementById("modal-ped-pago").innerText = data.pago;
+        document.getElementById("modal-ped-total").innerText = `Total: ${data.total}`;
+        
+        const estadoEl = document.getElementById("modal-ped-estado");
+        estadoEl.className = `estado ${data.estadoClase}`;
+        estadoEl.innerText = data.estado;
+
+        document.getElementById("modal-pedido").classList.add("abierto");
+    }
+
+    function abrirModalCliente(id) {
+        const data = datosClientes[id];
+        if (!data) return;
+
+        document.getElementById("modal-cli-nombre").innerText = data.nombre;
+        document.getElementById("modal-cli-correo").innerText = data.correo;
+        document.getElementById("modal-cli-tel").innerText = data.tel;
+        document.getElementById("modal-cli-dir").innerText = data.dir;
+        document.getElementById("modal-cli-ciudad").innerText = data.ciudad;
+        document.getElementById("modal-cli-gastos").innerText = data.gastos;
+        document.getElementById("modal-cli-ordenes").innerText = data.ordenes;
+        document.getElementById("modal-cli-pref").innerText = data.pref;
+        document.getElementById("modal-cli-nota").innerText = data.nota;
+
+        document.getElementById("modal-cliente").classList.add("abierto");
+    }
+
+    // 9. Cierre universal de modales
+    function cerrarModales() {
+        document.querySelectorAll(".modal").forEach(m => m.classList.remove("abierto"));
+    }
+
+    window.addEventListener("click", (e) => {
+        if (e.target.classList.contains("modal")) {
+            cerrarModales();
+        }
+    });
+
+    // 10. Alertas emergentes (Toast) y acciones auxiliares
+    function mostrarToast(mensaje) {
+        const toast = document.getElementById("toast-aviso");
+        const texto = document.getElementById("toast-texto");
+        if (!toast || !texto) return;
+
+        texto.innerText = mensaje;
+        toast.classList.add("activo");
+
+        setTimeout(() => {
+            toast.classList.remove("activo");
+        }, 3200);
+    }
+
+    function imprimirGuia() {
+        cerrarModales();
+        mostrarToast(`✓ Guía de envío impresa (${ordenActiva})`);
+    }
+
+    function enviarOfertaDirecta() {
+        cerrarModales();
+        mostrarToast("✓ Oferta asignada y enviada al cliente.");
+    }
+</script>
+</body>
+</html>
+
+</body>
+</html>
+    
+
+
+</body>
+</html>

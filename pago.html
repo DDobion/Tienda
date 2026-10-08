@@ -21,7 +21,7 @@
     </section>
 
     <main class="pago">
-        <!-- Columna Izquierda -->
+        <!-- Columna Izquierda: Formulario -->
         <section class="formulario">
             
             <!-- Dirección -->
@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <!-- Métodos -->
+            <!-- Métodos de Pago -->
             <div class="caja">
                 <small>PASO 02 · FORMA DE PAGO</small>
                 <h2>Selección de método</h2>
@@ -143,28 +143,39 @@
             </div>
         </section>
 
-     
+        <!-- Columna Derecha: Resumen de Orden -->
         <aside class="resumen">
             <div class="caja-resumen">
                 <small>EXPEDIENTE DE ORDEN</small>
                 <hr>
 
+                <!-- Producto en stock (Filo del Infinito) -->
                 <div class="pieza">
                     <div class="foto">
-                        <img src="img/cuchillo-damasco.jpg" onerror="this.src='https://images.unsplash.com/photo-1593618998160-e34014e67546?w=200&auto=format&fit=crop&q=80'" alt="Pieza">      <!-- !img -->
+                        <img src="img/productos/ad/filoinfinito.jpg" onerror="this.src='img/productos/ad/espadon.jpg'" alt="Filo del Infinito">
                     </div>
                     <div class="info">
-                        <h3>Cuchillo Forja 09 · Damasco</h3>
+                        <h3>Filo del Infinito</h3>
                         <p>Cantidad: 1 pza</p>
-                        <b>$2,850.00</b>
+                        <b>$3,400.00</b>
                     </div>
+                </div>
+
+                <!-- Apartado de Código de Oferta -->
+                <div class="caja-oferta-pago">
+                    <small>CÓDIGO DE PROMOCIÓN</small>
+                    <div class="oferta-input-grupo">
+                        <input type="text" id="input-codigo-oferta" placeholder="Ej. HEXTECH20">
+                        <button type="button" onclick="aplicarCodigoOferta()">Aplicar</button>
+                    </div>
+                    <span id="mensaje-oferta-estado"></span>
                 </div>
 
                 <small class="titulo-desglose">DESGLOSE</small>
                 <hr>
                 <div class="linea">
                     <span>Subtotal</span>
-                    <b>$2,850.00</b>
+                    <b>$3,400.00</b>
                 </div>
                 <div class="linea">
                     <span>Envío</span>
@@ -176,7 +187,13 @@
                 </div>
                 <div class="linea total">
                     <span>Total a pagar</span>
-                    <b class="oro">$2,850.00</b>
+                    <b class="oro">$3,400.00</b>
+                </div>
+
+                <!-- Checkbox Términos y Servicios -->
+                <div class="campo-terminos">
+                    <input type="checkbox" id="terminos">
+                    <label for="terminos">Acepto términos y servicios del taller</label>
                 </div>
 
                 <button class="pagar" type="button" onclick="pagar()">
@@ -184,16 +201,16 @@
                 </button>
 
                 <div class="seguridad">
-                    <span> Compra protegida por Forja 09</span>
+                    <span>Compra protegida por Forja 09</span>
                 </div>
             </div>
         </aside>
     </main>
 
-    <!-- Modal de confirmación (sin animaciones de martillo ni pulsos) -->
+    <!-- Modal de confirmación -->
     <div id="modal" class="modal">
         <div class="exito">
-            <div class="icono">⚒</div> <!-- xd -->
+            <div class="icono">⚒</div>
             <small>CONFIRMADO</small>
             <h2>¡Tu encargo ha sido registrado!</h2>
             <p>Hemos procesado tu compra con éxito. Se comenzará a preparar el paquete en el taller y te llegará la guía de rastreo por correo.</p>
@@ -201,11 +218,11 @@
             <div class="detalles">
                 <div>
                     <span>Expediente:</span>
-                    <b>#FJ09-84920</b>
+                    <b>#EXP-1002</b>
                 </div>
                 <div>
                     <span>Tiempo estimado:</span>
-                    <b>3 a 5 días hábiles</b>
+                    <b>2 a 4 días hábiles</b>
                 </div>
             </div>
 
@@ -242,7 +259,7 @@
             document.getElementById('ver-expira').textContent = val || 'MM/AA';
         });
 
-        // Cambio de método
+        // Cambio de método de pago
         function cambiarMetodo(tipo) {
             document.querySelectorAll('.metodo').forEach(btn => btn.classList.remove('activo'));
             document.querySelectorAll('.panel').forEach(p => p.classList.remove('visible'));
@@ -259,10 +276,33 @@
             }
         }
 
-        // Abrir modal de éxito de forma directa
+        // Lógica para validar cupones de oferta
+        function aplicarCodigoOferta() {
+            const input = document.getElementById('input-codigo-oferta').value.trim().toUpperCase();
+            const mensaje = document.getElementById('mensaje-oferta-estado');
+            
+            if (input === "HEXTECH20") {
+                mensaje.style.color = "#75c92d";
+                mensaje.textContent = "✓ Cupón aplicado: -20% de descuento";
+            } else if (input === "FORJA09") {
+                mensaje.style.color = "#75c92d";
+                mensaje.textContent = "✓ Cupón aplicado: Envío Gratis";
+            } else {
+                mensaje.style.color = "#e06c6c";
+                mensaje.textContent = "✕ Código no válido o expirado";
+            }
+        }
+
+        // Validación de términos y despliegue del modal de éxito
         function pagar() {
+            const terminos = document.getElementById('terminos');
+            if (!terminos.checked) {
+                alert("Debes aceptar los términos y servicios del taller para continuar.");
+                return;
+            }
             document.getElementById('modal').classList.add('mostrar');
         }
     </script>
+    <script src="js/sesion.js"></script>
 </body>
 </html>

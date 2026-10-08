@@ -34,16 +34,22 @@
 
     </section>
 
-    <!-- filtros de categorias -->
+    <!-- filtros de categorias y buscador -->
     <section class="catalogo-filtros">
 
-        <div class="filtros">
-            <button class="filtro activo" data-categoria="todos">Todas</button>
-            <button class="filtro" data-categoria="ad">Daño Físico (AD)</button>
-            <button class="filtro" data-categoria="ap">Poder de Habilidad (AP)</button>
-            <button class="filtro" data-categoria="def">Defensa y Tanque</button>
-            <button class="filtro" data-categoria="sup">Soporte y Utilidad</button>
-            <button class="filtro" data-categoria="mov">Movilidad</button>
+        <div class="contenedor-filtros-busqueda">
+            <div class="filtros">
+                <button class="filtro activo" data-categoria="todos">Todas</button>
+                <button class="filtro" data-categoria="ad">Daño Físico (AD)</button>
+                <button class="filtro" data-categoria="ap">Poder de Habilidad (AP)</button>
+                <button class="filtro" data-categoria="def">Defensa y Tanque</button>
+                <button class="filtro" data-categoria="sup">Soporte y Utilidad</button>
+                <button class="filtro" data-categoria="mov">Movilidad</button>
+            </div>
+
+            <div class="buscador-catalogo">
+                <input type="text" id="inputBuscar" placeholder="Buscar pieza..." autocomplete="off">
+            </div>
         </div>
 
     </section>
@@ -72,6 +78,15 @@
             .then(r => r.text())
             .then(data => document.getElementById("footer").innerHTML = data);
     </script>
+    
+
+        <!-- Agrega esto justo debajo de <div id="navbar"></div> en Catalogo.html -->
+    <div id="barra-admin" class="barra-admin" style="display: none;">
+        <span>Modo Administrador activo</span>
+        <a href="admin.html">← Volver al Panel</a>
+    </div>
+
+    <script src="js/sesion.js"></script>
 
     
     <script src="js/catalogo-render.js"></script>

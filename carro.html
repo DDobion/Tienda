@@ -18,27 +18,33 @@
             <div class="carro-columna-lista">
                 
                 <div class="carro-encabezado-lista">
-                    
                     <h1 class="carro-titulo-principal">Piezas en Espera</h1>
                     
-                    <!-- Control global para Seleccionar Todo -->
-                    <label class="carro-checkbox-todos">
-                        <input type="checkbox" id="carro-select-all" checked>
-                        <span>Seleccionar todas las piezas</span>
-                    </label>
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+                        <!-- Control global para Seleccionar Todo (Sin checked por defecto) -->
+                        <label class="carro-checkbox-todos" style="margin-bottom: 0;">
+                            <input type="checkbox" id="carro-select-all">
+                            <span>Seleccionar todas las piezas</span>
+                        </label>
+
+                        <!-- Botón para eliminar múltiples elementos (Se oculta si hay menos de 2 seleccionados) -->
+                        <button type="button" id="btn-eliminar-varios" class="carro-btn-eliminar-multiples" style="display: none;" onclick="solicitarEliminarSeleccionados()">
+                            🗑 Eliminar seleccionados (<span id="contador-seleccionados">0</span>)
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Caja Contenedora de Items -->
-                <div class="carro-caja-items">
+                <div class="carro-caja-items" id="contenedor-items-carro">
 
-                    <!-- Producto 1 -->
-                    <article class="carro-tarjeta-item" data-precio="3400">
+                    <!-- Producto 1 (Sin checked por defecto) -->
+                    <article class="carro-tarjeta-item" data-id="EXP-0941" data-nombre="Filo del Infinito" data-precio="3400">
                         <div class="carro-item-seleccion">
-                            <input type="checkbox" class="carro-item-check" checked>
+                            <input type="checkbox" class="carro-item-check">
                         </div>
 
                         <div class="carro-item-foto">
-                            <img src="img/cat-ad-modelo.jpg" alt="Filo del Infinito">
+                            <img src="img/productos/ad/filoinfinito.jpg" alt="Filo del Infinito" onerror="this.src='img/productos/ad/espadon.jpg'">
                         </div>
                         
                         <div class="carro-item-detalles">
@@ -55,18 +61,18 @@
 
                         <div class="carro-item-precio-caja">
                             <b class="carro-item-subtotal-texto">$3,400.00</b>
-                            <button type="button" class="carro-btn-eliminar">Eliminar</button>
+                            <button type="button" class="carro-btn-eliminar" title="Eliminar pieza">🗑</button>
                         </div>
                     </article>
 
-                    <!-- Producto 2 -->
-                    <article class="carro-tarjeta-item" data-precio="3600">
+                    <!-- Producto 2 (Sin checked por defecto) -->
+                    <article class="carro-tarjeta-item" data-id="EXP-0801" data-nombre="Sombrero Mortífero" data-precio="3600">
                         <div class="carro-item-seleccion">
-                            <input type="checkbox" class="carro-item-check" checked>
+                            <input type="checkbox" class="carro-item-check">
                         </div>
 
                         <div class="carro-item-foto">
-                            <img src="img/cat-ap-modelo.jpg" alt="Sombrero Mortífero">
+                            <img src="img/productos/ap/rabadon.jpg" alt="Sombrero Mortífero" onerror="this.src='img/productos/ad/espadon.jpg'">
                         </div>
                         
                         <div class="carro-item-detalles">
@@ -83,7 +89,7 @@
 
                         <div class="carro-item-precio-caja">
                             <b class="carro-item-subtotal-texto">$3,600.00</b>
-                            <button type="button" class="carro-btn-eliminar">Eliminar</button>
+                            <button type="button" class="carro-btn-eliminar" title="Eliminar pieza">🗑</button>
                         </div>
                     </article>
 
@@ -99,47 +105,89 @@
                     <div class="carro-filas-desglose">
                         <div class="carro-fila-linea">
                             <span>Subtotal piezas</span>
-                            <b id="carro-resumen-subtotal">$7,000.00</b>
+                            <b id="carro-resumen-subtotal">$0.00</b>
                         </div>
                         <div class="carro-fila-linea">
                             <span>Envío regional</span>
-                            <b id="carro-resumen-envio">$120.00</b>
+                            <b id="carro-resumen-envio">$0.00</b>
                         </div>
                         <div class="carro-fila-linea">
                             <span>Aseguramiento</span>
-                            <b id="carro-resumen-seguro">$45.00</b>
+                            <b id="carro-resumen-seguro">$0.00</b>
                         </div>
                     </div>
 
                     <div class="carro-bloque-total">
                         <span>Total a pagar</span>
-                        <b id="carro-resumen-total">$7,165.00</b>
+                        <b id="carro-resumen-total">$0.00</b>
                     </div>
 
                     <button type="button" class="carro-btn-finalizar" onclick="window.location.href='pago.html'">
                         FINALIZAR COMPRA
                     </button>
-                    
-                    <a href="catalogo.html" class="carro-enlace-volver">← Continuar viendo armas</a>
                 </div>
             </aside>
 
         </div>
     </section>
 
+    <!-- MODAL DE CONFIRMACIÓN DE ELIMINACIÓN -->
+    <div class="modal" id="modal-eliminar-carro">
+        <div class="modal-caja modal-caja-alerta">
+            <div class="modal-encabezado">
+                <span class="panel-etiqueta" style="color: #e06c6c;">DESTRUCCIÓN DE PIEZAS</span>
+                <button type="button" class="modal-cerrar" onclick="cerrarModalEliminar()">✕</button>
+            </div>
+            <div class="alerta-cuerpo">
+                <p id="texto-alerta-modal">¿Estás seguro de que deseas retirar esta pieza del carrito?</p>
+                <small class="admin-subtitulo">Esta acción removerá los elementos seleccionados de tu lista.</small>
+            </div>
+            <div class="modal-pie-acciones">
+                <button type="button" class="btn-cancelar" onclick="cerrarModalEliminar()">Cancelar</button>
+                <button type="button" class="btn-peligro-carro" id="btn-confirmar-eliminar-carro">Sí, eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor del aviso flotante (Toast) -->
+    <div id="toast-aviso" class="toast-notificacion">
+        <span class="toast-icono">✓</span>
+        <span id="toast-texto">Acción realizada.</span>
+    </div>
+
     <div id="footer"></div>
 
+    <script src="js/sesion.js"></script>
     <script>
-        // Carga de Navbar y Footer externos
-        fetch("navbar.html").then(r => r.text()).then(d => document.getElementById("navbar").innerHTML = d);
-        fetch("footer.html").then(r => r.text()).then(d => document.getElementById("footer").innerHTML = d);
+        let elementoAEliminar = null;
+        let esEliminacionMultiple = false;
 
-        // Lógica interactiva del Carrito
+        function cerrarModalEliminar() {
+            const modal = document.getElementById("modal-eliminar-carro");
+            if (modal) modal.classList.remove("abierto");
+            elementoAEliminar = null;
+            esEliminacionMultiple = false;
+        }
+
+        function mostrarToast(mensaje) {
+            const toast = document.getElementById("toast-aviso");
+            const texto = document.getElementById("toast-texto");
+            if (!toast || !texto) return;
+
+            texto.innerText = mensaje;
+            toast.classList.add("activo");
+
+            setTimeout(() => {
+                toast.classList.remove("activo");
+            }, 3200);
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
             const selectAllCheck = document.getElementById("carro-select-all");
-            const itemChecks = document.querySelectorAll(".carro-item-check");
-            const items = document.querySelectorAll(".carro-tarjeta-item");
-
+            const modalEliminar = document.getElementById("modal-eliminar-carro");
+            const btnConfirmar = document.getElementById("btn-confirmar-eliminar-carro");
+            const btnEliminarVarios = document.getElementById("btn-eliminar-varios");
+            const contadorSeleccionados = document.getElementById("contador-seleccionados");
             const COSTO_ENVIO = 120;
             const COSTO_SEGURO = 45;
 
@@ -150,8 +198,10 @@
             function calcularTotales() {
                 let subtotalAcumulado = 0;
                 let hayItemsSeleccionados = false;
+                let cantidadMarcados = 0;
+                const itemsRestantes = document.querySelectorAll(".carro-tarjeta-item");
 
-                document.querySelectorAll(".carro-tarjeta-item").forEach(item => {
+                itemsRestantes.forEach(item => {
                     const check = item.querySelector(".carro-item-check");
                     const inputCant = item.querySelector(".carro-input-cantidad");
                     const textoSubtotal = item.querySelector(".carro-item-subtotal-texto");
@@ -164,8 +214,19 @@
                     if (check && check.checked) {
                         subtotalAcumulado += totalItem;
                         hayItemsSeleccionados = true;
+                        cantidadMarcados++;
                     }
                 });
+
+                // Mostrar u ocultar el botón de eliminación múltiple si hay 2 o más seleccionados
+                if (btnEliminarVarios && contadorSeleccionados) {
+                    contadorSeleccionados.textContent = cantidadMarcados;
+                    if (cantidadMarcados >= 2) {
+                        btnEliminarVarios.style.display = "inline-flex";
+                    } else {
+                        btnEliminarVarios.style.display = "none";
+                    }
+                }
 
                 const envioActual = hayItemsSeleccionados ? COSTO_ENVIO : 0;
                 const seguroActual = hayItemsSeleccionados ? COSTO_SEGURO : 0;
@@ -175,35 +236,27 @@
                 document.getElementById("carro-resumen-envio").textContent = formatearMoneda(envioActual);
                 document.getElementById("carro-resumen-seguro").textContent = formatearMoneda(seguroActual);
                 document.getElementById("carro-resumen-total").textContent = formatearMoneda(totalFinal);
-            }
 
-            // Eventos Checkbox Seleccionar Todos
-            if (selectAllCheck) {
-                selectAllCheck.addEventListener("change", (e) => {
-                    const estado = e.target.checked;
-                    document.querySelectorAll(".carro-item-check").forEach(chk => chk.checked = estado);
-                    calcularTotales();
-                });
-            }
-
-            // Eventos Checkbox Individuales
-            document.querySelectorAll(".carro-item-check").forEach(chk => {
-                chk.addEventListener("change", () => {
-                    const todosChecks = document.querySelectorAll(".carro-item-check");
-                    const marcados = document.querySelectorAll(".carro-item-check:checked");
-                    if (selectAllCheck) {
-                        selectAllCheck.checked = (todosChecks.length === marcados.length);
+                if (itemsRestantes.length === 0) {
+                    const contenedor = document.getElementById("contenedor-items-carro");
+                    if (contenedor) {
+                        contenedor.innerHTML = `
+                            <div style="padding: 40px 20px; text-align: center; color: #8f9fa7; font-family: 'JetBrains Mono', monospace; border: 1px dashed #22313a;">
+                                Tu forja de espera está vacía. <br><br>
+                                <a href="catalogo.html" style="color: #c9942d; text-decoration: none;">← Volver al catálogo</a>
+                            </div>
+                        `;
                     }
-                    calcularTotales();
-                });
-            });
+                    if (btnEliminarVarios) btnEliminarVarios.style.display = "none";
+                }
+            }
 
-            // Botones mas / menos / eliminar
-            items.forEach(item => {
+            function vincularControlesItem(item) {
                 const btnMas = item.querySelector(".carro-btn-mas");
                 const btnMenos = item.querySelector(".carro-btn-menos");
                 const inputCant = item.querySelector(".carro-input-cantidad");
                 const btnEliminar = item.querySelector(".carro-btn-eliminar");
+                const chk = item.querySelector(".carro-item-check");
 
                 btnMas.addEventListener("click", () => {
                     inputCant.value = parseInt(inputCant.value) + 1;
@@ -218,12 +271,67 @@
                 });
 
                 btnEliminar.addEventListener("click", () => {
-                    item.remove();
+                    elementoAEliminar = item;
+                    esEliminacionMultiple = false;
+                    const nombre = item.getAttribute("data-nombre") || "este producto";
+                    const expId = item.getAttribute("data-id") || "";
+                    document.getElementById("texto-alerta-modal").innerHTML = `¿Estás seguro de que deseas retirar <b style="color: #f8b73f;">"${nombre}" (${expId})</b> del carrito?`;
+                    modalEliminar.classList.add("abierto");
+                });
+
+                chk.addEventListener("change", () => {
+                    const todosChecks = document.querySelectorAll(".carro-item-check");
+                    const marcados = document.querySelectorAll(".carro-item-check:checked");
+                    if (selectAllCheck) {
+                        selectAllCheck.checked = (todosChecks.length > 0 && todosChecks.length === marcados.length);
+                    }
                     calcularTotales();
                 });
+            }
+
+            document.querySelectorAll(".carro-tarjeta-item").forEach(vincularControlesItem);
+
+            window.solicitarEliminarSeleccionados = function() {
+                esEliminacionMultiple = true;
+                const cant = document.querySelectorAll(".carro-item-check:checked").length;
+                document.getElementById("texto-alerta-modal").innerHTML = `¿Estás seguro de que deseas retirar las <b style="color: #f8b73f;">${cant} piezas seleccionadas</b> del carrito?`;
+                modalEliminar.classList.add("abierto");
+            };
+
+            btnConfirmar.addEventListener("click", () => {
+                if (esEliminacionMultiple) {
+                    const marcados = document.querySelectorAll(".carro-item-check:checked");
+                    let cantidadBorradas = marcados.length;
+                    marcados.forEach(chk => {
+                        chk.closest(".carro-tarjeta-item").remove();
+                    });
+                    if (selectAllCheck) selectAllCheck.checked = false;
+                    calcularTotales();
+                    cerrarModalEliminar();
+                    mostrarToast(`✓ Se retiraron ${cantidadBorradas} piezas del carrito.`);
+                } else if (elementoAEliminar) {
+                    const nombre = elementoAEliminar.getAttribute("data-nombre") || "Pieza";
+                    elementoAEliminar.remove();
+                    calcularTotales();
+                    cerrarModalEliminar();
+                    mostrarToast(`✓ Se retiró "${nombre}" del carrito.`);
+                }
             });
 
-            // Cálculo inicial
+            if (selectAllCheck) {
+                selectAllCheck.addEventListener("change", (e) => {
+                    const estado = e.target.checked;
+                    document.querySelectorAll(".carro-item-check").forEach(chk => chk.checked = estado);
+                    calcularTotales();
+                });
+            }
+
+            window.addEventListener("click", (e) => {
+                if (e.target.classList.contains("modal")) {
+                    cerrarModalEliminar();
+                }
+            });
+
             calcularTotales();
         });
     </script>

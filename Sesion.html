@@ -14,15 +14,9 @@
 
 <body class="pagina-auth">
 
-    
-
     <div class="auth-contenedor">
 
-        
-
         <div class="auth-tarjeta">
-
-            <small class="auth-etiqueta">ACCESO AL GREMIO</small>
 
             <h1>Iniciar sesión</h1>
             <p class="auth-subtitulo">
@@ -32,8 +26,9 @@
             <form id="formularioLogin" class="auth-formulario">
 
                 <div class="campo">
-                    <label for="correoLogin">Correo</label>
-                    <input type="email" id="correoLogin" name="correo" placeholder="tucorreo@dominio.com">
+                    <label for="correoLogin">Usuario o Correo</label>
+                    <!-- Cambiado de type="email" a type="text" para evitar la validación obligatoria del @ -->
+                    <input type="text" id="correoLogin" name="correo" placeholder="admin, cliente o correo@dominio.com">
                 </div>
 
                 <div class="campo">
@@ -57,24 +52,36 @@
 
     </div>
 
+<script>
+    const formularioLogin = document.getElementById("formularioLogin");
+    const mensajeLogin = document.getElementById("mensajeLogin");
+    const correoInput = document.getElementById("correoLogin");
 
-    <script>
-        /* simulacion */
-        const formularioLogin = document.getElementById("formularioLogin");
-        const mensajeLogin = document.getElementById("mensajeLogin");
+    formularioLogin.addEventListener("submit", (evento) => {
+        evento.preventDefault();
 
-        formularioLogin.addEventListener("submit", (evento) => {
-            evento.preventDefault();
+        const correo = correoInput.value.trim().toLowerCase();
+        const esAdmin = correo.includes("admin");
 
-            mensajeLogin.classList.add("mostrar");
+        if (esAdmin) {
+            localStorage.setItem("sesion", "admin");
+            mensajeLogin.innerText = "✓ Modo Administrador detectado. Entrando...";
+        } else {
+            localStorage.setItem("sesion", "cliente");
+            mensajeLogin.innerText = "✓ Sesión iniciada. Bienvenido Invocador.";
+        }
 
-            setTimeout(() => {
+        mensajeLogin.classList.add("mostrar");
+
+        setTimeout(() => {
+            if (esAdmin) {
+                window.location.href = "admin.html";
+            } else {
                 window.location.href = "cuenta.html";
-            }, 1600);
-        });
-    </script>
-
-    
+            }
+        }, 1200);
+    });
+</script>
 
 </body>
 

@@ -1,7 +1,6 @@
-
-/* ------------------------------------------------------------------------------------------------ */
-/* pago -----------------------------------------------------------------------------*/
-
+/* -----------------------------------------------------------
+   Estilos de Pago alineados con el Panel Admin
+----------------------------------------------------------- */
 .ruta {
     max-width: 1200px;
     margin: 0 auto;
@@ -9,7 +8,7 @@
 }
 
 .ruta a {
-    color: #9e9c91;
+    color: #8a9ba8;
     text-decoration: none;
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
@@ -19,18 +18,15 @@
     color: #c9942d;
 }
 
-
-
 .pago {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
-    gap: 35px;
+    gap: 32px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px 20px 80px 20px;
     align-items: start; 
 }
-
 
 .formulario,
 .resumen {
@@ -40,21 +36,21 @@
 
 .caja,
 .caja-resumen {
-    background: #122738;
+    background: #0c1c28;
     border: 1px solid #33444e;
-    padding: 22px;
+    padding: 24px;
     margin-top: 0; 
     box-sizing: border-box;
 }
 
-
 .caja > small,
 .caja-resumen > small {
     display: block;
-    color: #b88a32;
+    color: #c9942d;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    line-height: 1.2;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     margin: 0;
     padding: 0;
 }
@@ -62,46 +58,25 @@
 .caja h2 {
     font-family: Georgia, serif;
     font-weight: normal;
-    font-size: 22px;
+    font-size: 20px;
     color: #e0ddd3;
-    margin: 8px 0 0 0;
+    margin: 6px 0 0 0;
 }
 
 .formulario {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 24px;
 }
 
-
-.caja {
-    background: #122738;
-    border: 1px solid #33444e;
-    padding: 22px;
-}
-
-.caja small {
-    color: #b88a32;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-}
-
-.caja h2 {
-    font-family: Georgia, serif;
-    font-weight: normal;
-    font-size: 22px;
-    color: #e0ddd3;
-    margin: 6px 0 0 0;
-}
-
-.caja hr {
+.caja hr,
+.caja-resumen hr {
     border: none;
-    border-top: 1px solid #33444e;
+    border-top: 1px solid #1f313c;
     margin: 16px 0;
 }
 
-/* ------------------------------------------------------------------------------------------------ */
-/* formulario .........................................................*/
+/* Campos de formulario idénticos al admin */
 .campos {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -119,28 +94,27 @@
 }
 
 .campo label {
-    color: #9e9c91;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
+    color: #8a9ba8;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
 }
 
 .campo input {
-    background: #04010f;
-    border: 1px solid #33444e;
-    color: #d9d6c9;
+    background: #0d1a24;
+    border: 1px solid #283a48;
+    color: #e0ddd3;
     padding: 10px 12px;
-    font-size: 14px;
-    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-family: 'Space Grotesk', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
 .campo input:focus {
-    outline: none;
     border-color: #c9942d;
 }
 
-/* ------------------------------------------------------------------------------------------------ */
-/* metodos pago------------------------------------------------------------------- */
+/* Métodos de pago */
 .metodos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -149,13 +123,14 @@
 }
 
 .metodo {
-    background: #04010f;
+    background: #09141d;
     border: 1px solid #33444e;
-    color: #9e9c91;
+    color: #8a9ba8;
     padding: 12px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
+    font-size: 11px;
     cursor: pointer;
+    transition: all 0.2s;
 }
 
 .metodo:hover {
@@ -165,10 +140,10 @@
 
 .metodo.activo {
     border-color: #c9942d;
-    background: #193144;
-    color: #ffffff;
+    background: #122738;
+    color: #f8b73f;
+    font-weight: 600;
 }
-
 
 .panel {
     display: none;
@@ -179,23 +154,24 @@
 }
 
 .nota {
-    color: #718089;
-    font-size: 14px;
-    line-height: 1.6;
+    color: #8a9ba8;
+    font-size: 13px;
+    line-height: 1.5;
     margin-bottom: 14px;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .banco {
-    background: #04010f;
-    border: 1px solid #33444e;
-    padding: 16px;
+    background: #09141d;
+    border: 1px solid #1f313c;
+    padding: 14px;
 }
 
 .banco div {
     display: flex;
     justify-content: space-between;
     padding: 8px 0;
-    border-bottom: 1px solid #1a2833;
+    border-bottom: 1px solid #182833;
     font-size: 13px;
 }
 
@@ -204,25 +180,25 @@
 }
 
 .banco span {
-    color: #53636c;
+    color: #718089;
 }
 
 .banco b {
-    color: #d9d6c9;
+    color: #e0ddd3;
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* ------------------------------------------------------------------------------------------------ */
-/* Tarjeta ------------------------------------------------- */
+/* Tarjeta interactiva */
 .tarjeta {
-    background: #0f2231;
-    border: 1px solid #486170;
+    background: #09141d;
+    border: 1px solid #33444e;
     padding: 20px;
     margin-bottom: 20px;
     height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .chip {
@@ -243,7 +219,7 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 16px;
     letter-spacing: 2px;
-    color: #f0ede6;
+    color: #e0ddd3;
 }
 
 .datos {
@@ -253,49 +229,33 @@
 
 .datos small {
     display: block;
-    color: #637785;
+    color: #718089;
     font-size: 9px;
     font-family: 'JetBrains Mono', monospace;
 }
 
 .datos span {
-    color: #d9d6c9;
+    color: #e0ddd3;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
 }
 
-/* ------------------------------------------------------------------------------------------------ */
-/* expediente ----------------------------------------------------------------------------------------- */
-
+/* Resumen de Orden */
 .resumen {
     display: block;
 }
 
 .caja-resumen {
-    background: #122738;
+    background: #0c1c28;
     border: 1px solid #33444e;
-    padding: 22px;
-    display: block;
-}
-
-.caja-resumen > small {
-    color: #b88a32;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    display: block;
-}
-
-.caja-resumen hr {
-    border: none;
-    border-top: 1px solid #33444e;
-    margin: 14px 0;
+    padding: 24px;
 }
 
 .pieza {
     display: flex;
     gap: 14px;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .foto {
@@ -323,7 +283,7 @@
 }
 
 .info p {
-    color: #718089;
+    color: #8a9ba8;
     font-size: 12px;
     font-family: 'JetBrains Mono', monospace;
     margin: 0 0 4px 0;
@@ -335,11 +295,74 @@
     font-size: 13px;
 }
 
-.titulo-desglose {
+/* Cupón de oferta */
+.caja-oferta-pago {
+    margin: 16px 0;
+    background: #09141d;
+    border: 1px solid #1f313c;
+    padding: 12px 14px;
+}
+
+.caja-oferta-pago small {
+    color: #718089;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     display: block;
-    color: #b88a32;
+    margin-bottom: 6px;
+}
+
+.oferta-input-grupo {
+    display: flex;
+    gap: 8px;
+}
+
+.oferta-input-grupo input {
+    flex: 1;
+    background: #0d1a24;
+    border: 1px solid #283a48;
+    color: #e0ddd3;
+    padding: 8px 10px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
+    outline: none;
+}
+
+.oferta-input-grupo input:focus {
+    border-color: #c9942d;
+}
+
+.oferta-input-grupo button {
+    background: #122738;
+    border: 1px solid #33444e;
+    color: #c9942d;
+    padding: 8px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.oferta-input-grupo button:hover {
+    border-color: #c9942d;
+    color: #f8b73f;
+}
+
+#mensaje-oferta-estado {
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    display: block;
+    margin-top: 6px;
+    color: #8a9ba8;
+}
+
+.titulo-desglose {
+    display: block;
+    color: #c9942d;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
     margin-top: 18px;
 }
 
@@ -347,18 +370,19 @@
     display: flex;
     justify-content: space-between;
     padding: 8px 0;
-    border-bottom: 1px solid #263943;
+    border-bottom: 1px solid #1f313c;
 }
 
 .linea span {
-    color: #53636c;
+    color: #8a9ba8;
     font-size: 13px;
 }
 
 .linea b {
-    color: #b8b8b1;
+    color: #e0ddd3;
     font-size: 13px;
     font-weight: normal;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .linea.total {
@@ -374,7 +398,7 @@
 }
 
 .oro {
-    color: #c9942d !important;
+    color: #f8b73f !important;
     font-size: 16px !important;
     font-weight: bold !important;
     font-family: 'JetBrains Mono', monospace;
@@ -384,50 +408,68 @@
     color: #75c92d !important;
 }
 
+/* Checkbox Términos y Servicios */
+.campo-terminos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0 4px 0;
+}
 
-/* ------------------------------------------------------------------------------------------------ */
-/* boton ...................................................................... */
+.campo-terminos input[type="checkbox"] {
+    accent-color: #c9942d;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.campo-terminos label {
+    color: #8a9ba8;
+    font-size: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    cursor: pointer;
+}
+
+/* Botón de pago estilo .admin-boton */
 .pagar {
     display: block;
     width: 100%;
     background: #c9942d;
     border: none;
-    padding: 13px 20px;
+    padding: 12px 18px;
     color: #101a20;
-    font-size: 14px;
-    font-weight: bold;
-    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
     text-transform: uppercase;
     cursor: pointer;
-    margin-top: 16px;
+    margin-top: 14px;
+    transition: opacity 0.2s;
 }
 
 .pagar:hover {
-    background: #dba539;
+    opacity: 0.9;
 }
 
 .seguridad {
-    margin-top: 14px;
+    margin-top: 12px;
     text-align: center;
 }
 
 .seguridad span {
-    color: #53636c;
+    color: #556673;
     font-size: 11px;
     font-family: 'JetBrains Mono', monospace;
 }
 
-
-/* ------------------------------------------------------------------------------------------------ */
-/* mensaje compra -------------------------------------------------------------------------- */
-
+/* Modal de éxito */
 .modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(4, 1, 15, 0.9);
+    background: rgba(4, 1, 15, 0.85);
     display: none;
     align-items: center;
     justify-content: center;
@@ -441,47 +483,47 @@
 }
 
 .exito {
-    background: #122738;
+    background: #0c1c28;
     border: 1px solid #c9942d;
     max-width: 440px;
     width: 100%;
-    padding: 30px;
+    padding: 28px;
     text-align: center;
 }
 
 .icono {
     font-size: 32px;
-    color: #c9942d;
-    margin-bottom: 12px;
+    color: #f8b73f;
+    margin-bottom: 10px;
 }
 
 .exito small {
-    color: #b88a32;
+    color: #c9942d;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .exito h2 {
     font-family: Georgia, serif;
     font-weight: normal;
     color: #e0ddd3;
-    font-size: 22px;
-    margin: 8px 0 12px 0;
+    font-size: 20px;
+    margin: 8px 0 10px 0;
 }
 
 .exito p {
-    color: #718089;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    color: #8a9ba8;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 16px;
 }
 
 .detalles {
-    background: #04010f;
-    border: 1px solid #33444e;
-    padding: 14px;
-    margin-bottom: 20px;
+    background: #09141d;
+    border: 1px solid #1f313c;
+    padding: 12px;
+    margin-bottom: 18px;
     text-align: left;
 }
 
@@ -494,19 +536,17 @@
 }
 
 .detalles span {
-    color: #53636c;
+    color: #718089;
 }
 
 .detalles b {
-    color: #d9d6c9;
+    color: #e0ddd3;
 }
-
 
 @media (max-width: 900px) {
     .pago {
         grid-template-columns: 1fr;
     }
-
     .resumen {
         order: -1;
     }
@@ -516,11 +556,9 @@
     .campos {
         grid-template-columns: 1fr;
     }
-
     .campo.doble {
         grid-column: span 1;
     }
-
     .metodos {
         grid-template-columns: 1fr;
     }
